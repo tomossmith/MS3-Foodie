@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 body {
-    background-image: url(/static/images/page-bg.png);
+    background-color: #002b5c
 }
 
 /*Special Paddings/Margins/Text*/
@@ -21,7 +21,7 @@ p {
 }
 
 .uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .text-shadow {
@@ -29,15 +29,24 @@ p {
 }
 
 /* Navigation Bar CSS */
+nav {
+    padding: 0.5em 2em;
+}
 
 nav li a {
     font-family: 'Lobster', cursive;
     font-size: 3em;
-    color: rgb(219, 161, 34));
+    color: white;
+    text-decoration-line: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
 }
 
 /* Base CSS */
 
 #logo {
     width: 10em;
+    border-bottom: 2px solid red;
+    padding-bottom: 2px;
 }
