@@ -1,15 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+<div class="row">
+
     {% for recipe in recipes %}
-        {{ recipe.recipe_name }} <br>
-        {{ recipe.recipe_description}} <br>
-        {{ recipe.recipe_serves}} <br>
-        {{ recipe.recipe_cook_time}} <br>
-        {{ recipe.recipe_ingredients}} <br>
-        {{ recipe.recipe_instructions}} <br>
-        {{ recipe.recipe_difficulty}} <br>
-        {{ recipe.recipe_spice_rating}} <br>
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ recipe.recipe_name }}</span>
+          <p>
+            {{ recipe.recipe_description}}
+            {{ recipe.recipe_serves}}
+            {{ recipe.recipe_cook_time}}
+            {{ recipe.recipe_ingredients}}
+            {{ recipe.recipe_instructions}}
+            {{ recipe.recipe_difficulty}}
+            {{ recipe.recipe_spice_rating}}
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
     {% endfor %}
+  </div>
 
 {% endblock %}
