@@ -20,10 +20,10 @@
 
     <header>
         <!-- TOP NAVIGATION BAR -->
-        <nav>
-            <div class="nav-wrapper">
+        <nav class="transparent z-depth-0">
+            <div class="nav-wrapper text-shadow">
                 <a href="{{ url_for('index') }}" class="brand-logo"><img id="logo" src="/static/images/logo.png" alt=""></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right gradient-text"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
