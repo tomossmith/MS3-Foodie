@@ -45,6 +45,11 @@ The task set for this project is to demonstrate the ability to create a fully re
 This section is designed to generate possible scenarios of the typical end user that would use this website. 
 This will help ensure end user requirements are designed into the website.
 
+To create a web application that offered a good experience to the user, I found that a minimal and simplistic style would be the best approach. 
+Not only does this keep the site easy to use, it also makes sure that the users aren't over powered with all the information the database may store/display.   
+
+A key priority was to try to make the journey from entering the site to displaying a recipe as quickly and clean as possible.
+
 
 ## <span id="#ux-user_stories"><b>User Stories</b></span>
 
