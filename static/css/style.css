@@ -82,6 +82,10 @@ nav li a {
     padding-bottom: 2px;
 }
 
+#text-logo {
+    width: 4em;
+}
+
 .alert .card-content h5 {
     font-family: 'Oswald', sans-serif;
     font-weight: bold;

@@ -55,9 +55,28 @@
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
-
             </div>
         </form>
     </div>
+
+    <!-- LOGIN BUTTON -->
+
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align white-text">
+                Already have a <img id="text-logo" src="/static/images/logo.png" alt="Foodie Logo"> account?
+            </p>
+        </div>
+        <div class="col s12">
+            <div class="col s5"></div>
+                <a href="{{ url_for('login') }}">
+                    <button class="col s2 btn-large red text-shadow default-button">
+                        Login<i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </a>
+            <div class="col s5"></div>
+        </div>
+    </div>
+
 
 {% endblock %}
