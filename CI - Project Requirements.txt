@@ -1,0 +1,16 @@
+Site owner's goal:
+Promote a brand of cooking tools.
+
+Potential features to include:
+Create a web application that allows users to store and easily access cooking recipes. Recipes would include fields such as ingredients, preparation steps, required tools, cuisine, etc.
+
+Create the backend code and frontend form(s) to allow users to add new recipes to the site, edit them and delete them.
+
+Create the backend and frontend functionality for users to locate recipes based on the recipe's fields. You may choose to create a full search functionality, or just a directory of recipes.
+
+Provide results in a manner that is visually appealing and user friendly.
+
+Advanced potential feature (nice-to-have)
+Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…).
+
+Create a dashboard to provide some statistics about all the recipes.
