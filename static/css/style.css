@@ -20,6 +20,30 @@ p {
     font-family: 'Oswald', sans-serif;
 }
 
+/* Form Elements */
+
+form i {
+    color: #002b5c;
+}
+
+label {
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Focus Color */
+.input-field input:focus + label {
+    color: #002b5c !important;
+}
+
+.active {
+    color: #135caf !important;
+}
+
+/* label underline focus color */
+.row .input-field input:focus {
+    border-bottom: 1px solid #002b5c!important;
+    box-shadow: 0 1px 0 0 #135caf !important
+}
 .uppercase {
     text-transform: uppercase;
 }
@@ -56,6 +80,35 @@ nav li a {
     width: 8em;
     border-bottom: 2px solid red;
     padding-bottom: 2px;
+}
+
+.alert .card-content h5 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #002b5c;
+}
+
+.alert .card-content h5 i {
+    color: rgb(228, 5, 5);
+    font-size: 1.5em;
+}
+
+/* Buttons */
+.default-button {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    background: #002b5c;
+    border-radius: 3em;
+    padding: 1em;
+}
+
+.default-button i {
+    color: white;
+}
+
+.default-button:hover {
+    background-color: #135caf;
 }
 
 /* Index Page */
