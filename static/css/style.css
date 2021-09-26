@@ -28,14 +28,21 @@ p {
     text-shadow: 2px 2px 2px #000;
 }
 
+.underline-red {
+    text-decoration-line: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+}
+
 /* Navigation Bar CSS */
 nav {
-    padding: 0.5em 2em;
+    padding: 0.5em 2em 6em 2em;
 }
 
 nav li a {
     font-family: 'Lobster', cursive;
-    font-size: 3em;
+    font-size: 2em;
     color: white;
     text-decoration-line: underline;
     text-decoration-color: red;
@@ -46,7 +53,14 @@ nav li a {
 /* Base CSS */
 
 #logo {
-    width: 10em;
+    width: 8em;
     border-bottom: 2px solid red;
     padding-bottom: 2px;
+}
+
+/* Index Page */
+#hero-img {
+    width: 100%;
+    height: auto;
+
 }
