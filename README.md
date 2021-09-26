@@ -81,3 +81,31 @@ This will help ensure end user requirements are designed into the website.
 
     - A returning visitor should be able to make changes to any recipes they have uploaded onto the site, but must not be able to edit or remove entries entered by the site admin or other users.
 
+---
+
+## <span id="#design"><b>Design</b></span>
+
+* ### <b>Color</b>
+
+    When choosing the most suitable color scheme for the site, I decided to list the main points of what I wanted to try to create from the design.
+
+    Here are the key points to consider when choosing the colors:
+
+    * Eye Catching
+    * Comfertable
+    * Color Compatibility
+
+    I chose to develop both the logo and the main site theme at the same time to ensure that they could work well together. 
+    The colors were going to be an important part of the design in order to create a brand that could be applied throughout the company should it be required in the future.
+
+    To choose a compatible color scheme, I decided to use [Adobe Color](https://color.adobe.com/) to find colors that would work well together. 
+    I began by choosing a base color that I thought would work well for the brand, then entered the color codes into the site and it came up with other colors that would work well in combination with the colors I had already entered.
+
+
+* ### <b>Typography</b>
+
+* ### <b>Images</b>
+
+* ### <b>Structure & Mockup Designs</b>
+
+* ### <b>Amendments To Mockup Designs During Develeopment</b>
