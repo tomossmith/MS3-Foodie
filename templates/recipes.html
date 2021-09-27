@@ -30,7 +30,26 @@
 
         <div class="row">
           <div class="col s6">
-            <p>Difficulty: {{ recipe.recipe_difficulty}}</p>
+            <p>Difficulty: &nbsp;
+              {% if recipe.recipe_difficulty == 1 %}
+                <i class="far fa-check-circle"></i>
+                <i class="far fa-circle"></i>
+                <i class="far fa-circle"></i>
+              {% endif %}
+            
+              {% if recipe.recipe_difficulty == 2 %}
+              <i class="far fa-check-circle"></i>
+              <i class="far fa-check-circle"></i>
+              <i class="far fa-circle"></i>
+              {% endif %}
+
+              {% if recipe.recipe_difficulty == 3 %}
+              <i class="far fa-check-circle"></i>
+              <i class="far fa-check-circle"></i>
+              <i class="far fa-check-circle"></i>
+              {% endif %}
+            </p>
+            
           </div>
         </div>
 
