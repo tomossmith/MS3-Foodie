@@ -90,7 +90,7 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-    
+
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
