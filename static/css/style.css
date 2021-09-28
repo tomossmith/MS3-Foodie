@@ -114,10 +114,3 @@ nav li a {
 .default-button:hover {
     background-color: #135caf;
 }
-
-/* Index Page */
-#hero-img {
-    width: 100%;
-    height: auto;
-
-}

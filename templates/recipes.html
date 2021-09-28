@@ -1,91 +1,89 @@
 {% extends "base.html" %}
 {% block content %}
 
-  {% for recipe in recipes %}
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card red darken-1">
-          <div class="card-content white-text">
-            <h3 class="card-title">{{ recipe.recipe_name }}</h3>
 
-            <!-- RECIPE DESCRIPTION-->
-            <div class="row">
-              <div class="col s12">
-                <p>{{ recipe.recipe_description}}</p>
-              </div>
-            </div>
-
-            <!-- RECIPE KEY ROW 1-->
-            <div class="row">
-              <div class="col s6">
-                <p>Serves: {{ recipe.recipe_serves}} </p>
-              </div>
-              <div class="col s6">
-                <p>Cooking Time: {{ recipe.recipe_cook_time}} minutes</p>
-              </div>
-            </div>
-
-            <!-- RECIPE KEY ROW 2-->
-            <div class="row">
-              <div class="col s6">
-                <p>Difficulty: &nbsp;
-                  {% if recipe.recipe_difficulty == 1 %}
-                  <i class="far fa-check-circle"></i>
-                  <i class="far fa-circle"></i>
-                  <i class="far fa-circle"></i>
-                  {% endif %}
-
-                  {% if recipe.recipe_difficulty == 2 %}
-                  <i class="far fa-check-circle"></i>
-                  <i class="far fa-check-circle"></i>
-                  <i class="far fa-circle"></i>
-                  {% endif %}
-
-                  {% if recipe.recipe_difficulty == 3 %}
-                  <i class="far fa-check-circle"></i>
-                  <i class="far fa-check-circle"></i>
-                  <i class="far fa-check-circle"></i>
-                  {% endif %}
-                </p>
-
-              </div>
-
-              <div class="col s6">
-                <p>Spice Rating: &nbsp;
-                  {% if recipe.recipe_spice_rating == 0 %}
-                  <i class="fas fa-times"></i>
-                  {% endif %}
-
-                  {% if recipe.recipe_spice_rating == 1 %}
-                  <i class="fas fa-pepper-hot"></i>
-                  {% endif %}
-
-                  {% if recipe.recipe_spice_rating == 2 %}
-                  <i class="fas fa-pepper-hot"></i>
-                  <i class="fas fa-pepper-hot"></i>
-                  {% endif %}
-
-                  {% if recipe.recipe_spice_rating == 3 %}
-                  <i class="fas fa-pepper-hot"></i>
-                  <i class="fas fa-pepper-hot"></i>
-                  <i class="fas fa-pepper-hot"></i>
-                  {% endif %}
-                </p>
-              </div>
-            </div>
-
-            <!-- INGREDIENTS -->
-            <div class="col s12 l18">
-              {% for ingredient in recipe.recipe_ingredients %}
-              <ul>
-                <li>
-                  {{ ingredient }}
-                </li>
-              </ul>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
+<!-- CARD -->
+{% for recipe in recipes %}
+<div class="row">
+  <div class="col s12 m4">
+    <div class="card red">
+      <div class="card-image">
+        <img src="/static/images/recipe_placeholder.jpeg">
+        <h3 class="card-title text-shadow">{{ recipe.recipe_name }}</h3>
       </div>
-  {% endfor %}
+      <div class="card-content">
+                <!-- RECIPE DESCRIPTION-->
+                <div class="row">
+                  <div class="col s12">
+                    <p class="white-text">{{ recipe.recipe_description}}</p>
+                  </div>
+                </div>
+        
+                <!-- RECIPE KEY ROW 1-->
+                <div class="row">
+                  <div class="col s6">
+                    <p class="white-text">Serves: {{ recipe.recipe_serves}} </p>
+                  </div>
+                  <div class="col s6">
+                    <p class="white-text">Cooking Time: {{ recipe.recipe_cook_time}} minutes</p>
+                  </div>
+                </div>
+        
+                <!-- RECIPE KEY ROW 2-->
+                <div class="row">
+                  <div class="col s6">
+                    <p class="white-text">Difficulty: &nbsp;
+                      {% if recipe.recipe_difficulty == 1 %}
+                      <i class="far fa-check-circle"></i>
+                      <i class="far fa-circle"></i>
+                      <i class="far fa-circle"></i>
+                      {% endif %}
+        
+                      {% if recipe.recipe_difficulty == 2 %}
+                      <i class="far fa-check-circle"></i>
+                      <i class="far fa-check-circle"></i>
+                      <i class="far fa-circle"></i>
+                      {% endif %}
+        
+                      {% if recipe.recipe_difficulty == 3 %}
+                      <i class="far fa-check-circle"></i>
+                      <i class="far fa-check-circle"></i>
+                      <i class="far fa-check-circle"></i>
+                      {% endif %}
+                    </p>
+        
+                  </div>
+        
+                  <div class="col s6">
+                    <p class="white-text">Spice Rating: &nbsp;
+                      {% if recipe.recipe_spice_rating == 0 %}
+                      <i class="fas fa-times"></i>
+                      {% endif %}
+        
+                      {% if recipe.recipe_spice_rating == 1 %}
+                      <i class="fas fa-pepper-hot"></i>
+                      {% endif %}
+        
+                      {% if recipe.recipe_spice_rating == 2 %}
+                      <i class="fas fa-pepper-hot"></i>
+                      <i class="fas fa-pepper-hot"></i>
+                      {% endif %}
+        
+                      {% if recipe.recipe_spice_rating == 3 %}
+                      <i class="fas fa-pepper-hot"></i>
+                      <i class="fas fa-pepper-hot"></i>
+                      <i class="fas fa-pepper-hot"></i>
+                      {% endif %}
+                    </p>
+                  </div>
+                </div>
+      </div>
+      <div class="card-action">
+        <a href="#">Read More...</a>
+      </div>
+    </div><!-- CARD-->
+  </div><!-- COL-->
+</div><!-- ROW -->
+
+{% endfor %}
 {% endblock %}
