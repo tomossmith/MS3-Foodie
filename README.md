@@ -114,3 +114,9 @@ A key priority was to try to make the journey from entering the site to displayi
 * ### <b>Structure & Mockup Designs</b>
 
 * ### <b>Amendments To Mockup Designs During Develeopment</b>
+
+
+
+## Credits
+
+Function to add additional fields to form: https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/

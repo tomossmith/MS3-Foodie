@@ -17,17 +17,23 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# GLOBAL VARIABLES
+@app.context_processor
+def get_categories():
+    categories = list(mongo.db.categories.find())
+    return dict(categories=categories)
+
+# LANDING PAGE
+
 
 @app.route("/")
-
 @app.route("/index")
 def index():
     return render_template("index.html")
 
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+# USER AUTHENTICATION
+
+# REGISTER
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -54,42 +60,38 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
+# LOGIN
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # CHECK IF USERNAME ALREADY EXISTS IN DATABASE
+        # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         if existing_user:
-            # VALID PASSWORD
+            # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                        session["user"] = request.form.get("username").lower()
+                        flash("Welcome, {}".format(
+                            request.form.get("username")))
+                        return redirect(url_for(
+                            "profile", username=session["user"]))
             else:
-                # INVALID PASSWORD
-                flash("Incorrect Username and/or Password, Please Try Again")
+                # invalid password match
+                flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
-        
+
         else:
-            # USERNAME INVALID
-            flash("Incorrect Username and/or Password, Please Try Again")
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
 
-
-@app.route("/logout")
-def logout():
-    # REMOVE THE USER SESSION COOKIE
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
+# PROFILE PAGE
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -99,14 +101,55 @@ def profile(username):
         "username": session["user"]})["username"]
     return render_template("profile.html", username=username)
 
+# LOGOUT
 
-@app.route("/add_recipe")
+
+@app.route("/logout")
+def logout():
+    # REMOVE THE USER SESSION COOKIE
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+# RECIPE PAGES
+# RECIPE BOOK
+
+
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+# ADD RECIPE
+
+
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     return render_template("add_recipe.html")
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"]})
+        recipe = {
+            "submitted_by": ObjectId(user["_id"]),
+            "recipe_name": request.form.get("recipe_name"),
+            "category_name": request.form.get("category_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_serving": request.form.get("recipe_serving"),
+            "recipe_cook_time": request.form.get("recipe_cook_time"),
+            "recipe_difficulty": request.form.get("recipe_difficulty"),
+            "recipe_spice": request.form.get("recipe_spice"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
+            "recipe_instructions": request.form.getlist("recipe_instructions"),
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Your Recipe Was Successfully Added To The Cookbook!")
+        return redirect(url_for("profile", username=session["user"]))
+    
+    return render_template("recipes.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug="True")
 
-## CHANGE TO FALSE BEFORE FINAL DEPLOYMENT ##
+# CHANGE TO FALSE BEFORE FINAL DEPLOYMENT

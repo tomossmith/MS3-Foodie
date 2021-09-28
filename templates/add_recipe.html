@@ -2,23 +2,136 @@
 {% block content %}
 
 
-<h3 class="white-text center-align">Add Recipe</h3>
+    <h3 class="white-text center-align">Add Recipe</h3>
+    <br>
 
-<div class="row">
-    <form class="col s12" method="POST" action="">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-user-circle prefix"></i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2">First Name</label>
+    <div id="form-blocks">
+        <div class="row">
+            <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+
+                <div class="row">
+
+                    <!-- RECIPE NAME -->
+                    <div class="input-field col s6">
+                        <input id="recipe_name" name="recipe_name" type="text" minlength="4" maxlength="30" length="30">
+                        <label for="recipe_name">Recipe Name</label>
+                    </div>
+
+                    <!-- CATEGORY -->
+                    <div class="input-field col s6">
+                        <select name="category_name">
+                            <option disabled selected>Type of recipe?</option>
+
+                            {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+
+                            <label for="category_name"></label>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- RECIPE DESCRIPTION -->
+                <div class="row">
+
+                    <div class="input-field col s12">
+                        <textarea id="recipe_description" class="materialize-textarea" minlength="15" maxlength="120"
+                            length="120"></textarea>
+                        <label for="recipe_description">Description</label>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <!-- SERVING -->
+                    <div class="input-field col s3">
+                        <select name="recipe_serving">
+                            <option value="" disabled selected>Serving Amount</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <label>Serves</label>
+                    </div>
+
+                    <div class="input-field col s3">
+                        <input id="recipe_cook_time" name="recipe_cook_time" type="number" minlength="1" maxlength="3">
+                        <label for="recipe_cook_time">Cooking Time (minutes)</label>
+                    </div>
+
+                    <div class="col s3">
+                        <label for="recipe_difficulty">Difficulty</label>
+                        <p class="range-field">
+                            <input type="range" id="recipe_difficulty" min="0" max="3" />
+                        </p>
+                    </div>
+
+                    <div class="col s3">
+                        <label for="recipe_spice">Spice</label>
+                        <p class="range-field">
+                            <input type="range" id="recipe_spice" min="0" max="3" />
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <!-- https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/ -->
+
+                <!-- INGREDIENTS -->
+                <div class="ingredient_field_wrapper">
+                    <div>
+                        <label>Ingredients</label>
+                        <input type="text" name="recipe_ingredients">
+                    </div>
+                </div>
+                <br>
+                <a href="javascript:void(0);" class="ingredient_add_button" title="Add field"><i
+                        class="fas fa-plus-circle"></i> Add Ingredient</a>
+
+                    <br>
+                    <br>
+
+                <!-- INSTRUCTIONS -->
+                <div class="instruction_field_wrapper">
+                    <div>
+                        <label>Instructions</label>
+                        <input type="text" name="recipe_instructions">
+                    </div>
+                </div>
+                <br>
+                <a href="javascript:void(0);" class="instruction_add_button" title="Add field"><i
+                        class="fas fa-plus-circle"></i>Add Instruction</a>
+                <!-- End Of Codex Code-->
+
+                <br>
+                <br>
+
+                <!-- RECIPE SUBMIT BUTTON-->
+                <div class="row">
+                    <div class="col s1"></div>
+                        <button type="submit" class="col s4 btn-large text-shadow default-button">
+                            Submit <i class="fas fa-mortar-pestle"></i>
+                        </button>
+                    <div class="col s2"></div>
+                        <button type="reset" class="col s4 btn-large text-shadow default-button">
+                            Clear <i class="fas fa-eraser"></i>
+                        </button>
+                    <div class="col s1"></div>
+                </div>
+
+            </form>
         </div>
-        <div class="input-field col s12">
-            <i class="fas fa-user-circle prefix"></i>
-            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-            <label for="icon_prefix2">First Name</label>
-          </div>
-      </div>
-    </form>
-  </div>
+    </div>
 
 {% endblock %}
