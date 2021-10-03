@@ -125,7 +125,6 @@ def get_recipes():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    return render_template("add_recipe.html")
     if request.method == "POST":
         user = mongo.db.users.find_one({"username": session["user"]})
         recipe = {
@@ -144,8 +143,7 @@ def add_recipe():
         flash("Your Recipe Was Successfully Added To The Cookbook!")
         return redirect(url_for("profile", username=session["user"]))
     
-    return render_template("recipes.html")
-
+    return render_template("add_recipe.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
