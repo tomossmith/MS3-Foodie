@@ -4,13 +4,20 @@
 
 {% for recipe in recipes %}
 <div class="row">
-  <div class="col s12 m4">
+  <div class="col s12 m5">
     <div class="card medium">
       <div class="card-content">
         <div class="card-image">
           <img id="recipe_img" src="{{ recipe.recipe_img_url }}">
-          <h3 id="recipe_card_title" class="card-title text-shadow">{{ recipe.recipe_name }}</h3>
+          <h3 class="card-title text-shadow">{{ recipe.recipe_name }}</h3>
         </div>
+      </div>
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab"><a href="#tab-details">Details</a></li>
+          <li class="tab"><a href="#tab-ingredients">Ingredients</a></li>
+          <li class="tab"><a href="#tab-instructions">Instructions</a></li>
+        </ul>
       </div>
       <div class="card-content red">
         <div id="tab-details">
@@ -80,24 +87,32 @@
             </div>
           </div>
         </div>
+
+        <div>
+          {% for ingredient in recipe.recipe_ingredients %}
+          <ul class="white-text">
+            <li>
+              {{ ingredient }}
+            </li>
+          </ul>
+          {% endfor %}
+        </div>
+
+        <div>
+          {% for instruction in recipe.recipe_instructions %}
+          <ul class="white-text">
+            <li>
+              {{ instruction }}
+            </li>
+          </ul>
+          {% endfor %}
+        </div>
+        
+
       </div>
     </div>
   </div>
 </div>
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#recipe_modal">Modal</a>
-
-  <!-- Modal Structure -->
-  <div id="recipe_modal" class="modal">
-    <div class="modal-content">
-      <img id="recipe_img" src="{{ recipe.recipe_img_url }}">
-      <h3 id="recipe_card_title" class="card-title text-shadow">{{ recipe.recipe_name }}</h3>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
 
 {% endfor %}
 {% endblock %}
