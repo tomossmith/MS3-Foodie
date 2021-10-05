@@ -112,9 +112,13 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-# RECIPE PAGES
-# RECIPE BOOK
+# RECIPE PAGE
+@app.route("/open_recipe/<recipe_id>")
+def open_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id":  ObjectId(recipe_id)})
+    return render_template("open_recipe.html", recipe=recipe)
 
+# RECIPE BOOK
 
 @app.route("/get_recipes")
 def get_recipes():
@@ -122,8 +126,6 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 # ADD RECIPE
-
-
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":

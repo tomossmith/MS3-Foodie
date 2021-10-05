@@ -77,6 +77,7 @@
                 <i class="fas fa-pepper-hot"></i>
                 {% endif %}
               </p>
+              <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('open_recipe',recipe_id = recipe._id) }}">More Info...</a>
             </div>
           </div>
         </div>
@@ -84,20 +85,6 @@
     </div>
   </div>
 </div>
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#recipe_modal">Modal</a>
-
-  <!-- Modal Structure -->
-  <div id="recipe_modal" class="modal">
-    <div class="modal-content">
-      <img id="recipe_img" src="{{ recipe.recipe_img_url }}">
-      <h3 id="recipe_card_title" class="card-title text-shadow">{{ recipe.recipe_name }}</h3>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
 
 {% endfor %}
 {% endblock %}
