@@ -77,7 +77,8 @@
                 <i class="fas fa-pepper-hot"></i>
                 {% endif %}
               </p>
-              <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('open_recipe',recipe_id = recipe._id) }}">More Info...</a>
+              <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">More Info...</a>
+              <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('edit_recipe',recipe_id=recipe._id) }}">Edit</a>
             </div>
           </div>
         </div>
