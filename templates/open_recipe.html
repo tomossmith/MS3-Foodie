@@ -34,19 +34,19 @@
           <div class="row">
             <div class="col s6">
               <p class="white-text">Difficulty: &nbsp;
-                {% if recipe.recipe_difficulty == 1 %}
+                {% if recipe.recipe_difficulty == Easy %}
                 <i class="far fa-check-circle"></i>
                 <i class="far fa-circle"></i>
                 <i class="far fa-circle"></i>
                 {% endif %}
 
-                {% if recipe.recipe_difficulty == 2 %}
+                {% if recipe.recipe_difficulty == Medium %}
                 <i class="far fa-check-circle"></i>
                 <i class="far fa-check-circle"></i>
                 <i class="far fa-circle"></i>
                 {% endif %}
 
-                {% if recipe.recipe_difficulty == 3 %}
+                {% if recipe.recipe_difficulty == Hard %}
                 <i class="far fa-check-circle"></i>
                 <i class="far fa-check-circle"></i>
                 <i class="far fa-check-circle"></i>
@@ -56,24 +56,24 @@
             </div>
 
             <div class="col s6">
-              <p class="white-text">Spice Rating: &nbsp;
-                {% if recipe.recipe_spice == 0 %}
-                  <i class="fas fa-times"></i>
+              <p class="white-text">Spice: &nbsp;
+                {% if recipe.recipe_spice == 'Not Spicy' %}
+                <i class="fas fa-times"></i>
                 {% endif %}
 
-                {% if recipe.recipe_spice == 1 %}
-                  <i class="fas fa-pepper-hot"></i>
+                {% if recipe.recipe_spice == 'Mild' %}
+                <i class="fas fa-pepper-hot"></i>
                 {% endif %}
 
-                {% if recipe.recipe_spice == 2 %}
-                  <i class="fas fa-pepper-hot"></i>
-                  <i class="fas fa-pepper-hot"></i>
+                {% if recipe.recipe_spice == 'Hot' %}
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
                 {% endif %}
 
-                {% if recipe.recipe_spice == 3 %}
-                  <i class="fas fa-pepper-hot"></i>
-                  <i class="fas fa-pepper-hot"></i>
-                  <i class="fas fa-pepper-hot"></i>
+                {% if recipe.recipe_spice == 'Very Hot' %}
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
                 {% endif %}
               </p>
             </div>
@@ -81,6 +81,7 @@
         </div>
 
         <div>
+          <label>Ingredients</label>
           {% for ingredient in recipe.recipe_ingredients %}
           <ul class="white-text">
             <li>
@@ -91,6 +92,7 @@
         </div>
 
         <div>
+          <label>Instructions</label>
           {% for instruction in recipe.recipe_instructions %}
           <ul class="white-text">
             <li>

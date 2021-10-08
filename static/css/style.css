@@ -152,10 +152,6 @@ nav li a {
 
   /* Recipe Page */
 
-  #recipe_card_title {
-      font-size: 2.5em;
-  }
-
   #recipe_img {
       width: 35em;
       height: auto;

@@ -37,24 +37,20 @@
 
                 <!-- RECIPE DESCRIPTION -->
                 <div class="row">
-
                     <div class="input-field col s12">
-                        <textarea id="recipe_description" class="materialize-textarea" minlength="15" maxlength="120"
-                            length="120" value="{{ recipe.recipe_description }}"></textarea>
-                        <label for="recipe_description">Description</label>
+                        <textarea id="recipe_description" class="materialize-textarea" name="recipe_description"
+                            minlength="15" maxlength="250" value="{{ recipe.recipe_description }}">{{ recipe.recipe_description }}</textarea>
+                        <label for="recipe_description">Recipe Description</label>
                     </div>
-
                 </div>
 
                 <!-- RECIPE IMAGE -->
                 <div class="row">
-
                     <div class="input-field col s12">
-                        <textarea id="recipe_image_url" class="materialize-textarea" minlength="15"
-                        value="{{ recipe.recipe_image_url }}"></textarea>
+                        <textarea id="recipe_image_url" class="materialize-textarea" name="recipe_image_url"
+                            minlength="15" maxlength="400" value="{{ recipe.recipe_image_url }}">{{ recipe.recipe_image_url }}</textarea>
                         <label for="recipe_image_url">Recipe Image (URL)</label>
                     </div>
-
                 </div>
 
 
@@ -92,28 +88,39 @@
 
                     <div class="col s3">
                         <label for="recipe_difficulty">Difficulty</label>
+                        <select name="recipe_difficulty">
                         {% if recipe.recipe_difficulty == recipe.recipe_difficulty %}
-                            <p class="range-field">
-                                <input type="range" id="recipe_difficulty" min="0" max="3" value="{{ recipe.recipe_difficulty }}">
-                            </p>
+                            <option value="{{ recipe.recipe_difficulty }}" selected>{{ recipe.recipe_difficulty }}</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
                         {% else %}
-                            <p class="range-field">
-                                <input type="range" id="recipe_difficulty" min="0" max="3" value="{{ recipe.recipe_difficulty }}">
-                            </p>
+                            <option value="" disabled selected>Difficulty</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
                         {% endif %}
+                    </select>
                     </div>
 
                     <div class="col s3">
                         <label for="recipe_spice">Spice</label>
+                        <select name="recipe_spice" id="recipe_spice">
                         {% if recipe.recipe_spice_rating == recipe.recipe_spice_rating %}
-                            <p class="range-field">
-                                <input type="range" id="recipe_spice" min="0" max="3" value="{{ recipe.recipe_spice }}">
-                            </p>
+                        <option value="{{ recipe.recipe_spice }}" selected>{{ recipe.recipe_spice }}</option>
+                        <option value="Not Spicy">Not Spicy</option>
+                        <option value="Mild">Mild</option>
+                        <option value="Hot">Hot</option>
+                        <option value="Very Hot">Very Hot</option>
                         {% else %}
-                            <p class="range-field">
-                                <input type="range" id="recipe_spice" min="0" max="3" value="{{ recipe.recipe_spice }}">
-                            </p>
+                        <option value="" disabled selected>How Spicy?</option>
+                        <option value="Not Spicy">Not Spicy</option>
+                        <option value="Mild">Mild</option>
+                        <option value="Hot">Hot</option>
+                        <option value="Very Hot">Very Hot</option>
+                            
                         {% endif %}
+                    </select>
                     </div>
 
 
