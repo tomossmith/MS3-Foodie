@@ -135,12 +135,14 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_image_url": request.form.get("recipe_image_url"),
             "recipe_serving": request.form.get("recipe_serving"),
             "recipe_cook_time": request.form.get("recipe_cook_time"),
             "recipe_difficulty": request.form.get("recipe_difficulty"),
             "recipe_spice": request.form.get("recipe_spice"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_instructions": request.form.getlist("recipe_instructions"),
+            "recipe_user": session["user"],
             "recipe_create_date": datetime.datetime.now(),
         }
         mongo.db.recipes.insert_one(recipe)
@@ -160,13 +162,14 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_image_url": request.form.get("recipe_image_url"),
             "recipe_serving": request.form.get("recipe_serving"),
             "recipe_cook_time": request.form.get("recipe_cook_time"),
             "recipe_difficulty": request.form.get("recipe_difficulty"),
             "recipe_spice": request.form.get("recipe_spice"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_instructions": request.form.getlist("recipe_instructions"),
-            "recipe_create_date": datetime.datetime.now(),
+            "recipe_modify_date": datetime.datetime.now(),
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Your Recipe Was Successfully Updated To The Cookbook!")

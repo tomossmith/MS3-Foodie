@@ -34,16 +34,23 @@
 
                 <!-- RECIPE DESCRIPTION -->
                 <div class="row">
-
                     <div class="input-field col s12">
-                        <textarea id="recipe_description" class="materialize-textarea" minlength="15" maxlength="120"
-                            length="120"></textarea>
-                        <label for="recipe_description">Description</label>
+                        <textarea id="recipe_description" class="materialize-textarea" name="recipe_description"
+                            minlength="15" maxlength="120">
+                    </textarea>
+                        <label for="recipe_description">Recipe Description</label>
                     </div>
-
                 </div>
 
-
+                <!-- RECIPE IMAGE -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="recipe_image_url" class="materialize-textarea" name="recipe_image_url"
+                            minlength="15" maxlength="120">
+                    </textarea>
+                        <label for="recipe_image_url">Recipe Image (URL)</label>
+                    </div>
+                </div>
                 <div class="row">
 
                     <!-- SERVING -->
@@ -69,20 +76,26 @@
                         <label for="recipe_cook_time">Cooking Time (minutes)</label>
                     </div>
 
-                    <div class="col s3">
-                        <label for="recipe_difficulty">Difficulty</label>
-                        <p class="range-field">
-                            <input type="range" id="recipe_difficulty" min="0" max="3" />
-                        </p>
+                    <div class="input-field col s3">
+                        <select name="recipe_difficulty">
+                            <option value="" disabled selected>Difficulty</option>
+                            <option value="1">Easy</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Hard</option>
+                        </select>
+                        <label>Difficulty</label>
                     </div>
 
-                    <div class="col s3">
-                        <label for="recipe_spice">Spice</label>
-                        <p class="range-field">
-                            <input type="range" id="recipe_spice" min="0" max="3" />
-                        </p>
+                    <div class="input-field col s3">
+                        <select name="recipe_spice">
+                            <option value="" disabled selected>How Spicy?</option>
+                            <option value="0">Not Spicy</option>
+                            <option value="1">Mild</option>
+                            <option value="2">Hot</option>
+                            <option value="3">Very Hot</option>
+                        </select>
+                        <label>How Spicy?</label>
                     </div>
-
 
                 </div>
 

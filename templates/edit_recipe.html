@@ -46,6 +46,17 @@
 
                 </div>
 
+                <!-- RECIPE IMAGE -->
+                <div class="row">
+
+                    <div class="input-field col s12">
+                        <textarea id="recipe_image_url" class="materialize-textarea" minlength="15"
+                        value="{{ recipe.recipe_image_url }}"></textarea>
+                        <label for="recipe_image_url">Recipe Image (URL)</label>
+                    </div>
+
+                </div>
+
 
                 <div class="row">
 
@@ -96,11 +107,11 @@
                         <label for="recipe_spice">Spice</label>
                         {% if recipe.recipe_spice_rating == recipe.recipe_spice_rating %}
                             <p class="range-field">
-                                <input type="range" id="recipe_spice" min="0" max="3" value="{{ recipe.recipe_spice_rating }}">
+                                <input type="range" id="recipe_spice" min="0" max="3" value="{{ recipe.recipe_spice }}">
                             </p>
                         {% else %}
                             <p class="range-field">
-                                <input type="range" id="recipe_spice" min="0" max="3" value="{{ recipe.recipe_spice_rating }}">
+                                <input type="range" id="recipe_spice" min="0" max="3" value="{{ recipe.recipe_spice }}">
                             </p>
                         {% endif %}
                     </div>
