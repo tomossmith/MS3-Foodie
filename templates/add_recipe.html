@@ -35,9 +35,8 @@
                 <!-- RECIPE DESCRIPTION -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="recipe_description" class="materialize-textarea" name="recipe_description"
-                            minlength="15" maxlength="120">
-                    </textarea>
+                        <textarea id="recipe_description" class="materialize-textarea" name="recipe_description" maxlength="300" value="">
+                        </textarea>
                         <label for="recipe_description">Recipe Description</label>
                     </div>
                 </div>
@@ -46,13 +45,13 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea id="recipe_image_url" class="materialize-textarea" name="recipe_image_url"
-                            minlength="15" maxlength="120">
+                            minlength="15" maxlength="120" value="">
                     </textarea>
                         <label for="recipe_image_url">Recipe Image (URL)</label>
                     </div>
                 </div>
-                <div class="row">
 
+                <div class="row">
                     <!-- SERVING -->
                     <div class="input-field col s3">
                         <select name="recipe_serving">
@@ -89,10 +88,10 @@
                     <div class="input-field col s3">
                         <select name="recipe_spice">
                             <option value="" disabled selected>How Spicy?</option>
-                            <option value="0">Not Spicy</option>
-                            <option value="1">Mild</option>
-                            <option value="2">Hot</option>
-                            <option value="3">Very Hot</option>
+                            <option value="Not Spicy">Not Spicy</option>
+                            <option value="Mild">Mild</option>
+                            <option value="Hot">Hot</option>
+                            <option value="Very Hot">Very Hot</option>
                         </select>
                         <label>How Spicy?</label>
                     </div>

@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-{% for recipe in recipes %}
 <div class="row">
+{% for recipe in recipes %}
+
   <div class="col s12 m4">
-    <div class="card medium">
+    <div class="card">
       <div class="card-content">
         <div class="card-image">
           <img id="recipe_img" src="{{ recipe.recipe_image_url }}">
@@ -13,7 +13,7 @@
       </div>
       <div class="card-content red">
         <div class="row">
-          <h3 class="card-title white-text text-shadow">{{ recipe.recipe_name }}</h3>
+          <h3 id="recipe-title" class="card-title white-text text-shadow center-align">{{ recipe.recipe_name }}</h3>
         </div>
         <div id="tab-details">
           <!-- RECIPE DESCRIPTION-->
@@ -83,16 +83,16 @@
             <br>
             <br>
             <br>
-            <div class="row">
-              <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">More Info...</a>
+            <div class="row center-align">
+              <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">Open Recipe</a>
               <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('edit_recipe',recipe_id=recipe._id) }}">Edit</a>
+              <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('delete_recipe',recipe_id=recipe._id) }}">Delete</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
 {% endfor %}
+</div>
 {% endblock %}

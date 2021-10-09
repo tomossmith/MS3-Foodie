@@ -152,7 +152,11 @@ nav li a {
 
   /* Recipe Page */
 
+  .card {
+    margin-bottom: 10em;
+  }
+
   #recipe_img {
-      width: 35em;
+      width: 24em;
       height: auto;
   }
