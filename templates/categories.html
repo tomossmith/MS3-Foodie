@@ -12,10 +12,20 @@
       <img src="{{category.category_image }}" alt="category images" width="200" height="200">
       <h4> {{ category.category_name }} </h4>
       <a href="{{ url_for('edit_category',category_id=category._id) }}" class="btn-floating waves-effect waves-light"><i class="fas fa-edit"></i></a>
-      <a class="btn-floating waves-effect waves-light"><i class="far fa-trash-alt"></i></a>
+      <a href="{{ url_for('delete_category',category_id=category._id) }}" class="btn-floating waves-effect waves-light"><i class="far fa-trash-alt"></i></a>
     </li>
     {% endfor %}
   </ul>
+</div>
+
+<!-- ADD CATEGORY BUTTON -->
+<div class="row">
+  <a href="{{ url_for('add_category') }}">
+    <h4 class="center-align white-text text-shadow">Add a Category
+      <i class="fas fa-plus-circle">
+      </i>
+    </h4>
+  </a>
 </div>
 
 {% else %}
@@ -54,16 +64,5 @@
 
 
 {% endif %}
-
-<!-- ADD CATEGORY BUTTON -->
-<div class="row">
-  <a href="{{ url_for('add_category') }}">
-    <h4 class="center-align white-text text-shadow">Add a Category
-      <i class="fas fa-plus-circle">
-      </i>
-    </h4>
-  </a>
-</div>
-
 
 {% endblock %}

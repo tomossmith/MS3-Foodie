@@ -5,6 +5,8 @@
 <h3 class="white-text center-align">Edit Category</h3>
 <br>
 
+{% if session.user|lower == "admin"|lower %}
+
 <div id="form-blocks">
     <div class="row">
         <form class="col s12 red" method="POST" action="{{ url_for('edit_category', category_id=category._id) }}">
@@ -46,5 +48,42 @@
         </form>
     </div>
 </div>
+
+{% else %}
+
+<!-- ADMINISTRATOR ONLY MESSAGE-->
+<div class="col s12 m4">
+  <div class="card red">
+    <div class="card-content">
+      <div class="row white-text center-align text-shadow">
+        <i class="fas fa-user-lock fa-7x"></i>
+      </div>
+      <h3 class="white-text center-align text-shadow oswald"> ACCESS DENIED <br> You need permission to access this page
+        or have administrator rights.</h3>
+      <br>
+
+      <!-- LOGIN BUTTON -->
+      <div class="row">
+        <div class="col s12">
+          <p class="center-align white-text">
+            Have an authorised <img id="text-logo" src="/static/images/logo.png" alt="Foodie Logo"> account?
+          </p>
+        </div>
+        <div class="col s12">
+          <div class="col s5"></div>
+          <a href="{{ url_for('login') }}">
+            <button class="col s2 btn-large text-shadow default-button">
+              Login<i class="fas fa-sign-in-alt"></i>
+            </button>
+          </a>
+          <div class="col s5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endif %}
 
 {% endblock %}
