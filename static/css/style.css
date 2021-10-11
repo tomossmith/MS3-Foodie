@@ -163,7 +163,7 @@ nav li a {
 /* Recipe Page */
 
 .card {
-    margin-bottom: 10em;
+    margin-bottom: 3em;
 }
 
 #recipe_img {
@@ -173,3 +173,6 @@ nav li a {
 
 /* Category Page */
 
+#category_blocks {
+    margin-bottom: 3em;
+}

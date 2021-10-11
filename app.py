@@ -191,6 +191,20 @@ def get_categories():
     categories = list(mongo.db.categories.find())
     return render_template("categories.html", categories=categories)
 
+# ADD CATEGORY
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name"),
+            "category_image": request.form.get("category_image"),
+        }
+        mongo.db.categories.insert_one(category)
+        flash("The Category Was Successfully Added")
+        return redirect(url_for("get_categories"))
+    
+    return render_template("add_category.html")
+
 # EDIT CATEGORY
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
@@ -202,6 +216,7 @@ def edit_category(category_id):
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("The Category Was Successfully Updated")
+        return redirect(url_for("get_categories"))
  
     return render_template("edit_category.html", category=category)
 
