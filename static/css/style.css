@@ -20,6 +20,10 @@ p {
     font-family: 'Oswald', sans-serif;
 }
 
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
 /* Form Elements */
 
 form i {
@@ -31,7 +35,7 @@ label {
 }
 
 /* Focus Color */
-.input-field input:focus + label {
+.input-field input:focus+label {
     color: #002b5c !important;
 }
 
@@ -41,9 +45,10 @@ label {
 
 /* label underline focus color */
 .row .input-field input:focus {
-    border-bottom: 1px solid #002b5c!important;
+    border-bottom: 1px solid #002b5c !important;
     box-shadow: 0 1px 0 0 #135caf !important
 }
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -121,42 +126,50 @@ nav li a {
     border-radius: 1em;
 }
 
- /* label color */
- .input-field label {
+/* label color */
+.input-field label {
     color: #000;
-  }
-  /* label focus color */
-  .input-field input[type=text]:focus + label {
+}
+
+/* label focus color */
+.input-field input[type=text]:focus+label {
     color: #000;
-  }
-  /* label underline focus color */
-  .input-field input[type=text]:focus {
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-  }
-  /* valid color */
-  .input-field input[type=text].valid {
+}
+
+/* valid color */
+.input-field input[type=text].valid {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-  }
-  /* invalid color */
-  .input-field input[type=text].invalid {
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-  }
-  /* icon prefix focus color */
-  .input-field .prefix.active {
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
     color: #000;
-  }
+}
 
 
-  /* Recipe Page */
+/* Recipe Page */
 
-  .card {
+.card {
     margin-bottom: 10em;
-  }
+}
 
-  #recipe_img {
-      width: 24em;
-      height: auto;
-  }
+#recipe_img {
+    width: 24em;
+    height: auto;
+}
+
+/* Category Page */
+

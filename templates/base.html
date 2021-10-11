@@ -22,18 +22,20 @@
         <!-- TOP NAVIGATION BAR -->
         <nav class="transparent z-depth-0">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo"><img id="logo" src="/static/images/logo.png" alt=""></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right gradient-text"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('index') }}" class="brand-logo"><img id="logo" src="/static/images/logo.png"
+                        alt=""></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right gradient-text"><i
+                        class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down ">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">Recipe Book</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
-                        {% if session.user|lower == "admin"|lower %} 
-                            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                    {% if session.user|lower == "admin"|lower %}
+                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
                     <li><a href="{{ url_for('login') }}">Login</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -47,32 +49,32 @@
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('get_recipes') }}">Recipe Book</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
-                <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
-    </ul>
+        </ul>
     </header>
 
     <section>
         <!-- FLASH MESSAGE DISPLAY -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
+        {% if messages %}
+        {% for message in messages %}
 
-                    <div class="alert card blue lighten-4">
-                        <div class="card-content center-align">
-                            <h5 class="center-align"><i class="fas fa-info-circle alert-icon"></i>
-                                <br> {{ message }}</h5>
-                        </div>
-                    </div>
+        <div class="alert card blue lighten-4">
+            <div class="card-content center-align">
+                <h5 class="center-align"><i class="fas fa-info-circle alert-icon"></i>
+                    <br> {{ message }}</h5>
+            </div>
+        </div>
 
-                {% endfor %}
-            {% endif %}
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 

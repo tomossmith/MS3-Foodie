@@ -1,20 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for category in categories %}
+<h3 class="white-text center-align">Categories</h3>
+
+{% if session.user|lower == "admin"|lower %}
 <div class="row">
-    <div class="col s4">
-      <div class="card">
-        <div class="card-image">
-          <img src="{{ category.category_image }}">
-          <span class="card-title">{{ category.category_name }}
-            <a class="btn-floating waves-effect waves-light red"><i class="fas fa-edit"></i></a>
-            <a class="btn-floating waves-effect waves-light red"><i class="far fa-trash-alt"></i></a>
-          </span>
+  <ul>
+    {% for category in categories %}
+    <li class="col s6 m3 center-align white-text">
+      <img src="{{category.category_image }}" alt="category images" width="200" height="200">
+      <h4> {{ category.category_name }} </h4>
+      <a href="{{ url_for('edit_category',category_id=category._id) }}" class="btn-floating waves-effect waves-light"><i class="fas fa-edit"></i></a>
+      <a class="btn-floating waves-effect waves-light"><i class="far fa-trash-alt"></i></a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% else %}
+
+<!-- ADMINISTRATOR ONLY MESSAGE-->
+<div class="col s12 m4">
+  <div class="card red">
+    <div class="card-content">
+      <div class="row white-text center-align text-shadow">
+        <i class="fas fa-user-lock fa-7x"></i>
+      </div>
+      <h3 class="white-text center-align text-shadow oswald"> ACCESS DENIED <br> You need permission to access this page
+        or have administrator rights.</h3>
+      <br>
+
+      <!-- LOGIN BUTTON -->
+      <div class="row">
+        <div class="col s12">
+          <p class="center-align white-text">
+            Have an authorised <img id="text-logo" src="/static/images/logo.png" alt="Foodie Logo"> account?
+          </p>
+        </div>
+        <div class="col s12">
+          <div class="col s5"></div>
+          <a href="{{ url_for('login') }}">
+            <button class="col s2 btn-large text-shadow default-button">
+              Login<i class="fas fa-sign-in-alt"></i>
+            </button>
+          </a>
+          <div class="col s5"></div>
         </div>
       </div>
     </div>
   </div>
-        {% endfor %}
+</div>
+
+
+{% endif %}
+
+
 
 {% endblock %}

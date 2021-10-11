@@ -2,110 +2,114 @@
 {% block content %}
 
 
-    <h3 class="white-text center-align">Edit Recipe</h3>
-    <br>
+<h3 class="white-text center-align">Edit Recipe</h3>
+<br>
 
-    <div id="form-blocks">
-        <div class="row">
-            <form class="col s12 red" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+<div id="form-blocks">
+    <div class="row">
+        <form class="col s12 red" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
 
-                <div class="row">
+            <div class="row">
 
-                    <!-- RECIPE NAME -->
-                    <div class="input-field col s6">
-                        <input id="recipe_name" name="recipe_name" type="text" minlength="4" maxlength="30" length="30" value="{{ recipe.recipe_name }}">
-                        <label for="recipe_name">Recipe Name</label>
-                    </div>
-
-                    <!-- CATEGORY -->
-                    <div class="input-field col s6">
-                        <select name="category_name">
-                            <option disabled>Type of recipe?</option>
-                            {% for category in categories %}
-                                {% if category.category_name == recipe.category_name %}
-                                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                                {% else %}
-                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                                {% endif %}
-                            {% endfor %}
-
-                            <label for="category_name"></label>
-                        </select>
-                    </div>
-
+                <!-- RECIPE NAME -->
+                <div class="input-field col s6">
+                    <input id="recipe_name" name="recipe_name" type="text" minlength="4" maxlength="30" length="30"
+                        value="{{ recipe.recipe_name }}">
+                    <label for="recipe_name">Recipe Name</label>
                 </div>
 
-                <!-- RECIPE DESCRIPTION -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="recipe_description" class="materialize-textarea" name="recipe_description"
-                            minlength="15" maxlength="250" value="{{ recipe.recipe_description }}">{{ recipe.recipe_description }}</textarea>
-                        <label for="recipe_description">Recipe Description</label>
-                    </div>
-                </div>
-
-                <!-- RECIPE IMAGE -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="recipe_image_url" class="materialize-textarea" name="recipe_image_url"
-                            minlength="15" maxlength="400" value="{{ recipe.recipe_image_url }}">{{ recipe.recipe_image_url }}</textarea>
-                        <label for="recipe_image_url">Recipe Image (URL)</label>
-                    </div>
-                </div>
-
-
-                <div class="row">
-
-                    <!-- SERVING -->
-                    <div class="input-field col s3">
-                        <select name="recipe_serving">
-                            <option value="" disabled>Serving Amount</option>
-                                {% if recipe.recipe_serving == recipe.recipe_serving %}
-                                    <option value="{{ recipe.recipe_serving }}" selected>{{ recipe.recipe_serving }}</option>
-                                {% endif %}
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                    </select>
-                        <label>Serves</label>
-                    </div>
-
-                    <div class="input-field col s3">
-                        {% if recipe.recipe_cook_time == recipe.recipe_cook_time %}
-                            <input id="recipe_cook_time" name="recipe_cook_time" type="number" minlength="1" maxlength="3" value="{{ recipe.recipe_cook_time }}">
+                <!-- CATEGORY -->
+                <div class="input-field col s6">
+                    <select name="category_name">
+                        <option disabled>Type of recipe?</option>
+                        {% for category in categories %}
+                        {% if category.category_name == recipe.category_name %}
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                         {% else %}
-                            <input id="recipe_cook_time" name="recipe_cook_time" type="number" minlength="1" maxlength="3" value="{{ recipe.recipe_cook_time }}">
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endif %}
-                        <label for="recipe_cook_time">Cooking Time (minutes)</label>
-                    </div>
+                        {% endfor %}
 
-                    <div class="col s3">
-                        <label for="recipe_difficulty">Difficulty</label>
-                        <select name="recipe_difficulty">
+                        <label for="category_name"></label>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- RECIPE DESCRIPTION -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="recipe_description" class="materialize-textarea" name="recipe_description"
+                        minlength="15" maxlength="250"
+                        value="{{ recipe.recipe_description }}">{{ recipe.recipe_description }}</textarea>
+                    <label for="recipe_description">Recipe Description</label>
+                </div>
+            </div>
+
+            <!-- RECIPE IMAGE -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="recipe_image_url" class="materialize-textarea" name="recipe_image_url" minlength="15"
+                        maxlength="400" value="{{ recipe.recipe_image_url }}">{{ recipe.recipe_image_url }}</textarea>
+                    <label for="recipe_image_url">Recipe Image (URL)</label>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <!-- SERVING -->
+                <div class="input-field col s3">
+                    <select name="recipe_serving">
+                        <option value="" disabled>Serving Amount</option>
+                        {% if recipe.recipe_serving == recipe.recipe_serving %}
+                        <option value="{{ recipe.recipe_serving }}" selected>{{ recipe.recipe_serving }}</option>
+                        {% endif %}
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <label>Serves</label>
+                </div>
+
+                <div class="input-field col s3">
+                    {% if recipe.recipe_cook_time == recipe.recipe_cook_time %}
+                    <input id="recipe_cook_time" name="recipe_cook_time" type="number" minlength="1" maxlength="3"
+                        value="{{ recipe.recipe_cook_time }}">
+                    {% else %}
+                    <input id="recipe_cook_time" name="recipe_cook_time" type="number" minlength="1" maxlength="3"
+                        value="{{ recipe.recipe_cook_time }}">
+                    {% endif %}
+                    <label for="recipe_cook_time">Cooking Time (minutes)</label>
+                </div>
+
+                <div class="col s3">
+                    <label for="recipe_difficulty">Difficulty</label>
+                    <select name="recipe_difficulty">
                         {% if recipe.recipe_difficulty == recipe.recipe_difficulty %}
-                            <option value="{{ recipe.recipe_difficulty }}" selected>{{ recipe.recipe_difficulty }}</option>
-                            <option value="Easy">Easy</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Hard">Hard</option>
+                        <option value="{{ recipe.recipe_difficulty }}" selected>{{ recipe.recipe_difficulty }}</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
                         {% else %}
-                            <option value="" disabled selected>Difficulty</option>
-                            <option value="Easy">Easy</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Hard">Hard</option>
+                        <option value="" disabled selected>Difficulty</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
                         {% endif %}
                     </select>
-                    </div>
+                </div>
 
-                    <div class="col s3">
-                        <label for="recipe_spice">Spice</label>
-                        <select name="recipe_spice" id="recipe_spice">
+                <div class="col s3">
+                    <label for="recipe_spice">Spice</label>
+                    <select name="recipe_spice" id="recipe_spice">
                         {% if recipe.recipe_spice_rating == recipe.recipe_spice_rating %}
                         <option value="{{ recipe.recipe_spice }}" selected>{{ recipe.recipe_spice }}</option>
                         <option value="Not Spicy">Not Spicy</option>
@@ -118,65 +122,65 @@
                         <option value="Mild">Mild</option>
                         <option value="Hot">Hot</option>
                         <option value="Very Hot">Very Hot</option>
-                            
+
                         {% endif %}
                     </select>
-                    </div>
-
-
                 </div>
 
-                <!-- https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/ -->
 
-                <!-- INGREDIENTS -->
-                <div class="ingredient_field_wrapper">
-                    <div>
-                        <label>Ingredients</label>
-                        {% for ingredient in recipe.recipe_ingredients %}
-                            {% if recipe.ingredient == recipe.ingredient %}
-                            <input type="text" name="recipe_ingredients" value="{{ ingredient }}">
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+            </div>
+
+            <!-- https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/ -->
+
+            <!-- INGREDIENTS -->
+            <div class="ingredient_field_wrapper">
+                <div>
+                    <label>Ingredients</label>
+                    {% for ingredient in recipe.recipe_ingredients %}
+                    {% if recipe.ingredient == recipe.ingredient %}
+                    <input type="text" name="recipe_ingredients" value="{{ ingredient }}">
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                <br>
-                <a href="javascript:void(0);" class="ingredient_add_button" title="Add field"><i
-                        class="fas fa-plus-circle"></i> Add Ingredient</a>
-                <br>
-                <br>
+            </div>
+            <br>
+            <a href="javascript:void(0);" class="ingredient_add_button" title="Add field"><i
+                    class="fas fa-plus-circle"></i> Add Ingredient</a>
+            <br>
+            <br>
 
-                <!-- INSTRUCTIONS -->
-                <div class="instruction_field_wrapper">
-                    <div>
-                        <label>Instructions</label>
-                        {% for instruction in recipe.recipe_instructions %}
-                            {% if recipe.instructions == recipe.instructions %}
-                            <input type="text" name="recipe_instructions" value="{{ instruction }}">
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+            <!-- INSTRUCTIONS -->
+            <div class="instruction_field_wrapper">
+                <div>
+                    <label>Instructions</label>
+                    {% for instruction in recipe.recipe_instructions %}
+                    {% if recipe.instructions == recipe.instructions %}
+                    <input type="text" name="recipe_instructions" value="{{ instruction }}">
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                <br>
-                <a href="javascript:void(0);" class="instruction_add_button" title="Add field"><i
-                        class="fas fa-plus-circle"></i> Add Instruction</a>
-                <br>
-                <br>
+            </div>
+            <br>
+            <a href="javascript:void(0);" class="instruction_add_button" title="Add field"><i
+                    class="fas fa-plus-circle"></i> Add Instruction</a>
+            <br>
+            <br>
 
-                <!-- RECIPE SUBMIT BUTTON-->
-                <div class="row">
-                    <div class="col s1"></div>
-                        <button type="submit" class="col s4 btn-large text-shadow default-button">
-                            Edit Recipe <i class="fas fa-edit"></i>
-                        </button>
-                    <div class="col s2"></div>
-                        <button type="reset" class="col s4 btn-large text-shadow default-button">
-                            Clear <i class="fas fa-eraser"></i>
-                        </button>
-                    <div class="col s1"></div>
-                </div>
+            <!-- RECIPE SUBMIT BUTTON-->
+            <div class="row">
+                <div class="col s1"></div>
+                <button type="submit" class="col s4 btn-large text-shadow default-button">
+                    Edit Recipe <i class="fas fa-edit"></i>
+                </button>
+                <div class="col s2"></div>
+                <button type="reset" class="col s4 btn-large text-shadow default-button">
+                    Clear <i class="fas fa-eraser"></i>
+                </button>
+                <div class="col s1"></div>
+            </div>
 
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 
 {% endblock %}

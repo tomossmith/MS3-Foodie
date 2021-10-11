@@ -188,8 +188,22 @@ def delete_recipe(recipe_id):
 # CATEGORIES LIST
 @app.route("/get_categories")
 def get_categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    categories = list(mongo.db.categories.find())
     return render_template("categories.html", categories=categories)
+
+# EDIT CATEGORY
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    category = mongo.db.categories.find_one({"_id":  ObjectId(category_id)})
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "category_image": request.form.get("category_image"),
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("The Category Was Successfully Updated")
+ 
+    return render_template("edit_category.html", category=category)
 
 
 if __name__ == "__main__":
