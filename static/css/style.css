@@ -24,6 +24,10 @@ p {
     font-family: 'Oswald', sans-serif;
 }
 
+.row {
+    margin: 0;
+}
+
 /* Form Elements */
 
 form i {
@@ -32,6 +36,8 @@ form i {
 
 label {
     font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    color: #000000;
 }
 
 /* Focus Color */
@@ -110,6 +116,7 @@ nav li a {
     background: #002b5c;
     border-radius: 3em;
     padding: 1em;
+    margin-bottom: 1em;
 }
 
 .default-button i {
@@ -157,6 +164,22 @@ nav li a {
 /* icon prefix focus color */
 .input-field .prefix.active {
     color: #000;
+}
+
+.select-wrapper input.select-dropdown {
+    color: #000000;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+}
+
+.dropdown-content li>span{
+    color: #002b5c;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+}
+
+.fa-trash-alt:before {
+    color: red;
 }
 
 
