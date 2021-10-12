@@ -24,8 +24,20 @@ p {
     font-family: 'Oswald', sans-serif;
 }
 
+.lobster {
+    font-family: 'Lobster', cursive;
+}
+
 .row {
     margin: 0;
+}
+
+.spacing_top {
+    margin-top: 1em;
+}
+
+.spacing_bottom {
+    margin-bottom: 1em;
 }
 
 /* Form Elements */
@@ -172,7 +184,7 @@ nav li a {
     font-size: 1em;
 }
 
-.dropdown-content li>span{
+.dropdown-content li>span {
     color: #002b5c;
     font-weight: 400;
     font-family: 'Oswald', sans-serif;
@@ -183,15 +195,23 @@ nav li a {
 }
 
 
-/* Recipe Page */
+/* Recipe Pages */
 
 .card {
     margin-bottom: 3em;
 }
 
-#recipe_img {
-    width: auto;
-    height: 24em;
+.card-image {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#recipe_key {
+    margin-top: 1em;
 }
 
 /* Category Page */
