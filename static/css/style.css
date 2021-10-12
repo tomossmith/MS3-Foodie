@@ -190,8 +190,8 @@ nav li a {
 }
 
 #recipe_img {
-    width: 24em;
-    height: auto;
+    width: auto;
+    height: 24em;
 }
 
 /* Category Page */

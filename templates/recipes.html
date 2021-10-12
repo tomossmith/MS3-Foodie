@@ -1,24 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="white-text center-align">Add Recipe</h3>
-
-<!-- RECIPE FILTER -->
-<div class="row">
-  <div class="input-field col s4">
-      <select name="category_name" required>
-          <option disabled selected class="white">Filter Recipe's By:</option>
-          <label for="recipe_type"></label>
-          {% for category in categories %}
-          <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-          {% endfor %}
-      </select>
-  </div>
-</div>
+<h3 class="white-text center-align">The Recipe Book</h3>
 
 <div class="row">
 
-    <div class="col s12 m4">
+  {% for recipe in recipes %}
+    <div class="col s12 m12 l6">
       <div class="card">
         <div class="card-content">
           <div class="card-image">
@@ -100,10 +88,6 @@
               <div class="row center-align">
                 <a class="waves-effect waves-light btn"
                   href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">Open Recipe</a>
-                <a class="waves-effect waves-light btn"
-                  href="{{ url_for('edit_recipe',recipe_id=recipe._id) }}">Edit</a>
-                <a class="waves-effect waves-light btn"
-                  href="{{ url_for('delete_recipe',recipe_id=recipe._id) }}">Delete</a>
               </div>
             </div>
           </div>
@@ -111,4 +95,6 @@
       </div>
     </div>
 </div>
+{% endfor %}
+
 {% endblock %}

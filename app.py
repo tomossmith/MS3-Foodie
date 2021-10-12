@@ -51,14 +51,13 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower(),
         }
         mongo.db.users.insert_one(register)
 
         # PLACE NEW USER INTO 'SESSION COOKIE'
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("my_recipes", username=session["user"]))
     return render_template("register.html")
 
 # LOGIN
@@ -79,7 +78,7 @@ def login():
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "profile", username=session["user"]))
+                            "my_recipes", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -92,13 +91,16 @@ def login():
 
     return render_template("login.html")
 
-# PROFILE PAGE
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+# MY RECIPES
+@app.route("/my_recipes/<username>", methods=["GET", "POST"])
+def my_recipes(username):
     # GET THE USER'S USERNAME FROM THE DATABASE
-    username = mongo.db.users.find_one({
-        "username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    user_id = mongo.db.users.find_one({
+        "username": session["user"]})["_id"]
+    recipes = mongo.db.recipes.find(
+        {"submitted_by": user_id})
+    count = recipes.count()
+    return render_template("my_recipes.html", username=username, recipes=recipes, count=count)
 
 # LOGOUT
 @app.route("/logout")
@@ -120,14 +122,7 @@ def open_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id":  ObjectId(recipe_id)})
     return render_template("open_recipe.html", recipe=recipe)
 
-# RECIPE PAGE BY TYPE
-#@app.route("/recipes_by_type/<category_id>")
-#def recipes_by_type(category_id):
-#    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-#    recipes = mongo.db.recipes.find({"category_name": category["category_name"]})
-#    return render_template("recipes_by_type.html", recipes=recipes,
-#    category=category)
-
+# RECIPES BY TYPE
 @app.route("/recipes_by_type/<category_id>")
 def recipes_by_type(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
@@ -163,7 +158,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Your Recipe Was Successfully Added To The Cookbook!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("my_recipes", username=session["user"]))
     
     return render_template("add_recipe.html")
 
