@@ -39,8 +39,8 @@
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipes By Type <i class="fas fa-angle-down"></i></a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
                     <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                    <li><a href="{{ url_for('my_recipes', username=session['user']) }}">{{ session.user }}'s Recipes</a></li>
                     {% if session.user|lower == "admin"|lower %}
                     <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
                     {% endif %}
@@ -57,10 +57,14 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('get_recipes') }}">Recipe Book</a></li>
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipes By Type <i class="fas fa-angle-down"></i></a></li>
             {% if session.user %}
             <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
-            <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
+            <li><a href="{{ url_for('my_recipes', username=session['user']) }}">{{ session.user }}'s Recipes</a></li>
+            {% if session.user|lower == "admin"|lower %}
             <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+            {% endif %}
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
