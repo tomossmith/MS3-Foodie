@@ -19,6 +19,13 @@
 <body>
 
     <header>
+        <!-- NAVIGATION DROPDROWN STRUCTURE -->
+        <ul id="dropdown1" class="dropdown-content">
+            {% for category in categories %}
+                <li><a href="{{url_for('recipes_by_type', category_id=category._id) }}">{{ category.category_name }}</a></li>
+            {% endfor %}
+        </ul>
+
         <!-- TOP NAVIGATION BAR -->
         <nav class="transparent z-depth-0">
             <div class="nav-wrapper">
@@ -29,6 +36,9 @@
                 <ul class="right hide-on-med-and-down ">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">Recipe Book</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipes By Type<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>

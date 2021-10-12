@@ -93,8 +93,6 @@ def login():
     return render_template("login.html")
 
 # PROFILE PAGE
-
-
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # GET THE USER'S USERNAME FROM THE DATABASE
@@ -103,8 +101,6 @@ def profile(username):
     return render_template("profile.html", username=username)
 
 # LOGOUT
-
-
 @app.route("/logout")
 def logout():
     # REMOVE THE USER SESSION COOKIE
@@ -112,18 +108,38 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-# RECIPE PAGE
+# RECIPE BOOK
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+# INDIVIDUAL RECIPE PAGE
 @app.route("/open_recipe/<recipe_id>")
 def open_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id":  ObjectId(recipe_id)})
     return render_template("open_recipe.html", recipe=recipe)
 
-# RECIPE BOOK
+# RECIPE PAGE BY TYPE
+#@app.route("/recipes_by_type/<category_id>")
+#def recipes_by_type(category_id):
+#    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+#    recipes = mongo.db.recipes.find({"category_name": category["category_name"]})
+#    return render_template("recipes_by_type.html", recipes=recipes,
+#    category=category)
 
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+@app.route("/recipes_by_type/<category_id>")
+def recipes_by_type(category_id):
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    """
+    Only return recipes where recipe[category_name]
+    matches category[category_name]
+    """
+    recipes = mongo.db.recipes.find(
+        {"category_name": category["category_name"]})
+    count = recipes.count()
+    return render_template("recipes_by_type.html", recipes=recipes,
+                           category=category, count=count)
 
 # ADD RECIPE
 @app.route("/add_recipe", methods=["GET", "POST"])

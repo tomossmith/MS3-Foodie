@@ -1,6 +1,7 @@
-// FUNCTION TO INITIATE THE SIDE NAVIGATION BAR
+// FUNCTION TO INITIATE THE SIDE NAVIGATION BAR AND DROPDOWN
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
+    $(".dropdown-trigger").dropdown();
   });
 
 // EVENT LISTENER TO TRIGGER TAB FUNCTION ON RECIPE CARDS
