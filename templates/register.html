@@ -2,8 +2,9 @@
 {% block content %}
 
 <div class="row">
-    <h1 class="center-align white-text text-darken-2 underline-red">Register</h1>
+    <h1 class="card-title white-text text-shadow center-align underline-red">Register</h1>
 </div>
+
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
@@ -45,14 +46,12 @@
             Already have a <img id="text-logo" src="/static/images/logo.png" alt="Foodie Logo"> account?
         </p>
     </div>
-    <div class="col s12">
-        <div class="col s5"></div>
+    <div class="row center-align">
         <a href="{{ url_for('login') }}">
             <button class="col s2 btn-large red text-shadow default-button">
                 Login<i class="fas fa-sign-in-alt"></i>
             </button>
         </a>
-        <div class="col s5"></div>
     </div>
 </div>
 

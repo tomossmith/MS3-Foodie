@@ -89,6 +89,41 @@ def login():
 
     return render_template("login.html")
 
+# LOGOUT
+@app.route("/logout")
+def logout():
+    # REMOVE THE USER SESSION COOKIE
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+# ADMIN FEATURES
+
+@app.route("/get_admins")
+def get_admins():
+    admins = list(mongo.db.admins.find())
+    return render_template("admins.html", admins=admins)
+
+# ADD ADMINISTRATOR
+@app.route("/add_admin", methods=["GET", "POST"])
+def add_admin():
+    if request.method == "POST":
+        admins = {
+            "username": request.form.get("admin_username"),
+        }
+        mongo.db.admins.insert_one(admins)
+        flash("Administrator Was Successfully Added To The Website Access List!")
+        return redirect(url_for("get_admins", admins=admins))
+    
+    return render_template("add_admin.html")
+
+# DELETE ADMIN
+@app.route("/delete_admin/<admin_id>")
+def delete_admin(admin_id):
+    mongo.db.admins.remove({"_id": ObjectId(admin_id)})
+    flash("Administrator Successfully Deleted")
+    return redirect(url_for("get_admins"))
+
 # MY RECIPES
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
@@ -99,14 +134,6 @@ def my_recipes(username):
         {"submitted_by": user_id})
     count = recipes.count()
     return render_template("my_recipes.html", username=username, recipes=recipes, count=count)
-
-# LOGOUT
-@app.route("/logout")
-def logout():
-    # REMOVE THE USER SESSION COOKIE
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
 
 # RECIPE BOOK
 @app.route("/get_recipes")
@@ -208,16 +235,20 @@ def get_categories():
 # ADD CATEGORY
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name"),
-            "category_image": request.form.get("category_image"),
-        }
-        mongo.db.categories.insert_one(category)
-        flash("The Category Was Successfully Added")
-        return redirect(url_for("get_categories"))
+# check if admin username exists in db
+    admin_user = mongo.db.admins.find_one({"username": session["user"]})
+    if admin_user:
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name"),
+                "category_image": request.form.get("category_image"),
+            }
+            mongo.db.categories.insert_one(category)
+            flash("The Category Was Successfully Added")
+            return redirect(url_for("get_categories"))
+        return render_template("add_category.html")
     
-    return render_template("add_category.html")
+    return render_template("no_auth.html")
 
 # EDIT CATEGORY
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])

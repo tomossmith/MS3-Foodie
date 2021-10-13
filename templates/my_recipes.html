@@ -3,44 +3,128 @@
 
   {% if session.user|lower == username|lower %}
 
-    <div class="row">
-      <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
-          <h3 class="center-align text-darken-4">
-            {{ username }}'s Recipe's
-          </h3>
-        </div>
-      </div>
-    </div>
-
+  <div class="row">
+    <h1 class="card-title white-text text-shadow center-align underline-red">{{ username[0]|upper}}{{username[1:] }}'s Recipes</h1>
+  </div>
 
     <div class="row">
       {% if count > 0 %}
 
       {% for recipe in recipes %}
-      <div class="col s12 m12 l6">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-image center-align">
-              <img id="recipe_img" src="{{ recipe.recipe_image_url }}">
-            </div>
+
+      <!-- RECIPE IMAGE & TITLE -->
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <img id="recipe_img" src="{{ recipe.recipe_image_url }}">
           </div>
-          <div class="card-content red">
-            <div class="row">
+        </div>
+        <div class="card-content red">
+          <div class="row">
+              <div class="col s12">
               <h3 id="recipe-title" class="card-title white-text text-shadow center-align">{{ recipe.recipe_name }}</h3>
             </div>
-            <div id="tab-details">
-              <!-- RECIPE DESCRIPTION-->
-              <div class="row">
-                <div class="col s12">
-                  <p class="white-text">{{ recipe.recipe_description }}</p>
-                </div>
+        </div>
+          <div id="tab-details">
+            
+  <!-- RECIPE DESCRIPTION-->
+            <div class="row">
+              <div class="col s12">
+                <p class="white-text">{{ recipe.recipe_description }}</p>
               </div>
-
+            </div>
+            <div id="recipe_key">
               <!-- RECIPE KEY ROW 1-->
               <div class="row">
                 <div class="col s6">
-                  <p class="white-text">Serves: {{ recipe.recipe_serving }} </p>
+                  <p class="white-text">Serves: &nbsp;
+                
+                    {% if recipe.recipe_serving == '1' %}
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '2' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '3' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '4' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '5' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '6' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '7' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '8' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '9' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+    
+                    {% if recipe.recipe_serving == '10' %}
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                      <i class="fas fa-user white-text"></i>
+                    {% endif %}
+                  </p>
                 </div>
                 <div class="col s6">
                   <p class="white-text">Cooking Time: {{ recipe.recipe_cook_time }} minutes</p>
@@ -94,6 +178,7 @@
                     {% endif %}
                   </p>
                 </div>
+            </div>
                 <br>
                 <br>
                 <br>
@@ -138,14 +223,12 @@
               Return to the <img id="text-logo" src="/static/images/logo.png" alt="Foodie Logo"> homepage?
             </p>
           </div>
-          <div class="col s12">
-            <div class="col s5"></div>
+          <div class="row center-align">
             <a href="{{ url_for('get_recipes') }}">
               <button class="col s2 btn-large text-shadow default-button">
                 Home<i class="fas fa-sign-in-alt"></i>
               </button>
             </a>
-            <div class="col s5"></div>
           </div>
         </div>
       </div>

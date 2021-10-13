@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<h3 class="white-text center-align">Edit Recipe</h3>
-<br>
+<div class="row">
+    <h1 class="card-title white-text text-shadow center-align underline-red">Add Recipe</h1>
+</div>
 
 {% if session.user %}
 
@@ -204,14 +204,12 @@
             Already have a <img id="text-logo" src="/static/images/logo.png" alt="Foodie Logo"> account?
           </p>
         </div>
-        <div class="col s12">
-          <div class="col s5"></div>
+        <div class="row center-align">
           <a href="{{ url_for('login') }}">
             <button class="col s2 btn-large text-shadow default-button">
               Login<i class="fas fa-sign-in-alt"></i>
             </button>
           </a>
-          <div class="col s5"></div>
         </div>
       </div>
     </div>

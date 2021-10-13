@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+  <h1 class="card-title white-text text-shadow center-align underline-red">Site Administrators</h1>
+</div>
+
+<div class="row">
+  <ul>
+    {% for admin in admins %}
+  <li class="center-align white-text">
+      <p>{{ admin.username }} <a class="waves-effect waves-light btn" href="{{ url_for('delete_admin',admin_id=admin._id) }}">Delete</a></p>
+    </li>
+
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- ADD ADMIN BUTTON -->
+<div class="row">
+  <a href="{{ url_for('add_admin') }}">
+    <h4 class="center-align white-text text-shadow">Add Administrator
+      <i class="fas fa-plus-circle">
+      </i>
+    </h4>
+  </a>
+</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
