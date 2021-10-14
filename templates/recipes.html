@@ -7,187 +7,147 @@
 
 <div class="row">
   {% for recipe in recipes %}
-    
+
   <!-- RECIPE IMAGE & TITLE -->
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-content">
-          <div class="card-image">
-            <img id="recipe_img" src="{{ recipe.recipe_image_url }}">
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="{{ recipe.recipe_image_url }}">
+        </div>
+      </div>
+      <div class="card-content red">
+        <div class="row">
+          <div class="col s12">
+            <h3 id="recipe-title" class="card-title white-text text-shadow center-align">{{ recipe.recipe_name }}</h3>
           </div>
         </div>
-        <div class="card-content red">
+        <div id="tab-details">
+
+          <!-- RECIPE DESCRIPTION-->
           <div class="row">
-              <div class="col s12">
-              <h3 id="recipe-title" class="card-title white-text text-shadow center-align">{{ recipe.recipe_name }}</h3>
+            <div class="col s12">
+              <p class="white-text">{{ recipe.recipe_description }}</p>
             </div>
-        </div>
-          <div id="tab-details">
-            
-  <!-- RECIPE DESCRIPTION-->
+          </div>
+
+          <div id="recipe_key">
+            <!-- RECIPE KEY ROW 1-->
             <div class="row">
               <div class="col s12">
-                <p class="white-text">{{ recipe.recipe_description }}</p>
+                <p class="white-text">Serves: &nbsp;
+
+                  {% if recipe.recipe_serving == '1' %}
+                  <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '2' %}
+                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '3' %}
+                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '4' %}
+                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '5' %}
+                  5 x <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '6' %}
+                  6 x <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '7' %}
+                  7 x <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '8' %}
+                  8 x <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '9' %}
+                  9 x <i class="fas fa-user white-text"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_serving == '10' %}
+                  10 x <i class="fas fa-user white-text"></i>
+                  {% endif %}
+                </p>
+              </div>
+              <div class="col s12">
+                <p class="white-text">Cooking Time: {{ recipe.recipe_cook_time }} minutes</p>
               </div>
             </div>
-            <div id="recipe_key">
-              <!-- RECIPE KEY ROW 1-->
-              <div class="row">
-                <div class="col s6">
-                  <p class="white-text">Serves: &nbsp;
-                
-                    {% if recipe.recipe_serving == '1' %}
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '2' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '3' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '4' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '5' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '6' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '7' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '8' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '9' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-    
-                    {% if recipe.recipe_serving == '10' %}
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                      <i class="fas fa-user white-text"></i>
-                    {% endif %}
-                  </p>
-                </div>
-                <div class="col s6">
-                  <p class="white-text">Cooking Time: {{ recipe.recipe_cook_time }} minutes</p>
-                </div>
+            <!-- RECIPE KEY ROW 2-->
+            <div class="row">
+              <div class="col s12">
+                <p class="white-text">Difficulty: &nbsp;
+                  {% if recipe.recipe_difficulty == 'Easy' %}
+                  <i class="far fa-check-circle"></i>
+                  <i class="far fa-circle"></i>
+                  <i class="far fa-circle"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_difficulty == 'Medium' %}
+                  <i class="far fa-check-circle"></i>
+                  <i class="far fa-check-circle"></i>
+                  <i class="far fa-circle"></i>
+                  {% endif %}
+
+                  {% if recipe.recipe_difficulty == 'Hard' %}
+                  <i class="far fa-check-circle"></i>
+                  <i class="far fa-check-circle"></i>
+                  <i class="far fa-check-circle"></i>
+                  {% endif %}
+                </p>
+
               </div>
 
-              <!-- RECIPE KEY ROW 2-->
-              <div class="row">
-                <div class="col s6">
-                  <p class="white-text">Difficulty: &nbsp;
-                    {% if recipe.recipe_difficulty == 'Easy' %}
-                    <i class="far fa-check-circle"></i>
-                    <i class="far fa-circle"></i>
-                    <i class="far fa-circle"></i>
-                    {% endif %}
+              <div class="col s12">
+                <p class="white-text">Spice: &nbsp;
+                  {% if recipe.recipe_spice == 'Not Spicy' %}
+                  <i class="fas fa-times"></i>
+                  {% endif %}
 
-                    {% if recipe.recipe_difficulty == 'Medium' %}
-                    <i class="far fa-check-circle"></i>
-                    <i class="far fa-check-circle"></i>
-                    <i class="far fa-circle"></i>
-                    {% endif %}
+                  {% if recipe.recipe_spice == 'Mild' %}
+                  <i class="fas fa-pepper-hot"></i>
+                  {% endif %}
 
-                    {% if recipe.recipe_difficulty == 'Hard' %}
-                    <i class="far fa-check-circle"></i>
-                    <i class="far fa-check-circle"></i>
-                    <i class="far fa-check-circle"></i>
-                    {% endif %}
-                  </p>
+                  {% if recipe.recipe_spice == 'Hot' %}
+                  <i class="fas fa-pepper-hot"></i>
+                  <i class="fas fa-pepper-hot"></i>
+                  {% endif %}
 
-                </div>
-
-                <div class="col s6">
-                  <p class="white-text">Spice: &nbsp;
-                    {% if recipe.recipe_spice == 'Not Spicy' %}
-                    <i class="fas fa-times"></i>
-                    {% endif %}
-
-                    {% if recipe.recipe_spice == 'Mild' %}
-                    <i class="fas fa-pepper-hot"></i>
-                    {% endif %}
-
-                    {% if recipe.recipe_spice == 'Hot' %}
-                    <i class="fas fa-pepper-hot"></i>
-                    <i class="fas fa-pepper-hot"></i>
-                    {% endif %}
-
-                    {% if recipe.recipe_spice == 'Very Hot' %}
-                    <i class="fas fa-pepper-hot"></i>
-                    <i class="fas fa-pepper-hot"></i>
-                    <i class="fas fa-pepper-hot"></i>
-                    {% endif %}
-                  </p>
-                </div>
+                  {% if recipe.recipe_spice == 'Very Hot' %}
+                  <i class="fas fa-pepper-hot"></i>
+                  <i class="fas fa-pepper-hot"></i>
+                  <i class="fas fa-pepper-hot"></i>
+                  {% endif %}
+                </p>
+              </div>
             </div>
-              <br>
-              <br>
-              <br>
-              <div class="row center-align">
-                <a class="waves-effect waves-light btn"
-                  href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">Open Recipe</a>
-              </div>
+            <br>
+            <div class="row center-align">
+              <a class="col s12 btn-large text-shadow default-button"
+                href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">Open Recipe</a>
             </div>
           </div>
+
         </div>
       </div>
     </div>
+  </div>
 
-{% endfor %}
+  {% endfor %}
 </div>
 {% endblock %}

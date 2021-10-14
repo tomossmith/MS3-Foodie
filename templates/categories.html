@@ -6,29 +6,38 @@
 </div>
 
 <div class="row">
-  <ul>
-    {% for category in categories %}
-    <li id="category_blocks" class="col s6 m3 center-align white-text">
-      <img src="{{category.category_image }}" alt="category images" width="200" height="200">
-      <h4> {{ category.category_name }} </h4>
-      <a href="{{ url_for('edit_category',category_id=category._id) }}" class="btn-floating waves-effect waves-light"><i class="fas fa-edit"></i></a>
-      <a href="{{ url_for('delete_category',category_id=category._id) }}" class="btn-floating waves-effect waves-light"><i class="far fa-trash-alt"></i></a>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+  {% for category in categories %}
+  
+    <!-- CATEGORY IMAGE & TITLE -->
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{category.category_image }}">
+          </div>
+        </div>
+        <div class="card-content red">
+          <div class="row">
+            <div class="col s12">
+              <h3 class="card-title white-text text-shadow center-align">{{ category.category_name }}</h3>
+            </div>
+          </div>
+          <div id="tab-details">
+  
+            <!-- CATEGORY BUTTONS-->
+            <div class="row">
+              <div class="col s12">
+                <a href="{{ url_for('edit_category',category_id=category._id) }}" class="col s10 offset-s1 btn-large text-shadow default-button"><i class="fas fa-edit"></i> Edit</a>
+      <a href="{{ url_for('delete_category',category_id=category._id) }}" class="col s10 offset-s1 btn-large text-shadow default-button"><i class="far fa-trash-alt"></i> Delete</a>
+              </div>
+            </div>
 
-<!-- ADD CATEGORY BUTTON -->
-<div class="row">
-  <a href="{{ url_for('add_category') }}">
-    <h4 class="center-align white-text text-shadow">Add a Category
-      <i class="fas fa-plus-circle">
-      </i>
-    </h4>
-  </a>
-</div>
+          </div>
+        </div>
+      </div>
     </div>
+  
+    {% endfor %}
   </div>
-</div>
 
 {% endblock %}

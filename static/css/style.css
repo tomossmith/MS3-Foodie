@@ -16,6 +16,22 @@ h6 {
     font-family: 'Lobster', cursive;
 }
 
+h1 {
+    font-size: 5vw;
+}
+
+h2 {
+    font-size: 4vw;
+}
+
+h3 {
+    font-size: 3vw;
+}
+
+span {
+    font-size: 3.5vw;
+}
+
 p {
     font-family: 'Oswald', sans-serif;
 }
@@ -101,6 +117,10 @@ nav li a {
     text-underline-offset: 2px;
 }
 
+#mobile-demo a, #mobile-demo i {
+    color: #002b5c;
+}
+
 /* Base CSS */
 
 #logo {
@@ -141,6 +161,10 @@ nav li a {
 
 .default-button:hover {
     background-color: #135caf;
+}
+
+.default-blue-text {
+    color: #002b5c;
 }
 
 /* FORMS */
@@ -194,10 +218,13 @@ nav li a {
     font-family: 'Oswald', sans-serif;
 }
 
-.fa-trash-alt:before {
-    color: red;
+#dropdown-main a {
+    color: #002b5c;
 }
 
+#dropdown-mobile a {
+    color: #002b5c;
+}
 
 /* Recipe Pages */
 
@@ -216,10 +243,4 @@ nav li a {
 
 #recipe_key {
     margin-top: 1em;
-}
-
-/* Category Page */
-
-#category_blocks {
-    margin-bottom: 3em;
 }

@@ -54,7 +54,7 @@
 
             <div class="row">
                 <!-- SERVING -->
-                <div class="input-field col s3">
+                <div class="input-field col s12 m3">
                     <select name="recipe_serving" required>
                         <option value="" disabled selected>Serving Amount</option>
                         <option value="1">1</option>
@@ -70,12 +70,12 @@
                     </select>
                 </div>
 
-                <div class="input-field col s3">
+                <div class="input-field col s12 m3">
                     <input id="recipe_cook_time" name="recipe_cook_time" type="number" minlength="1" maxlength="3" required>
                     <label for="recipe_cook_time">Cooking Time (minutes)</label>
                 </div>
 
-                <div class="input-field col s3">
+                <div class="input-field col s12 m3">
                     <select name="recipe_difficulty" required>
                         <option value="" disabled selected>Difficulty</option>
                         <option value="Easy">Easy</option>
@@ -84,7 +84,7 @@
                     </select>
                 </div>
 
-                <div class="input-field col s3">
+                <div class="input-field col s12 m3">
                     <select name="recipe_spice" required>
                         <option value="" disabled selected>How Spicy?</option>
                         <option value="Not Spicy">Not Spicy</option>
@@ -99,7 +99,7 @@
             <!-- https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/ -->
             <!-- INGREDIENTS -->
             <div class="row">
-                <div class="ingredient_field_wrapper input-field col s6">
+                <div class="ingredient_field_wrapper input-field col s12 m6">
                     <input id="recipe_ingredients" name="recipe_ingredients" type="text" minlength="3" required>
                     <label for="recipe_ingredients">Recipe Ingredient</label>
                     <a href="javascript:void(0);" class="ingredient_add_button" title="Add field">
@@ -108,7 +108,7 @@
                 </div>
             
             <!-- INSTRUCTIONS -->    
-                <div class="instruction_field_wrapper input-field col s6">
+                <div class="instruction_field_wrapper input-field col s12 m6">
                     <input id="recipe_instructions" name="recipe_instructions" type="text" minlength="3" required>
                     <label for="recipe_instructions">Recipe Instruction</label>
                     <a href="javascript:void(0);" class="instruction_add_button" title="Add field">
