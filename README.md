@@ -86,7 +86,17 @@ A key priority was to try to make the journey from entering the site to displayi
 
     - A returning visitor should be able to make changes to any recipes they have uploaded onto the site, but must not be able to edit or remove entries entered by the site admin or other users.
 
----
+* ### <b>Website Administrator Goals</b>
+
+    - The website administrator must be able to find the administrator tools when logged into the site.
+
+    - The website administrator must be able to add and remove administrator to the administrator access database.
+
+    - The website administrator must not be able to delete the main administrator account from the database.
+
+    - The website administrator must be able to create, remove, update and delete recipe categories.
+
+    - The website administrators must be the only users to have access to the restricted websites and non-administrators must not be able to access restricted sites by direct URL inputs.
 
 ## <span id="#design"><b>Design</b></span>
 
