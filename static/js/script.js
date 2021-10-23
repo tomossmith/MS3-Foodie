@@ -27,7 +27,7 @@ $(document).ready(function(){
   var ingredientMaxField = 30; //Input fields increment limitation
   var ingredientAddButton = $('.ingredient_add_button'); //Add button selector
   var ingredientWrapper = $('.ingredient_field_wrapper'); //Input field wrapper
-  var ingredientFieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="ingredient_remove_button"><p><i class="fas fa-trash-alt"></i> Remove Ingredient</p></a></div>'; //New input field html 
+  var ingredientFieldHTML = '<div class="ingredient_field_wrapper input-field"><input id="recipe_ingredients" name="recipe_ingredients" type="text" minlength="3"><label for="recipe_ingredients">Next Ingredient</label><a href="javascript:void(0);" class="ingredient_remove_button"><p><i class="fas fa-trash-alt"></i> Remove Ingredient</p></a></div>'; //New input field html 
   var x = 1; //Initial field counter is 1
   
   //Once add button is clicked
@@ -52,7 +52,7 @@ $(document).ready(function(){
   var instructionMaxField = 30; //Input fields increment limitation
   var instructionAddButton = $('.instruction_add_button'); //Add button selector
   var instructionWrapper = $('.instruction_field_wrapper'); //Input field wrapper
-  var instructionFieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="instruction_remove_button"><p><i class="fas fa-trash-alt"></i> Remove Instruction</p></a></div>'; //New input field html 
+  var instructionFieldHTML = '<div class="instruction_field_wrapper input-field"><input id="recipe_instructions" name="recipe_instructions" type="text" minlength="3"><label for="recipe_instructions"> Next Instruction</label><a href="javascript:void(0);" class="instruction_remove_button"><p><i class="fas fa-trash-alt"></i> Remove Instruction</p></a></div>'; //New input field html 
   var x = 1; //Initial field counter is 1
   
   //Once add button is clicked
