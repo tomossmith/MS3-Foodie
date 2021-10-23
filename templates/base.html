@@ -54,13 +54,13 @@
                 <ul class="right hide-on-med-and-down ">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-main">Recipes<i class="fas fa-angle-down"></i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-main">Recipes <i class="fas fa-angle-down"></i></a></li>
                         {% if session.user %}
                             <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                             <li><a href="{{ url_for('my_recipes', username=session['user']) }}">{{ session.user[0]|upper}}{{session.user[1:] }}'s Recipes</a></li>
                                 {% if session.user|lower == "admin"|lower %}
                                 <!-- Dropdown Trigger -->
-                                <li><a class="dropdown-trigger" href="#!" data-target="admin-dropdown-main">Manage Site<i class="fas fa-angle-down"></i></a></li>
+                                <li><a class="dropdown-trigger" href="#!" data-target="admin-dropdown-main">Manage Site <i class="fas fa-angle-down"></i></a></li>
                                 {% endif %}
                             <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {% else %}
@@ -75,13 +75,13 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mobile">Recipes<i class="fas fa-angle-down"></i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mobile">Recipes <i class="fas fa-angle-down"></i></a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                     <li><a href="{{ url_for('my_recipes', username=session['user']) }}">{{ session.user[0]|upper}}{{session.user[1:] }}'s Recipes</a></li>
                         {% if session.user|lower == "admin"|lower %}
                             <!-- Dropdown Trigger -->
-                            <li><a class="dropdown-trigger" href="#!" data-target="admin-dropdown-mobile">Manage Site<i class="fas fa-angle-down"></i></a></li>
+                            <li><a class="dropdown-trigger" href="#!" data-target="admin-dropdown-mobile">Manage Site <i class="fas fa-angle-down"></i></a></li>
                         {% endif %}
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}

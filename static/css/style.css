@@ -226,10 +226,35 @@ nav li a {
     color: #002b5c;
 }
 
+/* Home Page */
+/* The hero image */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/hero-image.png");
+  
+    /* Set a specific height */
+    height: 60em;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Place text in the middle of the image */
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
 /* Recipe Pages */
 
 .card {
-    margin-bottom: 12em;
+    margin-bottom: 2em;
 }
 
 .card-image {
