@@ -269,3 +269,9 @@ nav li a {
 #recipe_key {
     margin-top: 1em;
 }
+
+/* Footer */
+
+.footer-social a {
+    padding: 1em
+}
