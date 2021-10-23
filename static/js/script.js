@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 //Ingredients
 $(document).ready(function(){
-  var ingredientMaxField = 10; //Input fields increment limitation
+  var ingredientMaxField = 30; //Input fields increment limitation
   var ingredientAddButton = $('.ingredient_add_button'); //Add button selector
   var ingredientWrapper = $('.ingredient_field_wrapper'); //Input field wrapper
   var ingredientFieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="ingredient_remove_button"><p><i class="fas fa-trash-alt"></i> Remove Ingredient</p></a></div>'; //New input field html 
@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 //Instruction
 $(document).ready(function(){
-  var instructionMaxField = 10; //Input fields increment limitation
+  var instructionMaxField = 30; //Input fields increment limitation
   var instructionAddButton = $('.instruction_add_button'); //Add button selector
   var instructionWrapper = $('.instruction_field_wrapper'); //Input field wrapper
   var instructionFieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="instruction_remove_button"><p><i class="fas fa-trash-alt"></i> Remove Instruction</p></a></div>'; //New input field html 

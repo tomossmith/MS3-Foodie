@@ -23,5 +23,11 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
-   "editor.defaultFormatter": "HookyQR.beautify"
+   "editor.defaultFormatter": "HookyQR.beautify",
+   "python.pythonPath": "/home/gitpod/.pyenv/versions/3.8.12/bin/python",
+   "python.testing.pytestArgs": [
+      "."
+   ],
+   "python.testing.unittestEnabled": false,
+   "python.testing.pytestEnabled": true
 }
