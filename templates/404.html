@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h2 class="white-text center-align spacing_top text-shadow">Error, Page Not Found!</h2>
+            <h4 class="white-text center-align spacing_top text-shadow">You've navigated to an incorrect page!</h4>
+        </div>
+    </div>
+    <br>
+    <div class="row spacing_top">
+        <a href="{{ url_for('index') }}"><button class="col s6 offset-s3 btn-large text-shadow default-button red">Return Home</button></a>
+    </div>
+</div>
+
+{% endblock %}

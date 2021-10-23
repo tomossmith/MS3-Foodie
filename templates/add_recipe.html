@@ -97,24 +97,30 @@
             </div>
 
             <!-- https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/ -->
+           
+            <div class="row">  
+                     
             <!-- INGREDIENTS -->
-            <div class="row">
-                <div class="ingredient_field_wrapper input-field col s12 m6">
+            <div class="col s12 m6">
+                <div class="ingredient_field_wrapper input-field">
                     <input id="recipe_ingredients" name="recipe_ingredients" type="text" minlength="3" required>
                     <label for="recipe_ingredients">Recipe Ingredient</label>
-                    <a href="javascript:void(0);" class="ingredient_add_button" title="Add field">
-                        <p><i class="fas fa-plus-circle"></i> Add Ingredient</p>
-                    </a>
                 </div>
-            
-            <!-- INSTRUCTIONS -->    
-                <div class="instruction_field_wrapper input-field col s12 m6">
+                <a href="javascript:void(0);" class="ingredient_add_button" title="Add field">
+                    <p><i class="fas fa-plus-circle"></i> Add Ingredient</p>
+                </a>
+            </div>
+            <!-- INSTRUCTIONS -->  
+            <div class="col s12 m6">  
+                <div class="instruction_field_wrapper input-field">
                     <input id="recipe_instructions" name="recipe_instructions" type="text" minlength="3" required>
                     <label for="recipe_instructions">Recipe Instruction</label>
-                    <a href="javascript:void(0);" class="instruction_add_button" title="Add field">
-                        <p><i class="fas fa-plus-circle"></i> Add Instruction</p>
-                    </a>
                 </div>
+                <a href="javascript:void(0);" class="instruction_add_button" title="Add field">
+                    <p><i class="fas fa-plus-circle"></i> Add Instruction</p>
+                </a>
+            </div>
+
             </div>
             <!-- End Of Codex Code-->
 

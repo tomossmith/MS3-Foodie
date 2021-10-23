@@ -281,6 +281,13 @@ def delete_category(category_id):
     
     return render_template("no_auth.html")
 
+# ERROR PAGES:
+# https://flask.palletsprojects.com/en/2.0.x/errorhandling/
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

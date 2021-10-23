@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <div class="row">
   <h1 class="card-title white-text text-shadow center-align underline-red">{{ recipe.recipe_name }}</h1>
 </div>
@@ -45,7 +44,8 @@
                 {{ instruction }}
                 </li>
               </ul.k>
-          </div>
+            </div>
+            {% endfor %}
             
           </div>
 
@@ -166,6 +166,5 @@
     </div>
   </div>
 </div>
-{% endfor %}
 
 {% endblock %}
