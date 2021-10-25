@@ -52,9 +52,9 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right gradient-text"><i
                         class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down ">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-main">Recipes <i class="fas fa-angle-down"></i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-main">Categories <i class="fas fa-angle-down"></i></a></li>
                         {% if session.user %}
                             <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                             <li><a href="{{ url_for('my_recipes', username=session['user']) }}">{{ session.user[0]|upper}}{{session.user[1:] }}'s Recipes</a></li>
@@ -73,9 +73,9 @@
 
         <!-- MOBILE NAVIGATION BAR -->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mobile">Recipes <i class="fas fa-angle-down"></i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mobile">Categories <i class="fas fa-angle-down"></i></a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                     <li><a href="{{ url_for('my_recipes', username=session['user']) }}">{{ session.user[0]|upper}}{{session.user[1:] }}'s Recipes</a></li>

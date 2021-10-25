@@ -14,93 +14,83 @@
   {% for recipe in recipes %}
 
   <!-- RECIPE IMAGE & TITLE -->
-  <div class="col s12 m4">
+  <div class="col l12 xl6">
     <div class="card large">
       <div class="card-content">
         <div class="card-image">
           <img id="recipe_img" src="{{ recipe.recipe_image_url }}">
         </div>
       </div>
-      <div class="card-content red">
+      <div class="card-content">
         <div class="row">
           <div class="col s12">
-            <h3 id="recipe-title" class="card-title white-text text-shadow center-align">{{ recipe.recipe_name }}</h3>
+            <h3 id="recipe-title" class="card-title default-blue-text center-align">{{ recipe.recipe_name }}</h3>
           </div>
         </div>
         <div id="tab-details">
 
-         
-          <!-- RECIPE DESCRIPTION-->
- <!--
-          <div class="row">
-            <div class="col s12">
-              <p class="white-text">{{ recipe.recipe_description }}</p>
-            </div>
-          </div>
--->
-
           <div id="recipe_key">
             <!-- RECIPE KEY ROW 1-->
             <div class="row">
-              <div class="col s6">
-                <p class="white-text">Serves: 
+              <div class="col s6 default-blue-text">
+                <p >Serves: 
 
                   {% if recipe.recipe_serving == '1' %}
-                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '2' %}
-                  <i class="fas fa-user white-text"></i>
-                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '3' %}
-                  <i class="fas fa-user white-text"></i>
-                  <i class="fas fa-user white-text"></i>
-                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '4' %}
-                  <i class="fas fa-user white-text"></i>
-                  <i class="fas fa-user white-text"></i>
-                  <i class="fas fa-user white-text"></i>
-                  <i class="fas fa-user white-text"></i>
+                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '5' %}
-                  5 x <i class="fas fa-user white-text"></i>
+                  5 x <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '6' %}
-                  6 x <i class="fas fa-user white-text"></i>
+                  6 x <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '7' %}
-                  7 x <i class="fas fa-user white-text"></i>
+                  7 x <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '8' %}
-                  8 x <i class="fas fa-user white-text"></i>
+                  8 x <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '9' %}
-                  9 x <i class="fas fa-user white-text"></i>
+                  9 x <i class="fas fa-user"></i>
                   {% endif %}
 
                   {% if recipe.recipe_serving == '10' %}
-                  10 x <i class="fas fa-user white-text"></i>
+                  10 x <i class="fas fa-user"></i>
                   {% endif %}
                 </p>
               </div>
-              <div class="col s6">
-                <p class="white-text">Cooking Time: {{ recipe.recipe_cook_time }} minutes</p>
+              <div class="col s6 default-blue-text">
+                <p>Cooking Time: {{ recipe.recipe_cook_time }} minutes</p>
               </div>
             </div>
             <br>
             <!-- RECIPE KEY ROW 2-->
-            <div class="row">
+            <div class="row default-blue-text">
               <div class="col s6">
-                <p class="white-text">Difficulty: &nbsp;
+                <p>Difficulty: &nbsp;
                   {% if recipe.recipe_difficulty == 'Easy' %}
                   <i class="far fa-check-circle"></i>
                   <i class="far fa-circle"></i>
@@ -122,8 +112,8 @@
 
               </div>
 
-              <div class="col s6">
-                <p class="white-text">Spice: &nbsp;
+              <div class="col s6 default-blue-text">
+                <p>Spice: &nbsp;
                   {% if recipe.recipe_spice == 'Not Spicy' %}
                   <i class="fas fa-times"></i>
                   {% endif %}

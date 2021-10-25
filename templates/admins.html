@@ -5,6 +5,12 @@
   <h1 class="card-title white-text text-shadow center-align underline-red">Site Administrators</h1>
 </div>
 
+<!-- ADD ADMIN BUTTON -->
+<div class="row">
+  <a href="{{ url_for('add_admin') }}" class="col s8 offset-s2 btn-large text-shadow default-button red"><i
+      class="fas fa-plus-circle"></i> Add Administrator</a>
+</div>
+
 <div class="row">
   <div class="col s12">
     <ul class="collection">
@@ -19,12 +25,6 @@
       {% endfor %}
     </ul>
   </div>
-</div>
-
-<!-- ADD ADMIN BUTTON -->
-<div class="row">
-  <a href="{{ url_for('add_admin') }}" class="col s8 offset-s2 btn-large text-shadow default-button red"><i
-      class="fas fa-plus-circle"></i> Add Administrator</a>
 </div>
 
 
