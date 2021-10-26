@@ -2,14 +2,37 @@
 {% block content %}
 
 <div class="row">
-  <h1 class="card-title white-text text-shadow center-align underline-red">The Recipe Book</h1>
+  <h1 class="white-text text-shadow center-align underline-red">The Recipe Book</h1>
 </div>
+
+<!-- SEARCH FUNCTION -->
+<div id="search-box" class="row card-panel grey lighten-5">
+  <form action="{{ url_for('search') }}" method="post" class="col s12">
+    <div class="row valign-wrapper center-align">
+      <div class="input-field col s12">
+        <i class="fas fa-search prefix"></i>
+        <input type="text" name="query" id="query" minlength="3" class="validate" required>
+        <label for="query">Search Recipe Book</label>
+      </div>
+    </div>
+    <div class="row valign-wrapper center-align">
+      <div class="col s12">
+        <button type="submit" class="default-button btn text-shadow">
+          <i class="fas fa-search left"></i> Search
+        </button>
+        <a href="{{ url_for('get_recipes') }}" class="red default-button btn text-shadow"><i class="fas fa-undo left"></i>Reset</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% if recipes|length > 0 %}
 
 <div class="row">
   {% for recipe in recipes %}
 
   <!-- RECIPE IMAGE & TITLE -->
-  <div class="col l12 xl6">
+  <div class="col s12 l12 xl6">
     <div class="card large">
       <div class="card-content">
         <div class="card-image">
@@ -130,7 +153,7 @@
             </div>
             <br>
             <div class="row">
-              <a class="col s12 btn-large text-shadow default-button"
+              <a class="col s8 offset-s2 btn-large text-shadow default-button"
                 href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">Open Recipe</a>
             </div>
           </div>
@@ -142,4 +165,10 @@
 
   {% endfor %}
 </div>
+
+{% else %}
+
+<h2 class="spacing_top white-text center-align">Sorry, No Results Found</h2>
+
+{% endif %}
 {% endblock %}

@@ -28,9 +28,10 @@ def get_categories():
 
 
 @app.route("/")
-@app.route("/index")
-def index():
-    return render_template("index.html")
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
 
 # REGISTER
 
@@ -124,6 +125,14 @@ def delete_admin(admin_id):
     flash("Administrator Successfully Deleted")
     return redirect(url_for("get_admins"))
 
+# RECIPE SEARCH FUNCTION
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
+
+
 # MY RECIPES
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
@@ -134,12 +143,6 @@ def my_recipes(username):
         {"submitted_by": user_id})
     count = recipes.count()
     return render_template("my_recipes.html", username=username, recipes=recipes, count=count)
-
-# RECIPE BOOK
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
 
 # INDIVIDUAL RECIPE PAGE
 @app.route("/open_recipe/<recipe_id>")
@@ -219,7 +222,7 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
-    return redirect(url_for("get_recipes"))
+    return redirect(url_for("my_recipes", username=session["user"]))
 
 # CATEGORIES LIST
 @app.route("/get_categories", methods=["GET", "POST"])
