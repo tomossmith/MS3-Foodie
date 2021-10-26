@@ -10,8 +10,8 @@
 
   {% for recipe in recipes %}
      <!-- RECIPE IMAGE & TITLE -->
-     <div class="col l12 xl6">
-      <div class="card">
+     <div class="col s12 l12 xl6">
+      <div class="card large">
         <div class="card-content">
           <div class="card-image">
             <img id="recipe_img" src="{{ recipe.recipe_image_url }}">
@@ -131,7 +131,7 @@
               </div>
               <br>
               <div class="row">
-                <a class="col s12 btn-large text-shadow default-button"
+                <a class="col s8 offset-s2 btn-large text-shadow default-button"
                   href="{{ url_for('open_recipe',recipe_id=recipe._id) }}">Open Recipe</a>
               </div>
             </div>
@@ -143,7 +143,7 @@
 
   {% else %}
     <div>
-      <h3 class="center-align white-text"> Sorry there are no recipe's uploaded for {{ category.category_name }}</h3>
+      <h3 class="spacing_top center-align white-text"> Sorry there are no recipe's uploaded for {{ category.category_name }}</h3>
     </div>
   {% endif %}
 </div>

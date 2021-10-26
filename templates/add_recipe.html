@@ -7,11 +7,8 @@
 
 {% if session.user %}
 
-<div id="form-blocks">
     <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-
-           
+        <form class="col s12 white" method="POST" action="{{ url_for('add_recipe') }}">
 
                 <!-- RECIPE NAME -->
                 <div class="row">
@@ -131,15 +128,14 @@
                     Submit <i class="fas fa-mortar-pestle"></i>
                 </button>
                 <div class="col s2"></div>
-                <button type="reset" class="col s4 btn-large text-shadow default-button">
+                <button type="reset" class="col s4 red btn-large text-shadow default-button">
                     Clear <i class="fas fa-eraser"></i>
                 </button>
                 <div class="col s1"></div>
             </div>
-
+            <br>
         </form>
     </div>
-</div>
 
 {% else %}
 
