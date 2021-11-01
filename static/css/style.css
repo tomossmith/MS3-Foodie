@@ -60,7 +60,7 @@ p {
 hr {
     margin-top: 4em;
     height: 2px;
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     border: none;
 }
 

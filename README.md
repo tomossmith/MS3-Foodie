@@ -30,6 +30,33 @@ The task set for this project is to demonstrate the ability to create a fully re
 - <a href="#project_goals">Project Goals</a>
 - <a href="#ux">User Experience (UX)</a>
     - <a href="#ux-user_stories">User Stories</a>
+    - <a href="#ux-design">Design</a>
+        - <a href="#ux-design-color">Color</a>
+        - <a href="#ux-design-color">Typography</a>
+        - <a href="#ux-design-color">Images</a>
+        - <a href="#ux-design-structure">Structure & Mockup Designs</a></a>
+        - <a href="#ux-design-amendments">Amendments To Mockup Designs During Development</a></a>
+- <a href="#features">Features</a>
+    - <a href="#features-current">Current Features</a>
+    - <a href="#features-future">Possible Future Features</a>
+- <a href="#database">Database</a>
+- <a href="#key-components">Key Components</a>
+    - <a href="#key-components-languages">Languages</a>
+    - <a href="#key-components-frameworks">Frameworks & Libraries</a>
+    - <a href="#key-components-others">Others</a>
+- <a href="#testing">Testing</a>
+    - <a href="#testing-problems-during-development">Problems During Development</a>
+    - <a href="#testing-bugs">Known Bugs</a>
+- <a href="#deployment">Deployment</a>
+    - <a href="#deployment-github">Deployment Through GitHub Pages</a>
+    - <a href="#deployment-forking">Forking</a>
+    - <a href="#deployment-cloning">Cloning Project</a>
+    - <a href="deployment-admin">Administrator Access Credentials</a>
+- <a href="#credits">Credits</a>
+    - <a href="#credits-content">Content</a>
+    - <a href="#credits-media">Media</a>
+    - <a href="#credits-code">Code</a>
+    - <a href="#credits-acknowledgments">Acknowledgements</a>
 
 
 ----
@@ -98,9 +125,9 @@ A key priority was to try to make the journey from entering the site to displayi
 
     - The website administrators must be the only users to have access to the restricted websites and non-administrators must not be able to access restricted sites by direct URL inputs.
 
-## <span id="#design"><b>Design</b></span>
+## <span id="#ux-design"><b>Design</b></span>
 
-* ### <b>Color</b>
+* ### <span id="#ux-design-color"><b>Color</b></span>
 
     When choosing the most suitable color scheme for the site, I decided to list the main points of what I wanted to try to create from the design.
 
@@ -114,21 +141,66 @@ A key priority was to try to make the journey from entering the site to displayi
     The colors were going to be an important part of the design in order to create a brand that could be applied throughout the company should it be required in the future.
 
     To choose a compatible color scheme, I decided to use [Adobe Color](https://color.adobe.com/) to find colors that would work well together. 
-    I began by choosing a base color that I thought would work well for the brand, then entered the color codes into the site and it came up with other colors that would work well in combination with the colors I had already entered.
+    I began by choosing a base color that I thought would work well for the brand, then entered the color codes into the site and it came up with other colors that would work well in combination with the colors I had already entered. When [Adobe Color](https://color.adobe.com/) displayed the result, it stated 'No conflicts found. Swatches are color blind safe.'
+
+    <center><img src="readme-images/color.jpeg" alt="Color Palette" width="50%"></center>
+
+    After finding the colors I felt were most suitable I implemented them into the site, in later stages of development I began testing the site's compatibility using [Adobe Color](https://developers.google.com/web/tools/lighthouse) and it was brought to my attention that the way I was using the colors was not meeting lightroom's accessibility criterias due to contrasting colors. I have explained further in my testing section on the steps I had to take to overcome this issue.
 
 
-* ### <b>Typography</b>
+* ### <span id="ux-design-typography"><b>Typography</b></span>
 
-* ### <b>Images</b>
-
-Hero Image : https://unsplash.com/photos/-YHSwy6uqvk
-
-* ### <b>Structure & Mockup Designs</b>
-
-* ### <b>Amendments To Mockup Designs During Develeopment</b>
+* ### <span id="ux-design-images"><b>Images</b></span>
 
 
 
-## Credits
+* ### <span id="ux-design-structure"><b>Structure & Mockup Designs</b></span>
+
+* ### <span id="ux-design-amendments"><b>Amendments To Mockup Designs During Development</b></span>
+
+## <span id="features"><b>Features</b></span>
+
+* ### <span id="features-current"><b>Current Features</b></span>
+
+* ### <span id="features-future"><b>Possible Future Features</b></span>
+
+## <span id="database"><b>Database</b></span>
+
+## <span id="key-components"><b>Key Components</b></span>
+
+* ### <span id="key-components-languages"><b>Languages</b></span>
+
+* ### <span id="key-components-frameworks"><b>Frameworks & Libraries</b></span>
+
+* ### <span id="key-components-others"><b>Others</b></span>
+
+## <span id="testing"><b>Testing</b></span>
+* ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
+* ### <span id="testing-bugs"><b>Known Bugs</b></span>
+* ### <span id="testing-html"><b>HTML</b></span>
+* ### <span id="testing-css"><b>CSS</b></span>
+* ### <span id="testing-javascript"><b>Javascript</b></span>
+* ### <span id="testing-lighthouse"><b>Overall Website Performance & Compatibility</b></span>
+<< MENTION COLOR CONTRASTS >>
+* ### <span id="testing-responsive-design"><b>Responsive Design</b></span>
+* ### <span id="testing-browser-compatibility"><b>Browser Compatibility</b></span>
+* ### <span id="testing-links"><b>Link Testing</b></span>
+
+## <span id="deployment"><b>Deployment</b></span>
+
+* ### <span id="deployment-github"><b>Deployment Through GitHub Pages</b></span>
+* ### <span id="deployment-forking"><b>Forking</b></span>
+* ### <span id="deployment-cloning"><b>Cloning Project</b></span>
+* ### <span id="deployment-admin"><b>Administrator Access Credentials</b></span>
+
+## <span id="credits"><b>Credits</b></span>
+
+* ### <span id="credits-content"><b>Content</b></span>
+
+* ### <span id="credits-media"><b>Media</b></span>
+
+* ### <span id="credits-code"><b>Code</b></span>
 
 Function to add additional fields to form: https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
+
+* ### <span id="credits-acknowledgments"><b>Acknowledgements</b></span>
