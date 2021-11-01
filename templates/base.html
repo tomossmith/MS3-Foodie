@@ -21,6 +21,7 @@
     <header>
         <!-- NAVIGATION DROPDROWN STRUCTURE -->
         <ul id="dropdown-main" class="dropdown-content">
+            <li><a href="">Categories <i class="fas fa-angle-up"></i> </a></li>
             <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
             {% for category in categories %}
                 <li><a href="{{url_for('recipes_by_type', category_id=category._id) }}">{{ category.category_name }}</a></li>
@@ -28,11 +29,13 @@
         </ul>
 
         <ul id="admin-dropdown-main" class="dropdown-content">
+            <li><a href="">Manage Site <i class="fas fa-angle-up"></i> </a></li>
             <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
             <li><a href="{{ url_for('get_admins') }}">Manage Administrators</a></li>
         </ul>
 
         <ul id="dropdown-mobile" class="dropdown-content">
+            <li><a href="">Categories <i class="fas fa-angle-up"></i> </a></li>
             <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
             {% for category in categories %}
                 <li><a href="{{url_for('recipes_by_type', category_id=category._id) }}">{{ category.category_name }}</a></li>
@@ -40,6 +43,7 @@
         </ul>
 
         <ul id="admin-dropdown-mobile" class="dropdown-content">
+            <li><a href="">Manage Site <i class="fas fa-angle-up"></i> </a></li>
             <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
             <li><a href="{{ url_for('get_admins') }}">Manage Administrators</a></li>
         </ul>

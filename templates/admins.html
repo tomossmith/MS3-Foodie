@@ -5,18 +5,12 @@
   <h1 class="card-title white-text text-shadow center-align underline-red">Site Administrators</h1>
 </div>
 
-<!-- ADD ADMIN BUTTON -->
 <div class="row">
-  <a href="{{ url_for('add_admin') }}" class="col s8 offset-s2 btn-large text-shadow default-button red"><i
-      class="fas fa-plus-circle"></i> Add Administrator</a>
-</div>
-
-<div class="row">
-  <div class="col s12">
+  <div class="col s12 offset-s0">
     <ul class="collection">
 
       {% for admin in admins %}
-      <li class="collection-item avatar">
+      <li class="collection-item">
         <i class="material-icons fas fa-user-lock fa-2x default-blue-text"><span class="oswald default-blue-text">
             {{ admin.username }}</span></i>
         <a href="{{ url_for('delete_admin',admin_id=admin._id) }}!" class="secondary-content"><i
@@ -25,6 +19,12 @@
       {% endfor %}
     </ul>
   </div>
+</div>
+
+<!-- ADD ADMIN BUTTON -->
+<div class="row">
+  <a href="{{ url_for('add_admin') }}" class="col s8 offset-s2 btn text-shadow default-button red"><i
+      class="fas fa-plus-circle"></i> Add Administrator</a>
 </div>
 
 

@@ -72,8 +72,8 @@ form i {
 
 label {
     font-family: 'Oswald', sans-serif;
-    font-size: 1em;
-    color: #000000;
+    font-size: 0.75em;
+    color: #135caf !important;
 }
 
 /* Focus Color */
@@ -186,6 +186,14 @@ nav li a {
     font-size: 1.5em;
 }
 
+#edit_table_label {
+    font-size: 2em;
+}
+
+#edit_table_label a i {
+    font-size: 0.7em;
+}
+
 /* Buttons */
 .default-button {
     font-family: 'Oswald', sans-serif;
@@ -212,6 +220,7 @@ nav li a {
 #form-blocks {
     background-color: white;
     border-radius: 1em;
+    padding: 1em;
 }
 
 /* label color */
@@ -264,6 +273,14 @@ nav li a {
 }
 
 #dropdown-mobile a {
+    color: #002b5c;
+}
+
+#admin-dropdown-main a {
+    color: #002b5c;
+}
+
+#admin-dropdown-mobile a {
     color: #002b5c;
 }
 

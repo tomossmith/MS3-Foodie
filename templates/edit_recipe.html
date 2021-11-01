@@ -14,14 +14,14 @@
             <div class="row">
 
                 <!-- RECIPE NAME -->
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <input id="recipe_name" name="recipe_name" type="text" minlength="4" maxlength="36" length="36"
                         value="{{ recipe.recipe_name }}">
                     <label for="recipe_name">Recipe Name</label>
                 </div>
 
-                <!-- CATEGORY -->
-                <div class="input-field col s6">
+                <div class="col s12">
+                    <label for="category_name">Category</label>
                     <select name="category_name">
                         <option disabled>Type of recipe?</option>
                         {% for category in categories %}
@@ -31,11 +31,8 @@
                         <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endif %}
                         {% endfor %}
-
-                        <label for="category_name"></label>
                     </select>
                 </div>
-
             </div>
 
             <!-- RECIPE DESCRIPTION -->
@@ -61,7 +58,7 @@
             <div class="row">
 
                 <!-- SERVING -->
-                <div class="input-field col s3">
+                <div class="input-field col s6">
                     <select name="recipe_serving">
                         <option value="" disabled>Serving Amount</option>
                         {% if recipe.recipe_serving == recipe.recipe_serving %}
@@ -81,7 +78,7 @@
                     <label>Serves</label>
                 </div>
 
-                <div class="input-field col s3">
+                <div class="input-field col s6">
                     {% if recipe.recipe_cook_time == recipe.recipe_cook_time %}
                     <input id="recipe_cook_time" name="recipe_cook_time" type="number" minlength="1" maxlength="3"
                         value="{{ recipe.recipe_cook_time }}">
@@ -92,7 +89,7 @@
                     <label for="recipe_cook_time">Cooking Time (minutes)</label>
                 </div>
 
-                <div class="col s3">
+                <div class="col s6">
                     <label for="recipe_difficulty">Difficulty</label>
                     <select name="recipe_difficulty">
                         {% if recipe.recipe_difficulty == recipe.recipe_difficulty %}
@@ -109,7 +106,7 @@
                     </select>
                 </div>
 
-                <div class="col s3">
+                <div class="col s6">
                     <label for="recipe_spice">Spice</label>
                     <select name="recipe_spice" id="recipe_spice">
                         {% if recipe.recipe_spice_rating == recipe.recipe_spice_rating %}
@@ -180,7 +177,7 @@
                 </button>
                 <div class="col s1"></div>
             </div>
-
+            <br>
         </form>
     </div>
 </div>
