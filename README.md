@@ -5,7 +5,7 @@
 body{
     background-color: black;
     font-family: Oswald;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
 }
 </style>
@@ -69,13 +69,13 @@ The task set for this project is to demonstrate the ability to create a fully re
 
 # <span id="#ux">User Experience (UX)</span>
 
-This section is designed to generate possible scenarios of the typical end user that would use this website. 
-This will help ensure end user requirements are designed into the website.
+    This section is designed to generate possible scenarios of the typical end user that would use this website. 
+    This will help ensure end user requirements are designed into the website.
 
-To create a web application that offered a good experience to the user, I found that a minimal and simplistic style would be the best approach. 
-Not only does this keep the site easy to use, it also makes sure that the users aren't over powered with all the information the database may store/display.   
+    To create a web application that offered a good experience to the user, I found that a minimal and simplistic style would be the best approach. 
+    Not only does this keep the site easy to use, it also makes sure that the users aren't over powered with all the information the database may store/display.   
 
-A key priority was to try to make the journey from entering the site to displaying a recipe as quickly and clean as possible.
+    A key priority was to try to make the journey from entering the site to displaying a recipe as quickly and clean as possible.
 
 
 ## <span id="#ux-user_stories"><b>User Stories</b></span>
@@ -143,24 +143,86 @@ A key priority was to try to make the journey from entering the site to displayi
     To choose a compatible color scheme, I decided to use [Adobe Color](https://color.adobe.com/) to find colors that would work well together. 
     I began by choosing a base color that I thought would work well for the brand, then entered the color codes into the site and it came up with other colors that would work well in combination with the colors I had already entered. When [Adobe Color](https://color.adobe.com/) displayed the result, it stated 'No conflicts found. Swatches are color blind safe.'
 
-    <center><img src="readme-images/color.jpeg" alt="Color Palette" width="50%"></center>
+    <img src="readme-images/color.jpeg" alt="Color Palette" width="50%">
 
     After finding the colors I felt were most suitable I implemented them into the site, in later stages of development I began testing the site's compatibility using [Adobe Color](https://developers.google.com/web/tools/lighthouse) and it was brought to my attention that the way I was using the colors was not meeting lightroom's accessibility criterias due to contrasting colors. I have explained further in my testing section on the steps I had to take to overcome this issue.
 
-
 * ### <span id="ux-design-typography"><b>Typography</b></span>
+
+
+    When choosing which font to use as part of my design, I felt it was important for it to be easy to read but have similar feel as a font you would choose for a restraunt menu. I wanted the font to be appropriate so that I could use it for the logo text and also the main site text. This would then help maintain a nice continuity within the design and also help create the 'Foodie' brand I was aiming for.
+
+    I have used Google to source the fonts and these are loaded within the head of the page.
+
+    The main font is [Lobster](https://fonts.google.com/specimen/Lobster?query=lobster)
+
+    This is the font I used for fancy headings and labelling.
+
+    The secondary font is [Oswald](https://fonts.google.com/specimen/Oswald?query=oswald)
+
+    This font is used as a uniform font for all key information, keeping it easy to read.
 
 * ### <span id="ux-design-images"><b>Images</b></span>
 
-
+    There is very little base images on the site, but does display a large amount of images based on the content uploads of the end user.
+    The images for each of the recipes posted to the site are outsourced and the user must provided a url to the image of their recipe when uploading it to the site.
+    These uploads then form the design of all the pages.
 
 * ### <span id="ux-design-structure"><b>Structure & Mockup Designs</b></span>
 
 * ### <span id="ux-design-amendments"><b>Amendments To Mockup Designs During Development</b></span>
 
+
 ## <span id="features"><b>Features</b></span>
 
 * ### <span id="features-current"><b>Current Features</b></span>
+
+    * #### <b>User Access Structure</b>
+
+        In order to manage the recipe uploads, the site needed to be able to restrict certain users from being able to carry out certain tasks on the site.
+        Tasks such as:
+            - A user <b>MUST</b> be registered and logged in to the site to upload a recipe.
+            - A user <b>MUST</b> be logged in and the owner of the uploaded recipe to edit or remove the recipe.
+            - The necessary user access requirements <b>MUST</b> be checked upon landing on every restricted site, even if the user enters the direct URL.
+
+        In order to achieve this, all the restricted access sites have functions at the top of the site that will check if the user meets the necessary requirements. If they do, the content will load. If not, an error message will be displayed.
+
+    * #### <b>Navigation Menu Based On User Level</b>
+
+        There are additional items placed within the navigation menu that are only displayed depending on the user's log in state.
+        I felt it was important that a user that is not logged in, shouldn't need to see the 'new recipe' button. The same would also apply for a user that is logged in that shouldn't see all of the navigation options that an administrator would see.
+
+        To overcome these issues, there are if statements within the navigation menu code that checks the state of the user and displays the relevant options based on the result.
+
+    * #### <b>Dynamically Created Navigation Menu Dropdown</b>
+
+        Administrators of the site are able to edit the different recipe categories.
+        These categories are then listed as options within a dropdown in the navigation menu so that the site user can see a all the recipes that are uploaded to the site based on the category they choose.
+
+        When an administrator adds/removes a category from the site, the navigation item 'categories' will automatically update to show the changes made by the administrator.
+
+    * #### <b>Read Only Access To Recipes For Unregistered Users</b>
+
+        It was important that first time visitors to the site were able to see what the site was all about. The site will display all of the uploaded content to the un-registered user, however the un-registered user will not have access to add, edit, remove recipes but does have access to login or register for an account at anytime.
+
+    * #### <b>User Account</b>
+
+        In order to manage how the recipe's were managed, the site has a user account system. Users can create an account with the website that will allow them to log in and extend the functionality of the site.
+
+    * #### <b>User's Recipe Collection & Management Page</b>
+
+        I felt it was important for a user to be able to manage their uploads in a quick and easy way and to do this, I created a user recipe page.
+        When a user succesfully logs in, they will be re-directed to a page that displays all of the recipe's they have uploaded.
+        From here they have the option to open, edit or delete any of the displayed recipes.
+        They can also visit this page by clicking the {{username}}'s Recipes link within the navigation bar. This link will automatically update to display the session user's username for a more personal interaction with the site.
+
+    * #### <b>Administrator Account</b>
+
+        To manage the site, I created an administrator account. This account provides the user with all priviledges to manage the website.
+
+        The administrator is able to:
+            - create or remove additional recipe categories
+            - create or remove additional administrators to the site
 
 * ### <span id="features-future"><b>Possible Future Features</b></span>
 
