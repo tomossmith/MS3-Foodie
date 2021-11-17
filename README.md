@@ -194,11 +194,6 @@ The task set for this project is to demonstrate the ability to create a fully re
 
         To overcome these issues, there are if statements within the navigation menu code that checks the state of the user and displays the relevant options based on the result.
 
-        Here is how the menu is displayed for each user:
-
-        <img src="readme-images/user-access.png" alt="User Level Navigation Image" width="50%">
-
-
     * #### <b>Dynamically Created Navigation Menu Dropdown</b>
 
         Administrators of the site are able to edit the different recipe categories.
@@ -231,19 +226,7 @@ The task set for this project is to demonstrate the ability to create a fully re
 
 * ### <span id="features-future"><b>Possible Future Features</b></span>
 
-    In the future I think there is a great potential to include additional features such as:
-        - How To Videos; Where the user could upload/view a demonstration on how to carry out a certain cooking technique.
-        - Live stream cooking programs/shows
-        - The ability to share/send recipes to friends
-        - A facility within the ingredients where you could add all the ingredients to your online grocery shopping basket.
-
 ## <span id="database"><b>Database</b></span>
-
-I chose to use MongoDB as my database host as I felt that it was the best platform given the type of information I wanted to store, and how I needed to retrieve it.
-
-Here is a diagram to show the databases I have and how they integrate with each other.
-
-<img src="readme-images/database-plan.png" alt="Database Plan" width="50%">
 
 ## <span id="key-components"><b>Key Components</b></span>
 
