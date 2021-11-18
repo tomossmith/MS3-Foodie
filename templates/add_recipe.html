@@ -23,7 +23,6 @@
                     <div class="input-field col s12">
                         <select name="category_name" required>
                             <option value="" disabled selected>Recipe Type</option>
-                            <!-- <label for="recipe_type">Recipe Type</label> -->
                             {% for category in categories %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                             {% endfor %}
