@@ -259,6 +259,11 @@ p {
             - create or remove additional recipe categories
             - create or remove additional administrators to the site
 
+        <b> Administrator Credentials: </b>
+                
+                Username: tryadmin
+                Password: trypassword
+
 * ### <span id="features-future"><b>Possible Future Features</b></span>
 
     * #### Video Demonstrations / Live Cooking Sessions
@@ -311,21 +316,31 @@ As part of my planning process, I felt it was important to work out what fields 
     * #### [Balsamiq](https://balsamiq.com/) - Used to build the wireframes
     * #### [MongoDB](https://www.mongodb.com/) - Database hosting
     * #### [Heroku](https://www.heroku.com/) - Live site deployment
-    * #### [Am I Responsive](http://ami.responsivedesign.is/) - To check responsive design.
+    * #### [Am I Responsive](http://ami.responsivedesign.is/) - To check responsive design
+    * #### [W3 Validator](https://validator.w3.org/) - To check my HTML code
 
-
-    
-
-    
 
 ## <span id="testing"><b>Testing</b></span>
 * ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
+
+
+
 * ### <span id="testing-bugs"><b>Known Bugs</b></span>
+
 * ### <span id="testing-html"><b>HTML</b></span>
+
+    To test my HTML code, I used the [W3 Validator](https://validator.w3.org/)
+
 * ### <span id="testing-css"><b>CSS</b></span>
+
 * ### <span id="testing-javascript"><b>Javascript</b></span>
+
 * ### <span id="testing-lighthouse"><b>Overall Website Performance & Compatibility</b></span>
-<< MENTION COLOR CONTRASTS >>
+
+    As part of the lighthouse testing, there was an issue with the accessibility score that related to the choice of colors that were used for the site.
+
+    There were areas of the site that did not meet the color contrast requirement of the site. A poor contrast between colors can often be difficult and uncomfertable for users to see. To help improve this score and to ensure the site is easy to read, I altered some of the poorly contrasting colors and made sure that any background colors work well with the foreground colors.
+
 * ### <span id="testing-responsive-design"><b>Responsive Design</b></span>
 * ### <span id="testing-browser-compatibility"><b>Browser Compatibility</b></span>
 * ### <span id="testing-links"><b>Link Testing</b></span>
