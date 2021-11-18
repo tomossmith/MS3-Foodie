@@ -14,16 +14,19 @@ body{
 
 ----
 
-This is the README file for my Code Institute MS3 project site, Foodie - The Recipe Sharing Site
+    This is the README file for my Code Institute MS3 project site, Foodie - The Recipe Sharing Site
 
-This project is the 3rd project as part of the Code Institute Full Stack Development course. The projects are set in order to demonstrate my understanding of what we have learnt during the previous units.
-The task set for this project is to demonstrate the ability to create a fully responsive web application that allows users to interact and manipulate with data stored in a database.
+    This project is the 3rd project as part of the Code Institute Full Stack Development course. The projects are set in order to demonstrate my understanding of what we have learnt during the previous units.
+    The task set for this project is to demonstrate the ability to create a fully responsive web application that allows users to interact and manipulate with data stored in a database.
 
-############### PHOTOS OF THE LIVE SITE ################
+<br>
 
-[Click Here to visit the live site](https://ts-foodie.herokuapp.com/)
+<center><img src="readme-images/website-mockup.png" alt="Website Mockup" width="100%">
+
+[CLICK HERE TO VISIT THE LIVE SITE](https://ts-foodie.herokuapp.com/) </center>
 
 ----
+<br>
 
 # Table Of Content:
 
@@ -170,8 +173,31 @@ The task set for this project is to demonstrate the ability to create a fully re
 
 * ### <span id="ux-design-structure"><b>Structure & Mockup Designs</b></span>
 
+    <h3> Homepage </h3>
+    <img src="readme-images/wireframe-recipe-book.png" alt="Wireframe image for the Homepage" width="100%">
+
+    <h3> Registration Page </h3>
+    <img src="readme-images/wireframe-register.png" alt="Wireframe image for the Registration page" width="100%">
+
+    <h3> Login Page </h3>
+    <img src="readme-images/wireframe-login.png" alt="Wireframe image for the Login page" width="100%">
+
+    <h3> Add Recipe Page</h3>
+    <img src="readme-images/wireframe-add-recipe.png" alt="Wireframe image for the add recipe page" width="100%">
+
+    <h3> Edit Recipe Page</h3>
+    <img src="readme-images/wireframe-edit-recipe.png" alt="Wireframe image for the edit recipe page" width="100%">
+
+    <h3> Manage Categories Page (Administrators Only) </h3>
+    <img src="readme-images/wireframe-manage-categories.png" alt="Wireframe image for the manage categories page." width="100%">
+
 * ### <span id="ux-design-amendments"><b>Amendments To Mockup Designs During Development</b></span>
 
+    During the development there were very minor changes to the original design I created. I had originally planned to have a landing page to welcome users to the site with a button that they could click to open the recipe book. However when I built this, it felt that having this feature increased the time it took for the end user to reach the purpose of the site. I made the decision to remove the opening page and direct users straight into the recipe book.
+
+    I also felt that the site needed an additional feature for Administrators to be able to assign other administrators. As the number of users using the site increases, it would be useful for the Administrator to be able to share any administrative tasks with other users. I therefore chose to implement a page for anyone with administrative access to add/remove other administrators.
+
+    <img src="readme-images/wireframe-manage-administrators.png" alt="Wireframe image for the manage administrators page." width="100%">
 
 ## <span id="features"><b>Features</b></span>
 
@@ -188,6 +214,8 @@ The task set for this project is to demonstrate the ability to create a fully re
         In order to achieve this, all the restricted access sites have functions at the top of the site that will check if the user meets the necessary requirements. If they do, the content will load. If not, an error message will be displayed.
 
     * #### <b>Navigation Menu Based On User Level</b>
+
+        <img src="readme-images/wireframe-user-access.png" alt="Wireframe image for the navigation bars based on user access." width="100%">
 
         There are additional items placed within the navigation menu that are only displayed depending on the user's log in state.
         I felt it was important that a user that is not logged in, shouldn't need to see the 'new recipe' button. The same would also apply for a user that is logged in that shouldn't see all of the navigation options that an administrator would see.
@@ -227,6 +255,8 @@ The task set for this project is to demonstrate the ability to create a fully re
 * ### <span id="features-future"><b>Possible Future Features</b></span>
 
 ## <span id="database"><b>Database</b></span>
+
+<img src="readme-images/wireframe-databases.png" alt="Wireframe image for the database plans." width="100%">
 
 ## <span id="key-components"><b>Key Components</b></span>
 
