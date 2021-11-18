@@ -263,17 +263,17 @@ nav li a {
 
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color: #000;
+    color: #135caf;
 }
 
 .select-wrapper input.select-dropdown {
-    color: #000000;
+    color: #135caf;
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
 }
 
 .dropdown-content li>span {
-    color: #002b5c;
+    color: #135caf;
     font-weight: 400;
     font-family: 'Oswald', sans-serif;
 }
