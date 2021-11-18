@@ -194,6 +194,16 @@ nav li a {
     font-size: 0.7em;
 }
 
+#message-box {
+    font-size: 2em;
+    font-weight:600;
+}
+
+#message-box i{
+    font-size: 2.5em;
+
+}
+
 /* Buttons */
 .default-button {
     font-family: 'Oswald', sans-serif;

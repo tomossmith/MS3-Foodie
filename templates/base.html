@@ -96,13 +96,13 @@
         </ul>
     </header>
 
-    <section>
+    <div>
         <!-- FLASH MESSAGE DISPLAY -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
 
-        <div class="alert card blue lighten-4">
+        <div id="message-box" class="alert card blue lighten-4">
             <div class="card-content center-align">
                 <p class="center-align"><i class="fas fa-info-circle alert-icon"></i>
                     <br> {{ message }}</p>
@@ -112,7 +112,7 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-    </section>
+    </div>
 
     <main class="container">
         {% block content %}
