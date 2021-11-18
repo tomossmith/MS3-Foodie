@@ -7,7 +7,14 @@ body{
     font-family: Oswald;
     font-weight: 400;
     letter-spacing: 1px;
+    line-spacing: 
 }
+
+p {
+  line-height: 32px;
+  margin-bottom: 20px;
+  }
+
 </style>
 
 <center><img src="static/images/logo.png" alt="Foodie Logo" width="50%"></center>
@@ -253,6 +260,19 @@ body{
             - create or remove additional administrators to the site
 
 * ### <span id="features-future"><b>Possible Future Features</b></span>
+
+    * #### Video Demonstrations / Live Cooking Sessions
+        Now that more and more users are using the internet to learn, it would be great to offer the site users some live and pre-recorded cooking events. Users will be able to watch a live or recorded video of top chefs preparing some of the recipes from the site. This could be a feature that coulc become part of a paid subscription, this then earing revenue to the site.
+
+    * #### Cookery Equipment Store
+        The internet is quickly becoming a tool to promote and advertise products to their customers. By offering a cookery equipment store as part of the site, it is likely that the audience of the site already has a large interest in cooking and therefore the target audience for selling cooking products is already at the site.
+
+        Recipe's could include links to equipment best used to cook the recipe, offering the user the opportunity to buy the equipment directly from the site. This also helps create an 'all in one' portal for all things cooking!
+
+    * #### Order Recipe Ingredients
+        Very similar to the cook shop, offering the customers a quick and easy solution to buy all the necessary ingredients for the recipe would be a great feature for those who want a quick an easy solution to producing these foods themselves at home, and would also offer another revenue generating opportunity to the site.
+
+        The recipes could have a button at the bottom that users could click to buy the exact ingredients listed within the recipe.
 
 ## <span id="database"><b>Database</b></span>
 
