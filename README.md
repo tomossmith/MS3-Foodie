@@ -276,15 +276,47 @@ p {
 
 ## <span id="database"><b>Database</b></span>
 
+As part of my planning process, I felt it was important to work out what fields I would need to use and share as part of the site.
+
 <img src="readme-images/wireframe-databases.png" alt="Wireframe image for the database plans." width="100%">
 
 ## <span id="key-components"><b>Key Components</b></span>
 
 * ### <span id="key-components-languages"><b>Languages</b></span>
 
+    * #### [HTML5](https://en.wikipedia.org/wiki/HTML5)
+    * #### [CSS3](https://en.wikipedia.org/wiki/CSS)
+    * #### [JavaScript](https://www.javascript.com/)
+    * #### [Python](https://www.python.org/)
+
 * ### <span id="key-components-frameworks"><b>Frameworks & Libraries</b></span>
 
+    * #### [Flask](https://palletsprojects.com/p/flask/)
+    * #### [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
+    * #### [jQuery](https://jqueryui.com/)
+    * #### [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+    * #### [Werkzeug](https://pypi.org/project/Werkzeug/)
+    * #### [FontAwesome](https://fontawesome.com/)
+    * #### [Google Fonts](https://fonts.google.com/)
+    * #### [Materialize](https://materializecss.com/)
+
 * ### <span id="key-components-others"><b>Others</b></span>
+
+    * #### [GitHub](https://github.com/) - Repository Hosting
+    * #### [GitPod](https://www.gitpod.io/) - Development Enviroment
+    * #### [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) - Used to create the logo and favicon
+    * #### [Website Mockup Generator](https://websitemockupgenerator.com/) - To create the opening image for the README.
+    * #### [TinyPNG](https://tinypng.com/) - Used to reduce image file sizes
+    * #### [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Performance and Accessibility Reporting
+    * #### [Balsamiq](https://balsamiq.com/) - Used to build the wireframes
+    * #### [MongoDB](https://www.mongodb.com/) - Database hosting
+    * #### [Heroku](https://www.heroku.com/) - Live site deployment
+    * #### [Am I Responsive](http://ami.responsivedesign.is/) - To check responsive design.
+
+
+    
+
+    
 
 ## <span id="testing"><b>Testing</b></span>
 * ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
