@@ -259,11 +259,6 @@ p {
             - create or remove additional recipe categories
             - create or remove additional administrators to the site
 
-        <b> Administrator Credentials: </b>
-                
-                Username: tryadmin
-                Password: trypassword
-
 * ### <span id="features-future"><b>Possible Future Features</b></span>
 
     * #### Video Demonstrations / Live Cooking Sessions
