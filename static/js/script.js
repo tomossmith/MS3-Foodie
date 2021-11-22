@@ -70,21 +70,4 @@ $(document).ready(function(){
       $(this).parent('div').remove(); //Remove field html
       x--; //Decrement field counter
   });
-});
-
-// SLIDER ON 'ADD RECIPE' FORM
-var slider = document.getElementById('recipe_difficulty');
-noUiSlider.create(slider, {
- start: [20, 80],
- connect: true,
- step: 1,
- range: {
-  'min': [0],
-  'Medium': [80, 50],
-  'max': 200
- },
- format: wNumb({
-   decimals: 0
- })
-});
-      
+});  
