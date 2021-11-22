@@ -318,6 +318,7 @@ As part of my planning process, I felt it was important to work out what fields 
 ## <span id="testing"><b>Testing</b></span>
 * ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
 
+A blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
 
 
 * ### <span id="testing-bugs"><b>Known Bugs</b></span>
