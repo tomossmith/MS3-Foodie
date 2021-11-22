@@ -17,7 +17,7 @@
 
       {% for category in categories %}
       <li class="collection-item center-align oswald default-blue-text">
-        <span id="edit_table_label">
+        <span class="edit_table_label">
           {{ category.category_name }} 
           <a href="{{ url_for('edit_category',category_id=category._id) }}">
             <i class="far fa-edit red-text"></i></a>

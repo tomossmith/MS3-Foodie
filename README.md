@@ -321,6 +321,9 @@ As part of my planning process, I felt it was important to work out what fields 
 A blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
 
 
+A common problem that kept appearing in the validation was the error relating to the multiple uses of the same id's. 
+When writing some of the for loops, it never occured to me that by using the ID within the loop, it would be repeating itself multiple times on the published page. I quickly resolved these issues by changing the ID's to class rules.
+
 * ### <span id="testing-bugs"><b>Known Bugs</b></span>
 
 * ### <span id="testing-html"><b>HTML</b></span>
