@@ -15,7 +15,7 @@
     
     <!--Recipe Image-->
     <div class="col s12 card-image">
-      <img class="recipe_img" src="{{ recipe.recipe_image_url }}">
+      <img class="recipe_img" src="{{ recipe.recipe_image_url }}" alt="Recipe Image">
     </div>
   
   </div>
@@ -146,9 +146,9 @@
       <h6>Ingredients</h6>
       {% for ingredient in recipe.recipe_ingredients %}
       <div class="spacing_top">
-        <ul.k>
-          <li>{{ ingredient }}</li>
-        </ul.k>
+        <ul>
+          <li>- {{ ingredient }}</li>
+        </ul>
       </div>
       {% endfor %}
     </div>
@@ -158,11 +158,11 @@
       <h6>Instructions</h6>
       {% for instruction in recipe.recipe_instructions %}
       <div class="spacing_top">
-        <ul.k>
+        <ul>
           <li>
-            {{ instruction }}
+            - {{ instruction }}
           </li>
-        </ul.k>
+        </ul>
       </div>
       {% endfor %}
     </div>
