@@ -4,11 +4,6 @@ $(document).ready(function(){
     $(".dropdown-trigger").dropdown();
   });
 
-// EVENT LISTENER TO TRIGGER TAB FUNCTION ON RECIPE CARDS
-document.addEventListener('DOMContentLoaded', function() {
-  var instances = M.AutoInit();
-  });
-
 // FUNCTION TO RUN SELECT FIELD ON FORMS
 $(document).ready(function(){
   $('select').formSelect();

@@ -320,25 +320,66 @@ As part of my planning process, I felt it was important to work out what fields 
 
 A blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
 
-
-A common problem that kept appearing in the validation was the error relating to the multiple uses of the same id's. 
-When writing some of the for loops, it never occured to me that by using the ID within the loop, it would be repeating itself multiple times on the published page. I quickly resolved these issues by changing the ID's to class rules.
+<br>
 
 * ### <span id="testing-bugs"><b>Known Bugs</b></span>
+
+<br>
 
 * ### <span id="testing-html"><b>HTML</b></span>
 
     To test my HTML code, I used the [W3 Validator](https://validator.w3.org/)
 
+    A common problem that kept appearing in the validation was the error relating to the multiple uses of the same id's. 
+    When writing some of the for loops, it never occured to me that by using the ID within the loop, it would be repeating itself multiple times on the published page. I quickly resolved these issues by changing the ID's to class rules. Once I made these changes, the all of the pages passed the validation check.
+
+    Here is the pass report for the homepage:
+
+    <img src="readme-images/html_validation_report.png" alt="HTML Validation Report" width="80%">
+
+<br>
+
 * ### <span id="testing-css"><b>CSS</b></span>
 
+    To test my CSS code, I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+    When I first ran the validator, it returned the following errors:
+
+    <img src="readme-images/css_errors.png" alt="CSS Validator Error Report" width="80%">
+
+    The first error was simply a typing error and once the ',' was removed the error was cleared.
+
+    The next two errors were due to the sizes I had entered as the parameters for the media queries. I had entered the dimensions incorrectly, setting a parameter of 319px instead of 320px for example. I had also generated 2 media queries to cover 2 screen dimensions, I then realised I could achieve the desired results with a much simpler query, setting the page logo to a smaller size for screen widths of less than 768px.
+
+    Once I made the changes above, the errors were then cleared. However there are 3 remaining warnings within the CSS validation, these errors related to external style sheets as part of the Materialize style sheets and extensions.
+
+    Here is the pass report:
+
+    <img src="readme-images/css_pass.png" alt="CSS Validator Report" width="80%">
+
+<br>
+
 * ### <span id="testing-javascript"><b>Javascript</b></span>
+
+    To test my Javascript code, I used the [JSHint Validator](https://jshint.com/)
+
+    The initial report showed that I had an instance that was no longer being used, to correct this error I removed this instance.
+
+    Further errors were listed (as shown below) that related to the validator reporting that each '$' was an undefined variable.
+    I believe this is an issue within the validator itself. It is trying to determine that the '$' is a variable in itself.
+    I therefore ignored these errors as the functions would not work correctly without the '$'.
+
+    <img src="readme-images/js_error_report.png" alt="JSHint Validator Report" width="80%">
+
+<br>
 
 * ### <span id="testing-lighthouse"><b>Overall Website Performance & Compatibility</b></span>
 
     As part of the lighthouse testing, there was an issue with the accessibility score that related to the choice of colors that were used for the site.
 
     There were areas of the site that did not meet the color contrast requirement of the site. A poor contrast between colors can often be difficult and uncomfertable for users to see. To help improve this score and to ensure the site is easy to read, I altered some of the poorly contrasting colors and made sure that any background colors work well with the foreground colors.
+
+<br>
 
 * ### <span id="testing-responsive-design"><b>Responsive Design</b></span>
 * ### <span id="testing-browser-compatibility"><b>Browser Compatibility</b></span>
