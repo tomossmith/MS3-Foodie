@@ -375,9 +375,14 @@ A blank search would return an error, therefore I had to include an IF statement
 
 * ### <span id="testing-lighthouse"><b>Overall Website Performance & Compatibility</b></span>
 
-    As part of the lighthouse testing, there was an issue with the accessibility score that related to the choice of colors that were used for the site.
+    To test my websites performance and compatibility, I used [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
+    The initial lighthouse report showed that there was a significant issue with the accessibility score that related to the choice of colors that were used for the site.
 
     There were areas of the site that did not meet the color contrast requirement of the site. A poor contrast between colors can often be difficult and uncomfertable for users to see. To help improve this score and to ensure the site is easy to read, I altered some of the poorly contrasting colors and made sure that any background colors work well with the foreground colors.
+
+    Once I rectified this issue, I ran the tests again and the results showed a poor rating for the performance. 
+    These errors were due to load times for the images being used for the recipes on the site, as these are external URL's to images then I have no control of the size or format of image that the user has uploaded.
 
 <br>
 
