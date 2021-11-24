@@ -143,12 +143,23 @@ def delete_admin(admin_id):
 # RECIPE SEARCH FUNCTION
 @app.route("/search")
 def search():
+    # CREDIT https://harishvc.com/2015/04/15/pagination-flask-mongodb/
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 4
+    offset = (page - 1) * per_page
     query = request.args.get("query")
     if query:
         recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-        return render_template("recipes.html", recipes=recipes)
+        total = mongo.db.recipes.find().count()
+        recipes_paginated = recipes[offset: offset + per_page]
+        pagination = Pagination(page=page, per_page=per_page,
+                                total=total, css_framework='materializecss')
+        return render_template("recipes.html", recipes=recipes_paginated,
+                           page=page, per_page=per_page,
+                           pagination=pagination)
     return redirect(url_for("get_recipes"))
-
 
 # MY RECIPES
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])

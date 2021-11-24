@@ -291,6 +291,13 @@ header nav li a {
     box-shadow: none;
 }
 
+.pagination .disabled {
+    padding: 20px;
+    font-size: 2em;
+    align-items: center;
+    line-height: 30px;
+}
+
 .pagination { 
     display: flex;
     align-items: center;
@@ -300,6 +307,8 @@ header nav li a {
 .pagination li a{
     color: white;
     font-family: 'Lobster', cursive;
+    font-size: 2em;
+    padding: 20px;
 }
 
 .pagination li.active {
@@ -313,23 +322,17 @@ li.page-item.active a{
     text-decoration-thickness: 3px;
 }
 
-.pagination-page-info {
-    padding: .6em;
-    padding-left: 0;
-    width: 40em;
-    margin: .5em;
-    margin-left: 0;
-    font-size: 12px;
-}
-.pagination-page-info b {
-    color: black;
-    background: #6aa6ed;
-    padding-left: 2px;
-    padding: .1em .25em;
-    font-size: 150%;
+.pagination > li {
+    display: none;
 }
 
-
+.pagination > li:first-child,
+.pagination > .active,
+.pagination > li:last-child,
+.pagination > li:nth-child(14) {
+    display: inline-block;
+}
+}
 
 /* Footer */
 
