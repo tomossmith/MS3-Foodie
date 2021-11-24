@@ -3,9 +3,9 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_paginate import Pagination, get_page_args
 import datetime
 if os.path.exists("env.py"):
     import env
@@ -39,10 +39,10 @@ def get_recipes():
     total = mongo.db.recipes.find().count()
     recipes = list(mongo.db.recipes.find())
     recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework='materializecss')
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
     return render_template("recipes.html", recipes=recipes_paginated,
-                           page=page,
-                           per_page=per_page,
+                           page=page, per_page=per_page,
                            pagination=pagination)
 
 
