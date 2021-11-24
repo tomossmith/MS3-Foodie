@@ -260,13 +260,11 @@ def delete_recipe(recipe_id):
 # CATEGORIES LIST
 @app.route("/get_categories", methods=["GET", "POST"])
 def get_categories():
-    if 'username' in session:
-        # check if admin username exists in db
-        admin_user = mongo.db.admins.find_one({"username": session["user"]})
-        if admin_user:
-            categories = list(mongo.db.categories.find())
-            return render_template("categories.html", categories=categories)
-        return render_template("no_auth.html")
+    # check if admin username exists in db
+    admin_user = mongo.db.admins.find_one({"username": session["user"]})
+    if session['user'] == admin_user:
+        categories = list(mongo.db.categories.find())
+        return render_template("categories.html", categories=categories)
     return render_template("no_auth.html")
 
 
