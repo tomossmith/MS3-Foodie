@@ -122,6 +122,9 @@ header nav li a {
 #logo {
     border-bottom: 2px solid red;
     padding-bottom: 2px;
+    width: 20vw;
+    height: auto;
+    margin-top: 2px;
 }
 
 #text-logo {
@@ -350,6 +353,7 @@ footer {
 @media screen and (max-width : 768px) {
     #logo {
         width: 30vw;
+        height: auto;
     }
 }
 
