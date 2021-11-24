@@ -166,9 +166,15 @@
   {% endfor %}
 </div>
 
+<div class="pagination-container">
+  {{ pagination.links }}
+  {{ pagination.info }}
+</div>
+
 {% else %}
 
 <h2 class="spacing_top white-text center-align">Sorry, No Results Found</h2>
 
 {% endif %}
+
 {% endblock %}

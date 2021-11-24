@@ -81,10 +81,6 @@ label {
     color: #002b5c !important;
 }
 
-.active {
-    color: #135caf !important;
-}
-
 /* label underline focus color */
 .row .input-field input:focus {
     border-bottom: 1px solid #002b5c !important;
@@ -292,6 +288,50 @@ nav li a {
 
 #admin-dropdown-mobile a {
     color: #002b5c;
+}
+
+/* Pagination */
+.pagination-container nav {
+    background-color: transparent;
+    padding: 0px;
+    -webkit-box-shadow: none;  
+}
+
+.pagination { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.pagination li a {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5em;
+    color: white;
+    text-decoration-color: transparent;
+}
+
+li.page-item.active{
+    background-color: transparent;
+}
+
+li.page-item.active a{
+    text-decoration-color: red;
+}
+
+.pagination-page-info {
+    color: white;
+    font-family: oswald, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 3px;
+    font-size: 1em;
+}
+
+.pagination-page-info b{
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1.2em;
 }
 
 
