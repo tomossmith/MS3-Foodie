@@ -121,6 +121,7 @@ header nav li a {
 
 #logo {
     width: 22vw;
+    height: auto;
     border-bottom: 2px solid red;
     padding-bottom: 2px;
 }

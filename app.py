@@ -143,11 +143,11 @@ def delete_admin(admin_id):
 # RECIPE SEARCH FUNCTION
 @app.route("/search")
 def search():
-    query = request.args.get("query") 
-    if query :
+    query = request.args.get("query")
+    if query:
         recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
         return render_template("recipes.html", recipes=recipes)
-    return redirect(url_for("get_recipes"))   
+    return redirect(url_for("get_recipes"))
 
 
 # MY RECIPES
