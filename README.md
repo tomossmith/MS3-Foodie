@@ -77,7 +77,6 @@ p {
     - <a href="#credits-code">Code</a>
     - <a href="#credits-acknowledgments">Acknowledgements</a>
 
-
 ----
 
 # <span id="#project_goals">Project Goals</span>
@@ -164,7 +163,7 @@ p {
 
     <img src="readme-images/color.jpeg" alt="Color Palette" width="50%">
 
-    After finding the colors I felt were most suitable I implemented them into the site, in later stages of development I began testing the site's compatibility using [Adobe Color](https://developers.google.com/web/tools/lighthouse) and it was brought to my attention that the way I was using the colors was not meeting lightroom's accessibility criterias due to contrasting colors. I have explained further in my testing section on the steps I had to take to overcome this issue.
+    After finding the colors I felt were most suitable I implemented them into the site, in later stages of development I began testing the site's compatibility using [Adobe Color](https://developers.google.com/web/tools/lighthouse) and it was brought to my attention that the way I was using the colors was not meeting lightroom's accessibility criterion due to contrasting colors. I have explained further in my testing section on the steps I had to take to overcome this issue.
 
 * ### <span id="ux-design-typography"><b>Typography</b></span>
 
@@ -433,9 +432,106 @@ As part of my planning process, I felt it was important to work out what fields 
 
 * ### <span id="testing-user-stories"><b>User Story Testing</b></span>
 
+    * <b>User Experience</b>
+
+        - When I visit the site, I want to know that I have landed on the correct site that I intended to visit.
+
+        - I need to be able to navigate to the key elements of the site quickly.
+
+        - The website should load correctly on any device.
+
+        - The website should load quickly and only load the necessary files required to display the key elements of the site first to improve load times.
+
+        - Site visitors should be able to find social links to engage and share recipes to friends through their social media connections.
+
+
+    * <b>First Time Visitor Goals</b>
+
+        - First Time Visitors, should be able to understand the purpose and reason for the site.
+
+            As soon as the user lands on the site, they are presented with a minimal looking site, with a logo that stands out and gives the instant impression of a website associated with food. Without having to scroll or move the page in anyway, the title of 'The Recipe Book' is clearly visible and below it is an easy to navigate selection of recipes for the user to see.
+
+        - First Time Visitors, should be able to easily find the navigation links.
+
+            Following the most commonly used layout for the navigation bar, users are able to find the navigation links to work their way around the site in the top right hand corner of the page. The labels for navigation link are clean and easy to understand and read. For a user not logged into the site, the only dropdown menu within the navigation bar is to display the recipes by different categories. This keeping the navigation menu simple and minimal.
+
+        - First Time Visitors, should be able to interact with the site upon landing on the site.
+
+            When visiting the site, the recipes that have been uploaded to the site are presented to the user on the initial landing area. 
+            Users are able to see a photo of the recipe, see the title of the recipe, see a quick summary of what kind of recipe it is followed by a large button that they can click to open the recipe to find out what the ingredients are and how to cook it.
+
+        - First time users should be able to view the recipes on the site without having to log in or register for an account.
+
+            The homepage that the users are taken to displays all the recipes that have been uploaded to the site. User do not have to register or be logged in to browse, search, categorize or open the recipes.
+
+        - First time users are likely to be un-registered users and must have restricted access to certain areas of the site.
+
+            To maintain restricted access to elements of the site, the navigation bar has links that will not display unless the user has a certain account level.
+            e.g. a standard user will have an additional option to 'add a recipe' within the navigation bar, however the option to 'manage categories' will not be visible to them as this requires an administrative level of access.
+
+            To prevent users navigating to restricted sites using direct url's, each restricted page has a function that validates the user's access level before displaying the site. If the user has the correct access rights, the page displays as normal, if they do not have the necessary user access level then the page will display a message making them aware of this.
+
+        - First time users are able to navigate the site without registering. However in order to submit a recipe to the site, users must register and therefore the user must be able to locate the Register link on the hompeage easily and quickly.
+
+            A first time user to the site will be able to experience the basic functions of the site. The basic navigation menu has minimal links of which the login and register links are part of. The user can find and register with the site by clicking the link and they are taken to a short form and can be logged into the site with ease.
+
+            The user will also be reminded with the options to login and register should they navigate to a part of the site that they do not have an account.
+
+    * <b>Returning Visitor Goals</b>
+
+        - A returning visitor would typically be a user that has already registered with the website, therefore the user should be able to locate the log in link easily and quickly on the homepage.
+
+            A returning visitor can quickly log in to the page using the log in button on the navigation bar.
+            This will take them to a page to enter and submit their login information.
+
+        - A returning visitor should be able to make changes to any recipes they have uploaded onto the site, but must not be able to edit or remove entries entered by the site admin or other users.
+
+            When the user logs into the site, they are taken to a page that shows all of the recipes that they have uploaded to the site.
+            This page ONLY displays the recipes they have uploaded and provided that the session username matches the username in the database attached to the recipe, it will display the options to edit or delete the recipe.
+
+    * <b>Website Administrator Goals</b>
+
+        - The website administrator must be able to find the administrator tools when logged into the site.
+
+            When a user is logged into the site with administrator privilidges, the navigation bar displays additional links that are options only available to an administrator.
+            The tools that the administrator requires in order to manage the site are listed within the dropdown link 'Manage Site' shown on the navigation bar.
+
+        - The website administrator must be able to add and remove administrator to the administrator access database.
+
+            Within the 'Manage Site' dropdown, the administrator is presented with the option to 'Manage Administrators'
+            Once they navigate to this page, all of the current usernames that have administrator priviledges are listed within a table.
+            The administrator is then able to remove an administrator by clicking on a trash can icon next to the chosen username, or click a button labelled 'add administrator' to add a new username to the database.
+
+        - The website administrator must not be able to delete the main administrator account from the database.
+
+        ########################################################################################################
+                ########################################################################################################
+                        ########################################################################################################
+                                ########################################################################################################
+                                        ########################################################################################################
+                                                ########################################################################################################
+                                                        ########################################################################################################
+
+
+        - The website administrator must be able to create, remove, update and delete recipe categories.
+
+            The administrator can click on 'Manage Categories' under the 'Manage Site' tab on the navigation bar, where they can then see a list of categories currently listed on the site.
+
+                    ########################################################################################################        ########################################################################################################        ########################################################################################################
+
+        - The website administrators must be the only users to have access to the restricted websites and non-administrators must not be able to access restricted sites by direct URL inputs.
+
+            Each administrator only sites have code to determine the user level before displaying the chosen page.
+            If the username of the user logged into the site is not listed as an 'admin' within the database, they will be presented with a message explaining that administrator rights are required to access this page followed by the option to login with an administrator account.
+            Should the user be logged in with a username listed within the administrator username database, the page will load with the restricted content.
+
 * ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
 
-A blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
+    -   When using the search function to search for recipes, entering a blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
+
+    -   Accessing the get_categories (without being logged in) using a direct URL would open an error page. The reason for this was because the function was attempting to search for the session username within the administrator database and as because the user was not logged in, it was unable to find a username to search for.
+
+    It took some time to work out the best option to construct this as I already had a function searching for the administrator users, however I created an additional function before the administrator search to first find out if the user was logged in with any account. If the user is not logged in with any accounts, they will be navigated to a 'not authorised' page where they have the option to login. If the user was logged in, then it would continue the validation function and search to see if the username is entered within the administrator username database.
 
 <br>
 

@@ -157,8 +157,8 @@ def search():
         pagination = Pagination(page=page, per_page=per_page,
                                 total=total, css_framework='materializecss')
         return render_template("recipes.html", recipes=recipes_paginated,
-                           page=page, per_page=per_page,
-                           pagination=pagination)
+                            page=page, per_page=per_page,
+                            pagination=pagination)
     return redirect(url_for("get_recipes"))
 
 # MY RECIPES
