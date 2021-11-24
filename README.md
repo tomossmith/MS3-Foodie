@@ -385,7 +385,9 @@ A blank search would return an error, therefore I had to include an IF statement
 
     <img src="readme-images/lighthouse_error_report.png" alt="Lighthouse Error Report" width="80%">
 
-    These errors were due to load times for the images being used for the recipes on the site, as these are external URL's to images then I have no control of the size or format of image that the user has uploaded. I researched what options were available to deal with images being loaded from URL's and the only solution I found was to include '?tr=q-10' at the end of the image URL's. This reduces the quality of the image to 20% when loading.  This increased my performance score from 70 to 72.
+    These errors were due to load times for the images being used for the recipes on the site, as these are external URL's to images then I have no control of the size or format of image that the user has uploaded. I researched what options were available to deal with images being loaded from URL's and the only solution I found was to include '?tr=q-10' at the end of the image URL's. This reduces the quality of the image to 20% when loading.  This increased my performance score from 70 to 73.
+
+    There was also a drop in the SEO score after adding the pagination feature to the site. The report recognised the pagination links as 'href' and has a requirement for formatting these in order to make the links crawlable for search engines. As this is generated automatically, I was not able to improve this score.
 
     <img src="readme-images/lighthouse_report.png" alt="Lighthouse Report" width="80%">
 
@@ -394,8 +396,29 @@ A blank search would return an error, therefore I had to include an IF statement
 <br>
 
 * ### <span id="testing-responsive-design"><b>Responsive Design</b></span>
+
+    In order to maintain a good responsive design for the site, I tried to use the Materialize CSS classes for the majority of the design.
+    This helped generate suitable layouts for the recipes that adapt automatically if the display dimensions change.
+    Using the Materialize classes also helped reduce the number of media queries that had to be written, this keeping the amount of CSS code to a minimum.
+
+    In order to test the design on as many devices as possible, I came across a website called [Responsive Test Tool](http://responsivetesttool.com/)
+    It enabled me to test my design on a large range of devices.
+
 * ### <span id="testing-browser-compatibility"><b>Browser Compatibility</b></span>
+
+    To test my site's compatibility, I found a website called [Browserling](https://www.browserling.com/)
+
+    Using this tool I was able to test a range of browsers, some of which I wouldn't otherwise have access to.
+    Unfortunatley the site has a limited free version, and an upgrade to a premium plan would be required to access every device they offer, however i'm confident that the site is very compatible on the most popular browsers.
+
+    <img src="readme-images/browser_chrome.png" alt="Lighthouse Report" width="40%">
+    <img src="readme-images/browser_firefox.png" alt="Lighthouse Report" width="40%">
+    <img src="readme-images/browser_ie.png" alt="Lighthouse Report" width="40%">
+    <img src="readme-images/browser_opera.png" alt="Lighthouse Report" width="40%">
+
 * ### <span id="testing-links"><b>Link Testing</b></span>
+
+
 
 ## <span id="deployment"><b>Deployment</b></span>
 
