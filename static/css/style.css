@@ -349,3 +349,16 @@ footer {
         width: 30vw;
     }
 }
+
+@media screen and (max-width: 480px) {
+	.pagination > li {
+		display: none;
+	}
+	
+	.pagination > li:first-child,
+	.pagination > .active,
+	.pagination > li:last-child,
+	.pagination > li:nth-child(14) {
+		display: inline-block;
+	}
+}

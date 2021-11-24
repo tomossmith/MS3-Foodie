@@ -382,7 +382,14 @@ A blank search would return an error, therefore I had to include an IF statement
     There were areas of the site that did not meet the color contrast requirement of the site. A poor contrast between colors can often be difficult and uncomfertable for users to see. To help improve this score and to ensure the site is easy to read, I altered some of the poorly contrasting colors and made sure that any background colors work well with the foreground colors.
 
     Once I rectified this issue, I ran the tests again and the results showed a poor rating for the performance. 
-    These errors were due to load times for the images being used for the recipes on the site, as these are external URL's to images then I have no control of the size or format of image that the user has uploaded.
+
+    <img src="readme-images/lighthouse_error_report.png" alt="Lighthouse Error Report" width="80%">
+
+    These errors were due to load times for the images being used for the recipes on the site, as these are external URL's to images then I have no control of the size or format of image that the user has uploaded. I researched what options were available to deal with images being loaded from URL's and the only solution I found was to include '?tr=q-10' at the end of the image URL's. This reduces the quality of the image to 20% when loading.  This increased my performance score from 70 to 72.
+
+    <img src="readme-images/lighthouse_report.png" alt="Lighthouse Report" width="80%">
+
+    In the future I would like to include the possibility for users to upload and store the images onto the websites server, this will help manage file sizes, and types in order to improve load times.
 
 <br>
 
