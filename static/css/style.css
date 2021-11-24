@@ -29,10 +29,6 @@ h3 {
     font-size: 3vw;
 }
 
-span {
-    font-size: 3.5vw;
-}
-
 p {
     font-family: 'Oswald', sans-serif;
 }
@@ -102,12 +98,12 @@ label {
     text-underline-offset: 2px;
 }
 
-/* Navigation Bar CSS */
-nav {
+/* Navigation Bar CSS*/
+header nav {
     padding: 0.5em 2em 6em 2em;
-}
+} 
 
-nav li a {
+header nav li a {
     font-family: 'Lobster', cursive;
     font-size: 1.5em;
     color: white;
@@ -293,8 +289,7 @@ nav li a {
 /* Pagination */
 .pagination-container nav {
     background-color: transparent;
-    padding: 0px;
-    -webkit-box-shadow: none;  
+    box-shadow: none;
 }
 
 .pagination { 
@@ -303,36 +298,38 @@ nav li a {
     justify-content: center;
   }
 
-.pagination li a {
-    font-family: 'Lobster', cursive;
-    font-size: 1.5em;
+.pagination li a{
     color: white;
-    text-decoration-color: transparent;
+    font-family: 'Lobster', cursive;
 }
 
-li.page-item.active{
+.pagination li.active {
     background-color: transparent;
 }
 
 li.page-item.active a{
+    text-decoration: underline;
     text-decoration-color: red;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
 }
 
 .pagination-page-info {
-    color: white;
-    font-family: oswald, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 3px;
-    font-size: 1em;
+    padding: .6em;
+    padding-left: 0;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 12px;
+}
+.pagination-page-info b {
+    color: black;
+    background: #6aa6ed;
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
 }
 
-.pagination-page-info b{
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 1.2em;
-}
 
 
 /* Footer */
