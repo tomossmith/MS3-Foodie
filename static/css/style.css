@@ -120,8 +120,6 @@ header nav li a {
 /* Base CSS */
 
 #logo {
-    width: 22vw;
-    height: auto;
     border-bottom: 2px solid red;
     padding-bottom: 2px;
 }
