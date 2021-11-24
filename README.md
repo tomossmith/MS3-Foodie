@@ -55,6 +55,15 @@ p {
     - <a href="#key-components-frameworks">Frameworks & Libraries</a>
     - <a href="#key-components-others">Others</a>
 - <a href="#testing">Testing</a>
+    - <a href="#testing-html">HTML</a>
+    - <a href="#testing-css">CSS</a>
+    - <a href="#testing-javascript">Javascript</a>
+    - <a href="#testing-pep8">PEP8 Compliance</a>
+    - <a href="#testing-lighthouse">Overall Website Performance & Compatibility </a>
+    - <a href="#testing-responsive-design">Responsive Design</a>
+    - <a href="#testing-browser-compatibility">Browser Compatibilty</a>
+    - <a href="#testing-links">Link Testing</a>
+    - <a href="#testing-user-stories">User Story Testing</a>
     - <a href="#testing-problems-during-development">Problems During Development</a>
     - <a href="#testing-bugs">Known Bugs</a>
 - <a href="#deployment">Deployment</a>
@@ -158,7 +167,6 @@ p {
     After finding the colors I felt were most suitable I implemented them into the site, in later stages of development I began testing the site's compatibility using [Adobe Color](https://developers.google.com/web/tools/lighthouse) and it was brought to my attention that the way I was using the colors was not meeting lightroom's accessibility criterias due to contrasting colors. I have explained further in my testing section on the steps I had to take to overcome this issue.
 
 * ### <span id="ux-design-typography"><b>Typography</b></span>
-
 
     When choosing which font to use as part of my design, I felt it was important for it to be easy to read but have similar feel as a font you would choose for a restraunt menu. I wanted the font to be appropriate so that I could use it for the logo text and also the main site text. This would then help maintain a nice continuity within the design and also help create the 'Foodie' brand I was aiming for.
 
@@ -316,15 +324,6 @@ As part of my planning process, I felt it was important to work out what fields 
 
 
 ## <span id="testing"><b>Testing</b></span>
-* ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
-
-A blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
-
-<br>
-
-* ### <span id="testing-bugs"><b>Known Bugs</b></span>
-
-<br>
 
 * ### <span id="testing-html"><b>HTML</b></span>
 
@@ -373,6 +372,10 @@ A blank search would return an error, therefore I had to include an IF statement
 
 <br>
 
+* ### <span id="testing-pep8"><b>PEP8 Compliance</b></span>
+
+<br>]
+
 * ### <span id="testing-lighthouse"><b>Overall Website Performance & Compatibility</b></span>
 
     To test my websites performance and compatibility, I used [Lighthouse](https://developers.google.com/web/tools/lighthouse)
@@ -418,7 +421,27 @@ A blank search would return an error, therefore I had to include an IF statement
 
 * ### <span id="testing-links"><b>Link Testing</b></span>
 
+    In my last project, I tested all the website links manually by navigating the site myself. The problem I found was that there were links that I had forgotten about which meant there were many left unchecked.
+    For this project i've found an online tool called [Dead Link Checker](https://www.deadlinkchecker.com/) which scans the whole site for links and tests to make sure they are all correct. This has worked great and provided a detail report on its results. However, I felt it was important that not only were the links complete, but that they are directing the users to the correct places. 
+    As this is not a test that the online tool can carry out, I browsed the site and followed the links to make sure they were opening the correct sites.
 
+    Here are the results from the [Dead Link Checker](https://www.deadlinkchecker.com/):
+
+    <img src="readme-images/browser_opera.png" alt="Dead Link Reports" width="80%">
+
+<br>
+
+* ### <span id="testing-user-stories"><b>User Story Testing</b></span>
+
+* ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
+
+A blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
+
+<br>
+
+* ### <span id="testing-bugs"><b>Known Bugs</b></span>
+
+<br>
 
 ## <span id="deployment"><b>Deployment</b></span>
 
@@ -431,10 +454,16 @@ A blank search would return an error, therefore I had to include an IF statement
 
 * ### <span id="credits-content"><b>Content</b></span>
 
+    The recipes were sourced from [BBC Food](https://www.bbcgoodfood.com/)
+
 * ### <span id="credits-media"><b>Media</b></span>
+
+    The images for the recipes were all sourced from [BBC Food](https://www.bbcgoodfood.com/).
 
 * ### <span id="credits-code"><b>Code</b></span>
 
-Function to add additional fields to form: https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
+    Function to add additional fields to form: https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
+
+    Pagination to organise the recipe cards: https://harishvc.com/2015/04/15/pagination-flask-mongodb/
 
 * ### <span id="credits-acknowledgments"><b>Acknowledgements</b></span>
