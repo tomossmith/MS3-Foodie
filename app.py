@@ -34,7 +34,7 @@ def get_recipes():
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
         offset_parameter='offset')
-    per_page = 4
+    per_page = 3
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find().count()
     recipes = list(mongo.db.recipes.find())
