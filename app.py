@@ -6,7 +6,6 @@ from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from functools import wraps
 import datetime
 if os.path.exists("env.py"):
     import env
@@ -18,28 +17,6 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
-def login_required(f):
-    @wraps (f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' is not session:
-            return f(*args, **kwargs)
-        else:
-            flash("You need to login first")
-            return redirect (url_for('login'))
-
-    return wrap
-
-def admin_required(f):
-    @wraps (f)
-    def wrap(*args, **kwargs):
-        if 'admin' in session:
-            return f(*args, **kwargs)
-        else:
-            flash("You need to have administrator access to visit this page")
-            return redirect (url_for('login'))
-
-    return wrap
 
 
 # GLOBAL VARIABLES
@@ -132,36 +109,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-# ADMIN FEATURES
-@app.route("/get_admins")
-def get_admins():
-    admins = list(mongo.db.admins.find())
-    return render_template("admins.html", admins=admins)
-
-
-# ADD ADMINISTRATOR
-@app.route("/add_admin", methods=["GET", "POST"])
-def add_admin():
-    if request.method == "POST":
-        admins = {
-            "username": request.form.get("admin_username"),
-        }
-        mongo.db.admins.insert_one(admins)
-        flash(
-            "Administrator Was Successfully Added To The Website Access List!")
-        return redirect(url_for("get_admins", admins=admins))
-
-    return render_template("add_admin.html")
-
-
-# DELETE ADMIN
-@app.route("/delete_admin/<admin_id>")
-def delete_admin(admin_id):
-    mongo.db.admins.remove({"_id": ObjectId(admin_id)})
-    flash("Administrator Successfully Deleted")
-    return redirect(url_for("get_admins"))
-
-
 # RECIPE SEARCH FUNCTION
 @app.route("/search")
 def search():
@@ -186,6 +133,7 @@ def search():
 # MY RECIPES
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
+
     # GET THE USER'S USERNAME FROM THE DATABASE
     user_id = mongo.db.users.find_one({
         "username": session["user"]})["_id"]
@@ -281,16 +229,11 @@ def delete_recipe(recipe_id):
 
 # GET CATEGORIES
 @app.route("/get_categories", methods=["GET", "POST"])
-@login_required
 def get_categories():
     #check if admin username exists in db
-    admin_user = mongo.db.admins.find_one({"username": session["user"]})
-    if admin_user:
-        categories = list(mongo.db.categories.find())
-        return render_template("categories.html", categories=categories)
-
-    return render_template("no_auth.html")
-
+    categories = list(mongo.db.categories.find())
+    return render_template("categories.html", categories=categories)  
+        
 
 # ADD CATEGORY
 @app.route("/add_category", methods=["GET", "POST"])

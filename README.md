@@ -135,13 +135,11 @@ p {
 
     - The website administrator must be able to find the administrator tools when logged into the site.
 
-    - The website administrator must be able to add and remove administrator to the administrator access database.
-
     - The website administrator must not be able to delete the main administrator account from the database.
 
     - The website administrator must be able to create, remove, update and delete recipe categories.
 
-    - The website administrators must be the only users to have access to the restricted websites and non-administrators must not be able to access restricted sites by direct URL inputs.
+    - The website administrator must be the only users to have access to the restricted websites and non-administrators must not be able to access restricted sites by direct URL inputs.
 
 ## <span id="#ux-design"><b>Design</b></span>
 
@@ -264,7 +262,6 @@ p {
 
         The administrator is able to:
             - create or remove additional recipe categories
-            - create or remove additional administrators to the site
 
 * ### <span id="features-future"><b>Possible Future Features</b></span>
 
@@ -495,12 +492,6 @@ As part of my planning process, I felt it was important to work out what fields 
 
             When a user is logged into the site with administrator privilidges, the navigation bar displays additional links that are options only available to an administrator.
             The tools that the administrator requires in order to manage the site are listed within the dropdown link 'Manage Site' shown on the navigation bar.
-
-        - The website administrator must be able to add and remove administrator to the administrator access database.
-
-            Within the 'Manage Site' dropdown, the administrator is presented with the option to 'Manage Administrators'
-            Once they navigate to this page, all of the current usernames that have administrator priviledges are listed within a table.
-            The administrator is then able to remove an administrator by clicking on a trash can icon next to the chosen username, or click a button labelled 'add administrator' to add a new username to the database.
 
         - The website administrator must not be able to delete the main administrator account from the database.
 
