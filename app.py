@@ -6,10 +6,10 @@ from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
 import datetime
 if os.path.exists("env.py"):
     import env
-
 
 app = Flask(__name__)
 
@@ -18,6 +18,28 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+def login_required(f):
+    @wraps (f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' is not session:
+            return f(*args, **kwargs)
+        else:
+            flash("You need to login first")
+            return redirect (url_for('login'))
+
+    return wrap
+
+def admin_required(f):
+    @wraps (f)
+    def wrap(*args, **kwargs):
+        if 'admin' in session:
+            return f(*args, **kwargs)
+        else:
+            flash("You need to have administrator access to visit this page")
+            return redirect (url_for('login'))
+
+    return wrap
 
 
 # GLOBAL VARIABLES
@@ -257,14 +279,16 @@ def delete_recipe(recipe_id):
     return redirect(url_for("my_recipes", username=session["user"]))
 
 
-# CATEGORIES LIST
+# GET CATEGORIES
 @app.route("/get_categories", methods=["GET", "POST"])
+@login_required
 def get_categories():
-    # check if admin username exists in db
+    #check if admin username exists in db
     admin_user = mongo.db.admins.find_one({"username": session["user"]})
-    if session['user'] == admin_user:
+    if admin_user:
         categories = list(mongo.db.categories.find())
         return render_template("categories.html", categories=categories)
+
     return render_template("no_auth.html")
 
 
@@ -283,7 +307,6 @@ def add_category():
             flash("The Category Was Successfully Added")
             return redirect(url_for("get_categories"))
         return render_template("add_category.html")
-
     return render_template("no_auth.html")
 
 

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if session.user %}
+{% if session.user|lower == "admin"|lower %}
 
 <div class="row">
   <h1 class="card-title white-text text-shadow center-align underline-red">Categories</h1>
