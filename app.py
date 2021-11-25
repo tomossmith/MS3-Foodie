@@ -133,7 +133,6 @@ def search():
 # MY RECIPES
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
-
     # GET THE USER'S USERNAME FROM THE DATABASE
     user_id = mongo.db.users.find_one({
         "username": session["user"]})["_id"]
@@ -183,8 +182,7 @@ def add_recipe():
             "recipe_spice": request.form.get("recipe_spice"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_instructions": request.form.getlist("recipe_instructions"),
-            "recipe_user": session["user"],
-            "recipe_create_date": datetime.datetime.now(),
+            "recipe_user": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Your Recipe Was Successfully Added To The Cookbook!")
@@ -210,10 +208,12 @@ def edit_recipe(recipe_id):
             "recipe_spice": request.form.get("recipe_spice"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_instructions": request.form.getlist("recipe_instructions"),
-            "recipe_modify_date": datetime.datetime.now(),
+            "recipe_user": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Your Recipe Was Successfully Updated To The Cookbook!")
+        recipe = mongo.db.recipes.find_one({"_id":  ObjectId(recipe_id)})
+        return render_template("open_recipe.html", recipe=recipe)
 
     recipe = mongo.db.recipes.find_one({"_id":  ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
