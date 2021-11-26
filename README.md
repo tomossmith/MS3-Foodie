@@ -67,10 +67,9 @@ p {
     - <a href="#testing-problems-during-development">Problems During Development</a>
     - <a href="#testing-bugs">Known Bugs</a>
 - <a href="#deployment">Deployment</a>
-    - <a href="#deployment-github">Deployment Through GitHub Pages</a>
+    - <a href="#deployment-heroku">Deployment With Heroku</a>
     - <a href="#deployment-forking">Forking</a>
     - <a href="#deployment-cloning">Cloning Project</a>
-    - <a href="deployment-admin">Administrator Access Credentials</a>
 - <a href="#credits">Credits</a>
     - <a href="#credits-content">Content</a>
     - <a href="#credits-media">Media</a>
@@ -567,10 +566,99 @@ As part of my planning process, I felt it was important to work out what fields 
 
 ## <span id="deployment"><b>Deployment</b></span>
 
-* ### <span id="deployment-github"><b>Deployment Through GitHub Pages</b></span>
+* ### <span id="deployment-heroku"><b>Deployment With Heroku</b></span>
+
+    I deployed my site to Heroku at the beginning of the project. I think it was important to have the page deployed from the start so that I could progressively test the site as I was developing it.
+
+    Heroku has the option to enable maintenance mode that will hide the published site should there be the need to restrict the access at any point.
+
+    To deploy the site, here is what I did:
+
+    - To deploy to Heroku you need to have an account with them. There is a free tier account available and signing up is quick and easy at [https://signup.heroku.com/](https://signup.heroku.com/)
+
+    - Once you have signed up and logged in, you are presented with the Heroku Dashboard.
+
+    - Click <b>'Create App'</b> and you are then taken to the next page which asks you for the name of the app you wish to create and choose your region.
+        (The app name must be unique and not contain spaces) Once I created the name and chose the reason I clicked 'create app'
+
+    - Once it was created, I returned to my gitpod enviroment for the app and opened up a new terminal session to install Heroku into the enviroment.
+
+        In terminal I entered:
+
+                npm install -g heroku
+
+    - In order to deploy the site to Heroku, it needs to have requirements.txt file. A requirements.txt file contains a list of all the dependancies the project needs to return succesfully. Heroku also uses this file to determine the language of the project. To create this file I entered the following command in terminal:
+
+                pip3 freeze --local > requirements.txt
+
+    This will then generate a file within the project that contains a list of all the dependencies.
+
+    <img src="readme-images/deployment-heroku-requirements.png" alt="requirements.txt file example" width="80%">
+
+    - Now a Procfile needs to be generated to be pushed to Heroku, to do this I entered the following in terminal:
+
+                echo web: python app.py > Procfile
+
+    This will generate a file labelled Procfile to the project that tells Heroku which file to load to run the app.
+
+    <img src="readme-images/deployment-heroku-procfile.png" alt="procfile file example" width="80%">
+
+    - I then needed to link my git repository to Heroku. Firstly I went to Heroku and opened the settings tab for my app. Within this tab is a Heroku git url.
+
+    <img src="readme-images/deployment-heroku-url.png" alt="deployment to heroku settings page" width="80%">
+
+    - I then copied the Heroku git url and entered the following code into the Gitpod terminal along with a suitable name and the copied url:
+
+                git remote add <<name for the remote here followed by the url from Heroku>>
+
+    - I then pushed the initial files to Heroku using the following command:
+
+                git add -A
+                git commit -m "Initial Heroku Push"
+                git push -u heroku master
+
+    - Heroku will now accept this push and acknowledge the language of the application and install all the requirements to build the app. The app is now published on Heroku but does not have all the information it needs to operate correctly. 
+
+    - I then generated a file named ***env.py*** to store the enviroment variables for the app. Here is how the file should look:
+
+    <img src="readme-images/deployment-heroku-env.png" alt="env.py file example" width="80%">
+
+    - Within the env.py file, the secret key should contain the secret key that is unique to the project. As this file contains information that should not be published and available to displayed publically, I added this file to the ***.gitignore*** file.
+
+    - To add the enviroment variables to Heroku, I logged into Heroku and within the dashboard click 'Deploy' and locate 'Deployment Method' and choose 'Github'.
+    - In the search bar, locate the repository and click 'Connect'
+    - Click the 'Settings' tab and locate 'Config Vars' followed by 'Reveal Config Vars'
+    - Within these fields I entered the following information for my application: (these values must match the values within the env.py file.)
+
+    |Key|Value|
+    |:-:|:-:|
+    |IP|0.0.0.0|
+    |PORT|5000|
+    |SECRET_KEY| ***unique secret key***   |
+    |MONGO_URI|	mongodb+srv://root:PASSWORD@myfirstcluster.dr4g1.mongodb.net/foodie?retryWrites=true&w=majority|
+    |MONGO_DBNAME|foodie|
+
+    - Return to the 'Deploy' tab and click 'Enable Automatic Deployment'
+    - Click 'Manual Deploy' and choose the master branch and click 'Deploy Branch'
+    - It make take a few minutes to build the app, once its complete you can click 'Open App' at the top of the page.
+    
+
+
+
+
+        
+
+        
+
+        
+
+
+    
+
 * ### <span id="deployment-forking"><b>Forking</b></span>
+
 * ### <span id="deployment-cloning"><b>Cloning Project</b></span>
-* ### <span id="deployment-admin"><b>Administrator Access Credentials</b></span>
+
 
 ## <span id="credits"><b>Credits</b></span>
 
