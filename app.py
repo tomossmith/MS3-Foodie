@@ -126,9 +126,10 @@ def search():
         pagination = Pagination(page=page, per_page=per_page,
                                 total=total, css_framework='materializecss')
         return render_template("recipes.html", recipes=recipes_paginated,
-                            page=page, per_page=per_page,
-                            pagination=pagination)
+                               page=page, per_page=per_page,
+                               pagination=pagination)
     return redirect(url_for("get_recipes"))
+
 
 # MY RECIPES
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
@@ -230,10 +231,10 @@ def delete_recipe(recipe_id):
 # GET CATEGORIES
 @app.route("/get_categories", methods=["GET", "POST"])
 def get_categories():
-    #check if admin username exists in db
+    # check if admin username exists in db
     categories = list(mongo.db.categories.find())
-    return render_template("categories.html", categories=categories)  
-        
+    return render_template("categories.html", categories=categories)
+
 
 # ADD CATEGORY
 @app.route("/add_category", methods=["GET", "POST"])
