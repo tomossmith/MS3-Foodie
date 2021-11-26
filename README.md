@@ -410,10 +410,10 @@ As part of my planning process, I felt it was important to work out what fields 
     Using this tool I was able to test a range of browsers, some of which I wouldn't otherwise have access to.
     Unfortunatley the site has a limited free version, and an upgrade to a premium plan would be required to access every device they offer, however i'm confident that the site is very compatible on the most popular browsers.
 
-    <img src="readme-images/browser_chrome.png" alt="Lighthouse Report" width="40%">
-    <img src="readme-images/browser_firefox.png" alt="Lighthouse Report" width="40%">
-    <img src="readme-images/browser_ie.png" alt="Lighthouse Report" width="40%">
-    <img src="readme-images/browser_opera.png" alt="Lighthouse Report" width="40%">
+    <img src="readme-images/browser_chrome.png" alt="chrome browser test" width="40%">
+    <img src="readme-images/browser_firefox.png" alt="firefox browser test" width="40%">
+    <img src="readme-images/browser_ie.png" alt="internet explorer browser test" width="40%">
+    <img src="readme-images/browser_opera.png" alt="opera browser test" width="40%">
 
 * ### <span id="testing-links"><b>Link Testing</b></span>
 
@@ -423,7 +423,7 @@ As part of my planning process, I felt it was important to work out what fields 
 
     Here are the results from the [Dead Link Checker](https://www.deadlinkchecker.com/):
 
-    <img src="readme-images/browser_opera.png" alt="Dead Link Reports" width="80%">
+    <img src="readme-images/broken_link_report.png" alt="Dead Link Reports" width="80%">
 
 <br>
 
@@ -433,13 +433,44 @@ As part of my planning process, I felt it was important to work out what fields 
 
         - When I visit the site, I want to know that I have landed on the correct site that I intended to visit.
 
+            When users arrive at the site, there is a clear and bold logo visible straight away. 
+            This is followed by a large title of 'recipe book' followed by some recently uploaded recipes.
+
+            I believe this is a suitable opening site that allows the users to quickly know they have arrived at the correct page.
+
+            <img src="readme-images/testing-ue1.png" alt="Foodie Homepage" width="80%">
+
         - I need to be able to navigate to the key elements of the site quickly.
+
+            Similar to many sites, the navigation bar can be found at the traditional location on the page at the top right.
+            I think this makes it easy for the user to know where to go to find the navigation bar and locate the links to the key elements of the site.
+
+            <img src="readme-images/testing-ue2.png" alt="Foodie Homepage" width="80%">
 
         - The website should load correctly on any device.
 
+            I have carried out testing on the site on different devices using both virtual devices and on devices that I own.
+            By using the materialize classes, I feel the website performs well on a large range of popular devices.
+
+            <img src="readme-images/testing-ue3.png" alt="Foodie Homepage" width="80%">
+
         - The website should load quickly and only load the necessary files required to display the key elements of the site first to improve load times.
 
+            This was an area that was a little tricky to deal with, however I was able to make minor changes to help improve load times.
+            Unfortunatley, as the website was sourcing the recipe images using URL's provided by the site users, this meant that there were increased load times.
+            To help improve these times I changed the amount of recipes that were being displayed on the homepage using pagination and also deferred some scripts and links from loading at the initial load of the page.
+
+            To monitor my results and how the changes I made affected the score, I used [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
+            The results of the load times can be found <a href="#testing-lighthouse">Here</a>
+
         - Site visitors should be able to find social links to engage and share recipes to friends through their social media connections.
+
+            The internet is strongly used for social networking and users will often share with friends websites that they discover. To help attract more users to the site, social links are important platforms for users to engage and share with, in turn bringing more users to the site.
+
+            The social links for Foodie are located within the footer of every page, and I have used the easily recognize logo's for each social site to make the presentation of this part of the site more appealing to users.
+
+            <img src="readme-images/testing-ue5.png" alt="social icons in the footer" width="80%">
 
 
     * <b>First Time Visitor Goals</b>
@@ -457,6 +488,8 @@ As part of my planning process, I felt it was important to work out what fields 
             When visiting the site, the recipes that have been uploaded to the site are presented to the user on the initial landing area. 
             Users are able to see a photo of the recipe, see the title of the recipe, see a quick summary of what kind of recipe it is followed by a large button that they can click to open the recipe to find out what the ingredients are and how to cook it.
 
+            <img src="readme-images/testing-ftu3.png" alt="recipe cards on the homepage" width="80%">
+
         - First time users should be able to view the recipes on the site without having to log in or register for an account.
 
             The homepage that the users are taken to displays all the recipes that have been uploaded to the site. User do not have to register or be logged in to browse, search, categorize or open the recipes.
@@ -468,11 +501,13 @@ As part of my planning process, I felt it was important to work out what fields 
 
             To prevent users navigating to restricted sites using direct url's, each restricted page has a function that validates the user's access level before displaying the site. If the user has the correct access rights, the page displays as normal, if they do not have the necessary user access level then the page will display a message making them aware of this.
 
+            <img src="readme-images/testing-ftu5.png" alt="user must login to visit this page demo" width="80%">
+
         - First time users are able to navigate the site without registering. However in order to submit a recipe to the site, users must register and therefore the user must be able to locate the Register link on the hompeage easily and quickly.
 
             A first time user to the site will be able to experience the basic functions of the site. The basic navigation menu has minimal links of which the login and register links are part of. The user can find and register with the site by clicking the link and they are taken to a short form and can be logged into the site with ease.
 
-            The user will also be reminded with the options to login and register should they navigate to a part of the site that they do not have an account.
+            The user will also be reminded with the options to login should they navigate to a part of the site that they do not have an account.
 
     * <b>Returning Visitor Goals</b>
 
@@ -486,6 +521,8 @@ As part of my planning process, I felt it was important to work out what fields 
             When the user logs into the site, they are taken to a page that shows all of the recipes that they have uploaded to the site.
             This page ONLY displays the recipes they have uploaded and provided that the session username matches the username in the database attached to the recipe, it will display the options to edit or delete the recipe.
 
+            <img src="readme-images/testing-rv3.png" alt="user's uploaded recipes page" width="80%">
+
     * <b>Website Administrator Goals</b>
 
         - The website administrator must be able to find the administrator tools when logged into the site.
@@ -493,40 +530,38 @@ As part of my planning process, I felt it was important to work out what fields 
             When a user is logged into the site with administrator privilidges, the navigation bar displays additional links that are options only available to an administrator.
             The tools that the administrator requires in order to manage the site are listed within the dropdown link 'Manage Site' shown on the navigation bar.
 
-        - The website administrator must not be able to delete the main administrator account from the database.
-
-        ########################################################################################################
-                ########################################################################################################
-                        ########################################################################################################
-                                ########################################################################################################
-                                        ########################################################################################################
-                                                ########################################################################################################
-                                                        ########################################################################################################
+            <img src="readme-images/testing-wag1.png" alt="administrator navigation bar" width="80%">
 
 
         - The website administrator must be able to create, remove, update and delete recipe categories.
 
-            The administrator can click on 'Manage Categories' under the 'Manage Site' tab on the navigation bar, where they can then see a list of categories currently listed on the site.
+            The administrator can click on 'Manage Categories' under the 'Manage Site' tab on the navigation bar, where they can then see a list of categories currently listed on the site. Beside each category is the choice edit or delete the category, or at the bottom of the list there is a button to add a new category to the list.
 
-                    ########################################################################################################        ########################################################################################################        ########################################################################################################
+            <img src="readme-images/testing-wag2.png" alt="administrator manage categories" width="80%">
 
         - The website administrators must be the only users to have access to the restricted websites and non-administrators must not be able to access restricted sites by direct URL inputs.
 
-            Each administrator only sites have code to determine the user level before displaying the chosen page.
-            If the username of the user logged into the site is not listed as an 'admin' within the database, they will be presented with a message explaining that administrator rights are required to access this page followed by the option to login with an administrator account.
-            Should the user be logged in with a username listed within the administrator username database, the page will load with the restricted content.
+            Each administrator only sites have code to make sure the page administrator is logged in before displaying the chosen page.
+            If user logged into the site is the administrator, they will be presented with a message explaining that administrator rights are required to access this page followed by the option to login with an administrator account.
+            Should the user be logged in with the administrator account the page will load with the restricted content.
+
+            <img src="readme-images/testing-wag3.png" alt="please login as administrator page" width="80%">
 
 * ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
 
     -   When using the search function to search for recipes, entering a blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
 
-    -   Accessing the get_categories (without being logged in) using a direct URL would open an error page. The reason for this was because the function was attempting to search for the session username within the administrator database and as because the user was not logged in, it was unable to find a username to search for.
-
-    It took some time to work out the best option to construct this as I already had a function searching for the administrator users, however I created an additional function before the administrator search to first find out if the user was logged in with any account. If the user is not logged in with any accounts, they will be navigated to a 'not authorised' page where they have the option to login. If the user was logged in, then it would continue the validation function and search to see if the username is entered within the administrator username database.
+    -   Accessing the get_categories (without being logged in) using a direct URL would open an error page. The reason for this was because the function had a conflicting function within the page template itself. Once I removed one of the functions, it operated correctly.
 
 <br>
 
 * ### <span id="testing-bugs"><b>Known Bugs</b></span>
+
+    -   The recipe pages submit the instructions and ingredients to the database as a list array. These submit correctly and display as they should within the mongodb databases.
+        However, on some occassions only 1 of each instruction/ingredient is returned to be displayed on the page. 
+
+        I have read through the code for both submitting and returning the information and made some minor alterations to ensure this information is passed, stored and returned correctly. Since carrying out these changes and running some tests that I feel would repeat the problem, i've not yet had the bug re-appear. 
+        It is possible that the tests I have carried out are not the tests that are responsible for this, however I will continue to monitor the site and carry out any necessary changes in the future.
 
 <br>
 
