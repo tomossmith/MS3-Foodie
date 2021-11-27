@@ -7,7 +7,6 @@ body{
     font-family: Oswald;
     font-weight: 400;
     letter-spacing: 1px;
-    line-spacing: 
 }
 
 p {
@@ -81,6 +80,7 @@ p {
 # <span id="#project_goals">Project Goals</span>
 
 *   Design, develop and implement a full stack web application using HTML, CSS, JavaScript, Python, Flask and MongoDB
+
 *   Identify and apply necessary security features
 
 
@@ -104,11 +104,10 @@ p {
     - I need to be able to navigate to the key elements of the site quickly.
 
     - The website should load correctly on any device.
-
+    
     - The website should load quickly and only load the necessary files required to display the key elements of the site first to improve load times.
 
     - Site visitors should be able to find social links to engage and share recipes to friends through their social media connections.
-
 
 * ### <b>First Time Visitor Goals</b>
 
@@ -170,9 +169,13 @@ p {
 
     The main font is [Lobster](https://fonts.google.com/specimen/Lobster?query=lobster)
 
+    <img src="readme-images/font-lobster.png" alt="Image of the Lobster Font" width="100%">
+
     This is the font I used for fancy headings and labelling.
 
     The secondary font is [Oswald](https://fonts.google.com/specimen/Oswald?query=oswald)
+
+    <img src="readme-images/font-oswald.png" alt="Image of the Oswald Font" width="100%">
 
     This font is used as a uniform font for all key information, keeping it easy to read.
 
@@ -184,23 +187,31 @@ p {
 
 * ### <span id="ux-design-structure"><b>Structure & Mockup Designs</b></span>
 
+
     <h3> Homepage </h3>
     <img src="readme-images/wireframe-recipe-book.png" alt="Wireframe image for the Homepage" width="100%">
-
+    
+    <br>
     <h3> Registration Page </h3>
     <img src="readme-images/wireframe-register.png" alt="Wireframe image for the Registration page" width="100%">
 
+    <br>
     <h3> Login Page </h3>
     <img src="readme-images/wireframe-login.png" alt="Wireframe image for the Login page" width="100%">
 
+    <br>
     <h3> Add Recipe Page</h3>
     <img src="readme-images/wireframe-add-recipe.png" alt="Wireframe image for the add recipe page" width="100%">
 
+    <br>
     <h3> Edit Recipe Page</h3>
     <img src="readme-images/wireframe-edit-recipe.png" alt="Wireframe image for the edit recipe page" width="100%">
 
+    <br>
     <h3> Manage Categories Page (Administrators Only) </h3>
     <img src="readme-images/wireframe-manage-categories.png" alt="Wireframe image for the manage categories page." width="100%">
+
+<br>
 
 * ### <span id="ux-design-amendments"><b>Amendments To Mockup Designs During Development</b></span>
 
@@ -546,6 +557,8 @@ As part of my planning process, I felt it was important to work out what fields 
 
             <img src="readme-images/testing-wag3.png" alt="please login as administrator page" width="80%">
 
+<br>
+
 * ### <span id="testing-problems-during-development"><b>Problems During Development</b></span>
 
     -   When using the search function to search for recipes, entering a blank search would return an error, therefore I had to include an IF statement that would display the main page with all recipes if the user was to search a blank field.
@@ -709,3 +722,6 @@ As part of my planning process, I felt it was important to work out what fields 
     Pagination to organise the recipe cards: https://harishvc.com/2015/04/15/pagination-flask-mongodb/
 
 * ### <span id="credits-acknowledgments"><b>Acknowledgements</b></span>
+
+    - Thank you to everyone on Slack for help and advice
+    - Thank you to my mentor Caleb Mbakwe for his great guidance
