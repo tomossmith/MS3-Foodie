@@ -122,7 +122,7 @@ p {
 
     - First time users are likely to be un-registered users and must have restricted access to certain areas of the site.
 
-    - First time users are able to navigate the site without registering. However in order to submit a recipe to the site, users must register and therefore the user must be able to locate the Register link on the hompeage easily and quickly.
+    - First time users can navigate the site without registering. However, in order to submit a recipe to the site, users must register and therefore the user must be able to locate the Register link on the homepage easily and quickly.
 
 * ### <b>Returning Visitor Goals</b>
 
@@ -149,7 +149,7 @@ p {
     Here are the key points to consider when choosing the colors:
 
     * Eye Catching
-    * Comfertable
+    * Comfortable
     * Color Compatibility
 
     I chose to develop both the logo and the main site theme at the same time to ensure that they could work well together. 
@@ -164,7 +164,7 @@ p {
 
 * ### <span id="ux-design-typography"><b>Typography</b></span>
 
-    When choosing which font to use as part of my design, I felt it was important for it to be easy to read but have similar feel as a font you would choose for a restraunt menu. I wanted the font to be appropriate so that I could use it for the logo text and also the main site text. This would then help maintain a nice continuity within the design and also help create the 'Foodie' brand I was aiming for.
+    When choosing which font to use as part of my design, I felt it was important for it to be easy to read but have similar feel as a font you would choose for a restaurant menu. I wanted the font to be appropriate so that I could use it for the logo text and the main site text. This would then help maintain a nice continuity within the design and help create the 'Foodie' brand I was aiming for.
 
     I have used Google to source the fonts and these are loaded within the head of the page.
 
@@ -179,7 +179,7 @@ p {
 * ### <span id="ux-design-images"><b>Images</b></span>
 
     There is very little base images on the site, but does display a large amount of images based on the content uploads of the end user.
-    The images for each of the recipes posted to the site are outsourced and the user must provided a url to the image of their recipe when uploading it to the site.
+    The images for each of the recipes posted to the site are outsourced and the user must provide a url to the image of their recipe when uploading it to the site.
     These uploads then form the design of all the pages.
 
 * ### <span id="ux-design-structure"><b>Structure & Mockup Designs</b></span>
@@ -204,7 +204,7 @@ p {
 
 * ### <span id="ux-design-amendments"><b>Amendments To Mockup Designs During Development</b></span>
 
-    During the development there were very minor changes to the original design I created. I had originally planned to have a landing page to welcome users to the site with a button that they could click to open the recipe book. However when I built this, it felt that having this feature increased the time it took for the end user to reach the purpose of the site. I made the decision to remove the opening page and direct users straight into the recipe book.
+    During the development there were very minor changes to the original design I created. I had originally planned to have a landing page to welcome users to the site with a button that they could click to open the recipe book. However, when I built this, it felt that having this feature increased the time it took for the end user to reach the purpose of the site. I made the decision to remove the opening page and direct users straight into the recipe book.
 
     I also felt that the site needed an additional feature for Administrators to be able to assign other administrators. As the number of users using the site increases, it would be useful for the Administrator to be able to share any administrative tasks with other users. I therefore chose to implement a page for anyone with administrative access to add/remove other administrators.
 
@@ -229,14 +229,14 @@ p {
         <img src="readme-images/wireframe-user-access.png" alt="Wireframe image for the navigation bars based on user access." width="100%">
 
         There are additional items placed within the navigation menu that are only displayed depending on the user's log in state.
-        I felt it was important that a user that is not logged in, shouldn't need to see the 'new recipe' button. The same would also apply for a user that is logged in that shouldn't see all of the navigation options that an administrator would see.
+        I felt it was important that a user that is not logged in, shouldn't need to see the 'new recipe' button. The same would also apply for a user that is logged in that shouldn't see all the navigation options that an administrator would see.
 
         To overcome these issues, there are if statements within the navigation menu code that checks the state of the user and displays the relevant options based on the result.
 
     * #### <b>Dynamically Created Navigation Menu Dropdown</b>
 
-        Administrators of the site are able to edit the different recipe categories.
-        These categories are then listed as options within a dropdown in the navigation menu so that the site user can see a all the recipes that are uploaded to the site based on the category they choose.
+        Administrators of the site can edit the different recipe categories.
+        These categories are then listed as options within a dropdown in the navigation menu so that the site user can see all the recipes that are uploaded to the site based on the category they choose.
 
         When an administrator adds/removes a category from the site, the navigation item 'categories' will automatically update to show the changes made by the administrator.
 
@@ -246,31 +246,31 @@ p {
 
     * #### <b>User Account</b>
 
-        In order to manage how the recipe's were managed, the site has a user account system. Users can create an account with the website that will allow them to log in and extend the functionality of the site.
+        In order to manage how the recipes were managed, the site has a user account system. Users can create an account with the website that will allow them to log in and extend the functionality of the site.
 
     * #### <b>User's Recipe Collection & Management Page</b>
 
         I felt it was important for a user to be able to manage their uploads in a quick and easy way and to do this, I created a user recipe page.
-        When a user succesfully logs in, they will be re-directed to a page that displays all of the recipe's they have uploaded.
+        When a user successfully logs in, they will be re-directed to a page that displays all the recipes they have uploaded.
         From here they have the option to open, edit or delete any of the displayed recipes.
         They can also visit this page by clicking the {{username}}'s Recipes link within the navigation bar. This link will automatically update to display the session user's username for a more personal interaction with the site.
 
     * #### <b>Administrator Account</b>
 
-        To manage the site, I created an administrator account. This account provides the user with all priviledges to manage the website.
+        To manage the site, I created an administrator account. This account provides the user with all privileges to manage the website.
 
-        The administrator is able to:
+        The administrator can:
             - create or remove additional recipe categories
 
 * ### <span id="features-future"><b>Possible Future Features</b></span>
 
     * #### Video Demonstrations / Live Cooking Sessions
-        Now that more and more users are using the internet to learn, it would be great to offer the site users some live and pre-recorded cooking events. Users will be able to watch a live or recorded video of top chefs preparing some of the recipes from the site. This could be a feature that coulc become part of a paid subscription, this then earing revenue to the site.
+        Now that more and more users are using the internet to learn, it would be great to offer the site users some live and pre-recorded cooking events. Users will be able to watch a live or recorded video of top chefs preparing some of the recipes from the site. This could be a feature that could become part of a paid subscription, this then earing revenue to the site.
 
     * #### Cookery Equipment Store
         The internet is quickly becoming a tool to promote and advertise products to their customers. By offering a cookery equipment store as part of the site, it is likely that the audience of the site already has a large interest in cooking and therefore the target audience for selling cooking products is already at the site.
 
-        Recipe's could include links to equipment best used to cook the recipe, offering the user the opportunity to buy the equipment directly from the site. This also helps create an 'all in one' portal for all things cooking!
+        Recipes could include links to equipment best used to cook the recipe, offering the user the opportunity to buy the equipment directly from the site. This also helps create an 'all in one' portal for all things cooking!
 
     * #### Order Recipe Ingredients
         Very similar to the cook shop, offering the customers a quick and easy solution to buy all the necessary ingredients for the recipe would be a great feature for those who want a quick an easy solution to producing these foods themselves at home, and would also offer another revenue generating opportunity to the site.
@@ -306,7 +306,7 @@ As part of my planning process, I felt it was important to work out what fields 
 * ### <span id="key-components-others"><b>Others</b></span>
 
     * #### [GitHub](https://github.com/) - Repository Hosting
-    * #### [GitPod](https://www.gitpod.io/) - Development Enviroment
+    * #### [GitPod](https://www.gitpod.io/) - Development Environment
     * #### [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) - Used to create the logo and favicon
     * #### [Website Mockup Generator](https://websitemockupgenerator.com/) - To create the opening image for the README.
     * #### [TinyPNG](https://tinypng.com/) - Used to reduce image file sizes
@@ -325,7 +325,7 @@ As part of my planning process, I felt it was important to work out what fields 
     To test my HTML code, I used the [W3 Validator](https://validator.w3.org/)
 
     A common problem that kept appearing in the validation was the error relating to the multiple uses of the same id's. 
-    When writing some of the for loops, it never occured to me that by using the ID within the loop, it would be repeating itself multiple times on the published page. I quickly resolved these issues by changing the ID's to class rules. Once I made these changes, the all of the pages passed the validation check.
+    When writing some of the for loops, it never occurred to me that by using the ID within the loop, it would be repeating itself multiple times on the published page. I quickly resolved these issues by changing the ID's to class rules. Once I made these changes, all of the pages passed the validation check.
 
     Here is the pass report for the homepage:
 
@@ -345,7 +345,7 @@ As part of my planning process, I felt it was important to work out what fields 
 
     The next two errors were due to the sizes I had entered as the parameters for the media queries. I had entered the dimensions incorrectly, setting a parameter of 319px instead of 320px for example. I had also generated 2 media queries to cover 2 screen dimensions, I then realised I could achieve the desired results with a much simpler query, setting the page logo to a smaller size for screen widths of less than 768px.
 
-    Once I made the changes above, the errors were then cleared. However there are 3 remaining warnings within the CSS validation, these errors related to external style sheets as part of the Materialize style sheets and extensions.
+    Once I made the changes above, the errors were then cleared. However, there are 3 remaining warnings within the CSS validation, these errors related to external style sheets as part of the Materialize style sheets and extensions.
 
     Here is the pass report:
 
@@ -377,7 +377,7 @@ As part of my planning process, I felt it was important to work out what fields 
 
     The initial lighthouse report showed that there was a significant issue with the accessibility score that related to the choice of colors that were used for the site.
 
-    There were areas of the site that did not meet the color contrast requirement of the site. A poor contrast between colors can often be difficult and uncomfertable for users to see. To help improve this score and to ensure the site is easy to read, I altered some of the poorly contrasting colors and made sure that any background colors work well with the foreground colors.
+    There were areas of the site that did not meet the color contrast requirement of the site. A poor contrast between colors can often be difficult and uncomfortable for users to see. To help improve this score and to ensure the site is easy to read, I altered some of the poorly contrasting colors and made sure that any background colors work well with the foreground colors.
 
     Once I rectified this issue, I ran the tests again and the results showed a poor rating for the performance. 
 
@@ -389,13 +389,13 @@ As part of my planning process, I felt it was important to work out what fields 
 
     <img src="readme-images/lighthouse_report.png" alt="Lighthouse Report" width="80%">
 
-    In the future I would like to include the possibility for users to upload and store the images onto the websites server, this will help manage file sizes, and types in order to improve load times.
+    In the future I would like to include the possibility for users to upload and store the images onto the website's server, this will help manage file sizes, and types in order to improve load times.
 
 <br>
 
 * ### <span id="testing-responsive-design"><b>Responsive Design</b></span>
 
-    In order to maintain a good responsive design for the site, I tried to use the Materialize CSS classes for the majority of the design.
+    In order to maintain a good responsive design for the site, I tried to use the Materialize CSS classes for the most of the design.
     This helped generate suitable layouts for the recipes that adapt automatically if the display dimensions change.
     Using the Materialize classes also helped reduce the number of media queries that had to be written, this keeping the amount of CSS code to a minimum.
 
@@ -407,7 +407,7 @@ As part of my planning process, I felt it was important to work out what fields 
     To test my site's compatibility, I found a website called [Browserling](https://www.browserling.com/)
 
     Using this tool I was able to test a range of browsers, some of which I wouldn't otherwise have access to.
-    Unfortunatley the site has a limited free version, and an upgrade to a premium plan would be required to access every device they offer, however i'm confident that the site is very compatible on the most popular browsers.
+    Unfortunately the site has a limited free version, and an upgrade to a premium plan would be required to access every device they offer, however I'm confident that the site is very compatible on the most popular browsers.
 
     <img src="readme-images/browser_chrome.png" alt="chrome browser test" width="40%">
     <img src="readme-images/browser_firefox.png" alt="firefox browser test" width="40%">
@@ -417,7 +417,7 @@ As part of my planning process, I felt it was important to work out what fields 
 * ### <span id="testing-links"><b>Link Testing</b></span>
 
     In my last project, I tested all the website links manually by navigating the site myself. The problem I found was that there were links that I had forgotten about which meant there were many left unchecked.
-    For this project i've found an online tool called [Dead Link Checker](https://www.deadlinkchecker.com/) which scans the whole site for links and tests to make sure they are all correct. This has worked great and provided a detail report on its results. However, I felt it was important that not only were the links complete, but that they are directing the users to the correct places. 
+    For this project I've found an online tool called [Dead Link Checker](https://www.deadlinkchecker.com/) which scans the whole site for links and tests to make sure they are all correct. This has worked great and provided a detail report on its results. However, I felt it was important that not only were the links complete, but that they are directing the users to the correct places. 
     As this is not a test that the online tool can carry out, I browsed the site and followed the links to make sure they were opening the correct sites.
 
     Here are the results from the [Dead Link Checker](https://www.deadlinkchecker.com/):
@@ -441,7 +441,7 @@ As part of my planning process, I felt it was important to work out what fields 
 
         - I need to be able to navigate to the key elements of the site quickly.
 
-            Similar to many sites, the navigation bar can be found at the traditional location on the page at the top right.
+            Like many sites, the navigation bar can be found at the traditional location on the page at the top right.
             I think this makes it easy for the user to know where to go to find the navigation bar and locate the links to the key elements of the site.
 
             <img src="readme-images/testing-ue2.png" alt="Foodie Homepage" width="80%">
@@ -456,8 +456,8 @@ As part of my planning process, I felt it was important to work out what fields 
         - The website should load quickly and only load the necessary files required to display the key elements of the site first to improve load times.
 
             This was an area that was a little tricky to deal with, however I was able to make minor changes to help improve load times.
-            Unfortunatley, as the website was sourcing the recipe images using URL's provided by the site users, this meant that there were increased load times.
-            To help improve these times I changed the amount of recipes that were being displayed on the homepage using pagination and also deferred some scripts and links from loading at the initial load of the page.
+            Unfortunately, as the website was sourcing the recipe images using URL's provided by the site users, this meant that there were increased load times.
+            To help improve these times I changed the number of recipes that were being displayed on the homepage using pagination and also deferred some scripts and links from loading at the initial load of the page.
 
             To monitor my results and how the changes I made affected the score, I used [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
@@ -465,9 +465,9 @@ As part of my planning process, I felt it was important to work out what fields 
 
         - Site visitors should be able to find social links to engage and share recipes to friends through their social media connections.
 
-            The internet is strongly used for social networking and users will often share with friends websites that they discover. To help attract more users to the site, social links are important platforms for users to engage and share with, in turn bringing more users to the site.
+            The internet is strongly used for social networking and users will often share with friend's websites that they discover. To help attract more users to the site, social links are important platforms for users to engage and share with, in turn bringing more users to the site.
 
-            The social links for Foodie are located within the footer of every page, and I have used the easily recognize logo's for each social site to make the presentation of this part of the site more appealing to users.
+            The social links for Foodie are located within the footer of every page, and I have used the easily recognize logos for each social site to make the presentation of this part of the site more appealing to users.
 
             <img src="readme-images/testing-ue5.png" alt="social icons in the footer" width="80%">
 
@@ -480,12 +480,12 @@ As part of my planning process, I felt it was important to work out what fields 
 
         - First Time Visitors, should be able to easily find the navigation links.
 
-            Following the most commonly used layout for the navigation bar, users are able to find the navigation links to work their way around the site in the top right hand corner of the page. The labels for navigation link are clean and easy to understand and read. For a user not logged into the site, the only dropdown menu within the navigation bar is to display the recipes by different categories. This keeping the navigation menu simple and minimal.
+            Following the most commonly used layout for the navigation bar, users are able to find the navigation links to work their way around the site in the top right-hand corner of the page. The labels for navigation link are clean and easy to understand and read. For a user not logged into the site, the only dropdown menu within the navigation bar is to display the recipes by different categories. This keeping the navigation menu simple and minimal.
 
         - First Time Visitors, should be able to interact with the site upon landing on the site.
 
             When visiting the site, the recipes that have been uploaded to the site are presented to the user on the initial landing area. 
-            Users are able to see a photo of the recipe, see the title of the recipe, see a quick summary of what kind of recipe it is followed by a large button that they can click to open the recipe to find out what the ingredients are and how to cook it.
+            Users can see a photo of the recipe, see the title of the recipe, see a quick summary of what kind of recipe it is followed by a large button that they can click to open the recipe to find out what the ingredients are and how to cook it.
 
             <img src="readme-images/testing-ftu3.png" alt="recipe cards on the homepage" width="80%">
 
@@ -502,9 +502,9 @@ As part of my planning process, I felt it was important to work out what fields 
 
             <img src="readme-images/testing-ftu5.png" alt="user must login to visit this page demo" width="80%">
 
-        - First time users are able to navigate the site without registering. However in order to submit a recipe to the site, users must register and therefore the user must be able to locate the Register link on the hompeage easily and quickly.
+        - First time users can navigate the site without registering. However, in order to submit a recipe to the site, users must register and therefore the user must be able to locate the Register link on the homepage easily and quickly.
 
-            A first time user to the site will be able to experience the basic functions of the site. The basic navigation menu has minimal links of which the login and register links are part of. The user can find and register with the site by clicking the link and they are taken to a short form and can be logged into the site with ease.
+            A first-time user to the site will be able to experience the basic functions of the site. The basic navigation menu has minimal links of which the login and register links are part of. The user can find and register with the site by clicking the link and they are taken to a short form and can be logged into the site with ease.
 
             The user will also be reminded with the options to login should they navigate to a part of the site that they do not have an account.
 
@@ -515,9 +515,9 @@ As part of my planning process, I felt it was important to work out what fields 
             A returning visitor can quickly log in to the page using the log in button on the navigation bar.
             This will take them to a page to enter and submit their login information.
 
-        - A returning visitor should be able to make changes to any recipes they have uploaded onto the site, but must not be able to edit or remove entries entered by the site admin or other users.
+        - A returning visitor should be able to make changes to any recipes they have uploaded onto the site but must not be able to edit or remove entries entered by the site admin or other users.
 
-            When the user logs into the site, they are taken to a page that shows all of the recipes that they have uploaded to the site.
+            When the user logs into the site, they are taken to a page that shows all the recipes that they have uploaded to the site.
             This page ONLY displays the recipes they have uploaded and provided that the session username matches the username in the database attached to the recipe, it will display the options to edit or delete the recipe.
 
             <img src="readme-images/testing-rv3.png" alt="user's uploaded recipes page" width="80%">
@@ -526,7 +526,7 @@ As part of my planning process, I felt it was important to work out what fields 
 
         - The website administrator must be able to find the administrator tools when logged into the site.
 
-            When a user is logged into the site with administrator privilidges, the navigation bar displays additional links that are options only available to an administrator.
+            When a user is logged into the site with administrator privileges, the navigation bar displays additional links that are options only available to an administrator.
             The tools that the administrator requires in order to manage the site are listed within the dropdown link 'Manage Site' shown on the navigation bar.
 
             <img src="readme-images/testing-wag1.png" alt="administrator navigation bar" width="80%">
@@ -557,9 +557,9 @@ As part of my planning process, I felt it was important to work out what fields 
 * ### <span id="testing-bugs"><b>Known Bugs</b></span>
 
     -   The recipe pages submit the instructions and ingredients to the database as a list array. These submit correctly and display as they should within the mongodb databases.
-        However, on some occassions only 1 of each instruction/ingredient is returned to be displayed on the page. 
+        However, on some occasions only 1 of each instruction/ingredient is returned to be displayed on the page. 
 
-        I have read through the code for both submitting and returning the information and made some minor alterations to ensure this information is passed, stored and returned correctly. Since carrying out these changes and running some tests that I feel would repeat the problem, i've not yet had the bug re-appear. 
+        I have read through the code for both submitting and returning the information and made some minor alterations to ensure this information is passed, stored and returned correctly. Since carrying out these changes and running some tests that I feel would repeat the problem, I've not yet had the bug re-appear. 
         It is possible that the tests I have carried out are not the tests that are responsible for this, however I will continue to monitor the site and carry out any necessary changes in the future.
 
 <br>
@@ -581,13 +581,13 @@ As part of my planning process, I felt it was important to work out what fields 
     - Click <b>'Create App'</b> and you are then taken to the next page which asks you for the name of the app you wish to create and choose your region.
         (The app name must be unique and not contain spaces) Once I created the name and chose the reason I clicked 'create app'
 
-    - Once it was created, I returned to my gitpod enviroment for the app and opened up a new terminal session to install Heroku into the enviroment.
+    - Once it was created, I returned to my Gitpod environment for the app and opened up a new terminal session to install Heroku into the environment.
 
         In terminal I entered:
 
                 npm install -g heroku
 
-    - In order to deploy the site to Heroku, it needs to have requirements.txt file. A requirements.txt file contains a list of all the dependancies the project needs to return succesfully. Heroku also uses this file to determine the language of the project. To create this file I entered the following command in terminal:
+    - In order to deploy the site to Heroku, it needs to have requirements.txt file. A requirements.txt file contains a list of all the dependencies the project needs to return successfully. Heroku also uses this file to determine the language of the project. To create this file, I entered the following command in terminal:
 
                 pip3 freeze --local > requirements.txt
 
@@ -619,46 +619,78 @@ As part of my planning process, I felt it was important to work out what fields 
 
     - Heroku will now accept this push and acknowledge the language of the application and install all the requirements to build the app. The app is now published on Heroku but does not have all the information it needs to operate correctly. 
 
-    - I then generated a file named ***env.py*** to store the enviroment variables for the app. Here is how the file should look:
+    - I then generated a file named ***env.py*** to store the environment variables for the app. Here is how the file should look:
 
     <img src="readme-images/deployment-heroku-env.png" alt="env.py file example" width="80%">
 
-    - Within the env.py file, the secret key should contain the secret key that is unique to the project. As this file contains information that should not be published and available to displayed publically, I added this file to the ***.gitignore*** file.
+    - Within the env.py file, the secret key should contain the secret key that is unique to the project. As this file contains information that should not be published and available to displayed publicly, I added this file to the ***.gitignore*** file.
 
-    - To add the enviroment variables to Heroku, I logged into Heroku and within the dashboard click 'Deploy' and locate 'Deployment Method' and choose 'Github'.
+    - To add the environment variables to Heroku, I logged into Heroku and within the dashboard click 'Deploy' and locate 'Deployment Method' and choose 'Github'.
     - In the search bar, locate the repository and click 'Connect'
     - Click the 'Settings' tab and locate 'Config Vars' followed by 'Reveal Config Vars'
     - Within these fields I entered the following information for my application: (these values must match the values within the env.py file.)
 
-    |Key|Value|
-    |:-:|:-:|
-    |IP|0.0.0.0|
-    |PORT|5000|
-    |SECRET_KEY| ***unique secret key***   |
-    |MONGO_URI|	mongodb+srv://root:PASSWORD@myfirstcluster.dr4g1.mongodb.net/foodie?retryWrites=true&w=majority|
-    |MONGO_DBNAME|foodie|
+        |Key|Value|
+        |:-:|:-:|
+        |IP|0.0.0.0|
+        |PORT|5000|
+        |SECRET_KEY| ***unique secret key***   |
+        |MONGO_URI|	mongodb+srv://root:PASSWORD@myfirstcluster.dr4g1.mongodb.net/foodie?retryWrites=true&w=majority|
+        |MONGO_DBNAME|foodie|
 
     - Return to the 'Deploy' tab and click 'Enable Automatic Deployment'
     - Click 'Manual Deploy' and choose the master branch and click 'Deploy Branch'
     - It make take a few minutes to build the app, once its complete you can click 'Open App' at the top of the page.
     
 
-
-
-
-        
-
-        
-
-        
-
-
-    
-
 * ### <span id="deployment-forking"><b>Forking</b></span>
+
+    To fork this repository, you will need to carry out the following steps;
+
+    - On [Github](https://www.github.com), navigate to the repository you wish to fork.
+
+    - In the top right corner click <b>Fork</b>
+
+        <img src="readme-images/deployment-forking-1.png" alt="image showing the location of the fork button on Github" width="80%">
 
 * ### <span id="deployment-cloning"><b>Cloning Project</b></span>
 
+    In order to display the website with all its features, you will need to clone the repository to your GitHub account or locally. 
+
+    Cloning will enable you to copy all of the site's files at that time, into your own working environment to apply any changes or test the site.
+
+    - On GitHub, navigate to the repository location
+    - On the right hand side of the page you will see a green button labelled 'Code'. Click This
+    - A menu will appear with different ways of cloning the repository.
+
+        <img src="readme-images/deployment-clone-1.png" alt="Github website showing where to find the 'code' button." width="80%">
+
+    <b>To Clone the repository By HTTPS</b>
+    - From the previous step, click on the clipboard button (located after the address) under the 'HTTPS' tab.
+    - Open terminal and change directory to the area you wish to load the repository into.
+    - Once you're in the required directory, enter the command 'git clone' and paste the URL that you added to the clipboard in the previous step. - Press Enter
+
+        <img src="readme-images/deployment-clone-2.png" alt="Github website showing where to click to copy the address to the clipboard" width="80%">
+
+    <b>To Clone the repository to GitHub Desktop</b>
+    - Follow steps 1,2 and 3 above.
+    - Click 'Open with GitHub Desktop
+    - Follow the prompts within the GitHub Desktop popups to complete the clone.
+
+        <img src="readme-images/deployment-clone-3.png" alt="Github website showing where to click to open with Github Desktop" width="80%">
+
+    <b>How to download a Zip file of the repository</b>
+    - Follow steps 1,2 and 3 above.
+    - Select the option 'Download Zip'
+
+        <img src="readme-images/deployment-clone-4.png" alt="Github website showing the Download Zip link." width="80%">
+
+    Once you have cloned the repository, you will need to carry out these additional steps:
+        a. Create an env.py file containing your own variables
+        b. Create a MongoDB database and replicate the databases from <a href="#database">here</a>.
+        c. Install all the packages listed within the requirements.txt file using the following command within your environment:
+
+            pip install -r requirements.txt
 
 ## <span id="credits"><b>Credits</b></span>
 
