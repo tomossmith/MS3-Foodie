@@ -288,6 +288,10 @@ p {
 
         The recipes could have a button at the bottom that users could click to buy the exact ingredients listed within the recipe.
 
+    * #### Recipe Ratings
+        It would be a great feature to allow registered users to give a rating on recipes that they have tried. 
+        This would increase the social interaction on the site, and may be an additional feature to help users decide which recipe to cook next.
+
 ## <span id="database"><b>Database</b></span>
 
 As part of my planning process, I felt it was important to work out what fields I would need to use and share as part of the site.
