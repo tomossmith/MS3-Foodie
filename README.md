@@ -41,8 +41,8 @@ p {
     - <a href="#ux-user_stories">User Stories</a>
     - <a href="#ux-design">Design</a>
         - <a href="#ux-design-color">Color</a>
-        - <a href="#ux-design-color">Typography</a>
-        - <a href="#ux-design-color">Images</a>
+        - <a href="#ux-design-typography">Typography</a>
+        - <a href="#ux-design-images">Images</a>
         - <a href="#ux-design-structure">Structure & Mockup Designs</a></a>
         - <a href="#ux-design-amendments">Amendments To Mockup Designs During Development</a></a>
 - <a href="#features">Features</a>
@@ -77,14 +77,14 @@ p {
 
 ----
 
-# <span id="#project_goals">Project Goals</span>
+# <span id="project_goals">Project Goals</span>
 
 *   Design, develop and implement a full stack web application using HTML, CSS, JavaScript, Python, Flask and MongoDB
 
 *   Identify and apply necessary security features
 
 
-# <span id="#ux">User Experience (UX)</span>
+# <span id="ux">User Experience (UX)</span>
 
     This section is designed to generate possible scenarios of the typical end user that would use this website. 
     This will help ensure end user requirements are designed into the website.
@@ -95,7 +95,7 @@ p {
     A key priority was to try to make the journey from entering the site to displaying a recipe as quickly and clean as possible.
 
 
-## <span id="#ux-user_stories"><b>User Stories</b></span>
+## <span id="ux-user_stories"><b>User Stories</b></span>
 
 * ### <b>User Experience</b>
 
@@ -139,9 +139,9 @@ p {
 
     - The website administrator must be the only users to have access to the restricted websites and non-administrators must not be able to access restricted sites by direct URL inputs.
 
-## <span id="#ux-design"><b>Design</b></span>
+## <span id="ux-design"><b>Design</b></span>
 
-* ### <span id="#ux-design-color"><b>Color</b></span>
+* ### <span id="ux-design-color"><b>Color</b></span>
 
     When choosing the most suitable color scheme for the site, I decided to list the main points of what I wanted to try to create from the design.
 
