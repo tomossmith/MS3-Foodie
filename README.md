@@ -169,13 +169,13 @@ p {
 
     The main font is [Lobster](https://fonts.google.com/specimen/Lobster?query=lobster)
 
-    <img src="readme-images/font-lobster.png" alt="Image of the Lobster Font" width="100%">
+    <img src="readme-images/font-lobster.png" alt="Image of the Lobster Font" width="30%">
 
     This is the font I used for fancy headings and labelling.
 
     The secondary font is [Oswald](https://fonts.google.com/specimen/Oswald?query=oswald)
 
-    <img src="readme-images/font-oswald.png" alt="Image of the Oswald Font" width="100%">
+    <img src="readme-images/font-oswald.png" alt="Image of the Oswald Font" width="30%">
 
     This font is used as a uniform font for all key information, keeping it easy to read.
 
@@ -216,10 +216,6 @@ p {
 * ### <span id="ux-design-amendments"><b>Amendments To Mockup Designs During Development</b></span>
 
     During the development there were very minor changes to the original design I created. I had originally planned to have a landing page to welcome users to the site with a button that they could click to open the recipe book. However, when I built this, it felt that having this feature increased the time it took for the end user to reach the purpose of the site. I made the decision to remove the opening page and direct users straight into the recipe book.
-
-    I also felt that the site needed an additional feature for Administrators to be able to assign other administrators. As the number of users using the site increases, it would be useful for the Administrator to be able to share any administrative tasks with other users. I therefore chose to implement a page for anyone with administrative access to add/remove other administrators.
-
-    <img src="readme-images/wireframe-manage-administrators.png" alt="Wireframe image for the manage administrators page." width="100%">
 
 ## <span id="features"><b>Features</b></span>
 
@@ -296,7 +292,7 @@ p {
 
 As part of my planning process, I felt it was important to work out what fields I would need to use and share as part of the site.
 
-<img src="readme-images/wireframe-databases.png" alt="Wireframe image for the database plans." width="100%">
+<img src="readme-images/wireframe-databases.png" alt="Wireframe image for the database plans." width="50%">
 
 ## <span id="key-components"><b>Key Components</b></span>
 
@@ -384,7 +380,13 @@ As part of my planning process, I felt it was important to work out what fields 
 
 * ### <span id="testing-pep8"><b>PEP8 Compliance</b></span>
 
-<br>]
+    To test my PEP8 compliance, I used [PEP8 Online Check](http://pep8online.com).
+
+    Here were the results:
+
+    <img src="readme-images/pep8_report.png" alt="PEP8 Report" width="80%">
+
+<br>
 
 * ### <span id="testing-lighthouse"><b>Overall Website Performance & Compatibility</b></span>
 
