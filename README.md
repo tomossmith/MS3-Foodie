@@ -725,6 +725,8 @@ As part of my planning process, I felt it was important to work out what fields 
 
     Pagination to organise the recipe cards: https://harishvc.com/2015/04/15/pagination-flask-mongodb/
 
+    Redirect 404 Error page to a custom error page: https://flask.palletsprojects.com/en/2.0.x/errorhandling/
+
 * ### <span id="credits-acknowledgments"><b>Acknowledgements</b></span>
 
     - Thank you to everyone on Slack for help and advice
