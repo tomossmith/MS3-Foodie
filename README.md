@@ -29,7 +29,7 @@ p {
 
 <center><img src="readme-images/website-mockup.png" alt="Website Mockup" width="100%">
 
-[CLICK HERE TO VISIT THE LIVE SITE](https://ts-foodie.herokuapp.com/) </center>
+[CLICK HERE TO VISIT THE LIVE SITE](https://ms3-foodie.onrender.com/) </center>
 
 ----
 <br>
